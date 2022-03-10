@@ -9,7 +9,7 @@ Ime i prezime | dmujanovi@foi.hr    | 0016140519 | dmujanovic
 Ime i prezime | dbrajdic@foi.hr     | 0016142693 | DominikB0
 
 ## Opis domene
-Izradom projekta sustava za rad videoteke riješit ćemo problem jednostavnosti rada videoteke. Svrha izrade aplikacije za rad videoteke jest korisnicima omogućiti jednostavniju posudbu/pregled  dostupnih filmova, rezervaciju nadolazećih filmova, pregled statistike filmova od strane ostalih korisnika (gledanost, ocjene, itd.). Također administratori će moći u bazu unašati/micati filmove, kao i upravljati korisnicima. 
+Izradom projekta sustava za rad videoteke riješit ćemo problem jednostavnosti rada videoteke. Svrha izrade aplikacije za rad videoteke jest korisnicima omogućiti jednostavniju posudbu/pregled  dostupnih filmova, rezervaciju nadolazećih filmova, pregled statistike filmova od strane ostalih korisnika (gledanost, ocjene, itd.). Također administratori će moći u bazu unašati/brisati filmove, kao i upravljati korisnicima. 
 
 ## Specifikacija projekta
 
