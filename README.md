@@ -12,7 +12,6 @@ Sav programski kod potrebno je verzionirati u glavnoj **master** grani i **obvez
 Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra raditi na ovom projektu. A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
 
 # Sustav za rad videoteke
-(u redak iznad navedite kratki proizvoljni naziv projekta prikladan akademskoj zajednici, a ovaj tekst obrišite)
 
 ## Projektni tim
 
@@ -23,7 +22,7 @@ Ime i prezime | dmujanovi@foi.hr    | 0016140519 | dmujanovic
 Ime i prezime | dbrajdic@foi.hr     | 0016142693 | DominikB0
 
 ## Opis domene
-Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
+Izradom projekta sustava za rad videoteke riješit ćemo problem jednostavnosti rada videoteke. Svrha izrade aplikacije za rad videoteke jest korisnicima omogućiti jednostavniju posudbu/pregled  dostupnih filmova, rezervaciju nadolazećih filmova, pregled statistike filmova od strane ostalih korisnika (gledanost, ocijene, itd.). Također administratori će moći u bazu unašati/micati filmove, kao i upravljati korisnicima.
 
 ## Specifikacija projekta
 Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
