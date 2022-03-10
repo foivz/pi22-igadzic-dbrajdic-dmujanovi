@@ -17,7 +17,7 @@ Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01    | Registracija korisnika | Korisnicima se omogućuje kreiranje korisničkog računa kojim pristupaju aplikaciji.  | Ivan Gadžić
 F02    | Prijava korisnika       | Registrirani korisnici imaju mogućnost prijave i interakcije sa sustavom videoteke (posudba filmova, itd.) | Ivan Gadžić
-F03    | Upravljanje korisnicima | Administrator ima mogućnost upravljati korisnicima, dodijeliti uloge, te izmijeniti osobne podatke
+F03    | Upravljanje korisnicima | Administrator ima mogućnost upravljati korisnicima, dodijeliti uloge, te izmijeniti osobne podatke | Ivan Gadžić
 F04    | Posudba filmova         | Samo registrirani korisnici imaju mogućnost posudbe filmova, kako bi se znalo kod koga je film. | Ivan Gadžić
 F05    | Upravljanje filmovima   | Administrator ima mogućnost dodavanja/brisanja filmova, kao izmjenu informacija o filmovima | Dominik Mujanović
 F06    | Pregled dostupnih filmova | Pregled trenutno dostupnih filmova za posudbu, nije nužno da korisnik bude registriran. | Dominik Mujanović
