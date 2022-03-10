@@ -30,8 +30,14 @@ Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda.
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom ... | Zlatko Stapić
-F02 | Pregled dnevnika | .... | ...
+F01    | Regirstraijca korisnika | Novim korisnicima omogućujemo registraciju u našoj trgovini, s registracijom ostvaruju popust na posudbu filmova | Ivan Gadžić
+F02    | Prijava korisnika       | Registrirani korisnici imaju mogućnost prijave i pregleda dostupnih filmova | Ivan Gadžić
+F03    | Posudba filmova         | Korisnici koji nisu registirani, ali i oni koji su registirani imaju mogućnost posudbe filmova | Ivan Gadžić
+F04    | Pregled dostupnih filmova | Pregled trenutno dostupnih filmova za posudbu | Dominik Mujanović
+F05    | Pregled uskoro dostupnih filmova | Filmovi koji su posuđeni, ali trebaju biti uskoro vraćeni i biti će ponovno dostupni na posudbu | Dominik Mujanović
+F06    | Pregled novo nadolazećih filmova | Filmovi premijere koji će biti dostupni na posudbu | Dominik Mujanović 
+F07    | Statistika posuđenih filmova     | Dostupna evidencija najposuđivaniji filmovi, najbolja ocjena korisnika za posudđene filmove i dr... | Dominik Brajdić
+F08    | Pregled podataka o zaposleniku   | Evidencija svakog zaposlenika odrađenih sati i smjena u određenom mjesecu | Dominik Brajdić 
 
 ## Tehnologije i oprema
 Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu.
