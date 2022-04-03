@@ -20,9 +20,9 @@ F02    | Prijava korisnika       | Registrirani korisnici imaju mogućnost prija
 F03    | Upravljanje korisnicima | Administrator ima mogućnost upravljati korisnicima, dodijeliti uloge, te izmijeniti osobne podatke. | Ivan Gadžić
 F04    | Prijava dostupnog filma  | Svaki prijavljeni korisnik ima mogućnost objaviti filmove koje ima pohranjene na vlastitom računalu dostupne za streamanje. | Dominik Mujanović
 F05    | Pregled dostupnih filmova | Pregled trenutno dostupnih filmova za posudbu, nije nužno da korisnik bude registriran.| Dominik Mujanović
-F06    |  | Filmovi koji su posuđeni, ali trebaju biti uskoro vraćeni i biti će ponovno dostupni na posudbu | Dominik Mujanović
-F07    | Windows servis za pružanje filmova | Omogućuje prijavljenim korisnicima da na zahtjev drugih korisnika pružaju (strimaju) tražen film | Dominik Brajdić
-F08    | Statistika filmova    | Korisnik za svoje filmove upisane u aplikaciju ima mogućnost vidjeti statistiku (koliko puta je film pogledan, koliko ljudi trenutno gleda film, itd.)  | Dominik Brajdić
+F06    | Statistika filmova | Korisnik za svoje filmove upisane u aplikaciju ima mogućnost vidjeti statistiku (koliko puta je film pogledan, koliko ljudi trenutno gleda film, itd.) | Dominik Mujanović
+F07    | Aktivacija windows servisa za pružanje filma | Korisnik koji ima aktiviran odgovarajući windows servis ima i mogućnost streamanja filmova | Dominik Brajdić
+F08    | Streamanje filma | Omogućuje prijavljenim korisnicima da na zahtjev drugih korisnika pružaju (strimaju) tražen film, odnosno pokreću i zaustavljaju prijenos. | Dominik Brajdić
 
 
 ## Tehnologije i oprema
