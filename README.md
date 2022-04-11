@@ -17,7 +17,7 @@ Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01    | Registracija korisnika | Korisnicima se omogućuje kreiranje korisničkog računa kojim pristupaju aplikaciji.  | Ivan Gadžić
 F02    | Prijava korisnika       | Registrirani korisnici imaju mogućnost prijave i interakcije sa sustavom videoteke (posudba filmova, itd.) | Ivan Gadžić
-F03    | Aktivacija windows servisa za pružanje filma | Korisnik koji ima aktiviran odgovarajući windows servis ima i mogućnost streamanja filmova | Ivan Gadžić
+F03    | Aktivacija windows servisa za pružanje filma | Korisnik koji ima aktiviran odgovarajući windows servis ima i mogućnost streamanja filmova. | Ivan Gadžić
 F04    | Prijava dostupnog filma  | Svaki prijavljeni korisnik ima mogućnost objaviti filmove koje ima pohranjene na vlastitom računalu dostupne za streamanje. | Dominik Mujanović
 F05    | Pregled dostupnih filmova | Pregled trenutno dostupnih filmova za gledanje.| Dominik Mujanović
 F06    | Statistika filmova | Korisnik za svoje filmove upisane u aplikaciju ima mogućnost vidjeti statistiku (koliko puta je film pogledan, koliko ljudi trenutno gleda film, itd.) | Dominik Mujanović
