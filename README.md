@@ -21,7 +21,7 @@ F03    | Implementacija windows servisa za pružanje filma | Korisnik koji ima a
 F04    | Odobravanje novih filmova |Korisniku admin može dodjeliti ulogu recenzenta koji će onda imati mogućnost odobravanja film ako je u skladu s Pravilnikom uploadanja filma .|Ivan Gadžić
 F05    | Dodavanje filma  | Svaki korisnik neovisno o teme dali je registriran ili ne ima mogućnost objaviti filmove koje ima pohranjene na vlastitom računalu dostupne za streamanje. | Dominik Mujanović
 F06    | Statistika filmova | Korisnik za svoje filmove upisane u aplikaciju ima mogućnost vidjeti statistiku (koliko puta je film pogledan, koliko ljudi trenutno gleda film, itd.) | Dominik Mujanović
-F07    | Mogućnost korištenja windwos servisa | Korisnik može birati želi li da windwos servis bude uključen ili isključen, za mogućnost streamanja filma. | Dominik Mujanović
+F07    | Mogućnost korištenja windows servisa | Korisnik može birati želi li da windwos servis bude uključen ili isključen, za mogućnost streamanja filma. | Dominik Mujanović
 F08    | Pregled dostupnih filmova |  Pregled trenutno dostupnih filmova za gledanje. | Dominik Brajdić
 F09    | Upravljanje korisnicima  | Administrator ima mogućnost upravljati korisnicima, dodijeliti uloge administrator ili recenzent. | Dominik Brajdić
 F10    | Gledanje filma | Omogućuje se gledanje samo prijavljenim korisnicima dok bi svi korisnici imali pregled. | Dominik Brajdić
