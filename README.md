@@ -28,4 +28,4 @@ F10    | Gledanje filma | Omogućuje se gledanje samo prijavljenim korisnicima d
 
 
 ## Tehnologije i oprema
-Visual Studio 2022. C#, .NET Framework, Microsoft SQL Server, GitHub, Microsoft Word.
+Visual Studio 2022. C#, .NET Framework, Microsoft SQL Server, GitHub, Microsoft Word,Microsoft Project Profesional.
