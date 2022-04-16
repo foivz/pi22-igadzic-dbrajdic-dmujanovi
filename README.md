@@ -18,12 +18,13 @@ Oznaka | Naziv | Kratki opis | Odgovorni član tima
 F01    | Registracija korisnika | Korisnicima se omogućuje kreiranje korisničkog računa kojim pristupaju aplikaciji.  | Ivan Gadžić
 F02    | Prijava korisnika       | Registrirani korisnici imaju mogućnost prijave i interakcije sa sustavom videoteke | Ivan Gadžić
 F03    | Implementacija windows servisa za pružanje filma | Korisnik koji ima aktiviran odgovarajući windows servis ima i mogućnost streamanja filmova. | Ivan Gadžić
-F04    | Prijava dostupnog filma  | Svaki prijavljeni korisnik ima mogućnost objaviti filmove koje ima pohranjene na vlastitom računalu dostupne za streamanje. | Dominik Mujanović
-F05    | Statistika filmova | Korisnik za svoje filmove upisane u aplikaciju ima mogućnost vidjeti statistiku (koliko puta je film pogledan, koliko ljudi trenutno gleda film, itd.) | Dominik Mujanović
-F06    | Mogućnost korištenja windwos servisa | Korisnik može birati želi li da windwos servis bude uključen ili isključen, za mogućnost streamanja filma. | Dominik Mujanović
-F07    | Pregled dostupnih filmova |  Pregled trenutno dostupnih filmova za gledanje. | Dominik Brajdić
-F08    | Upravljanje korisnicima  | Administrator ima mogućnost upravljati korisnicima, dodijeliti uloge, te izmijeniti osobne podatke. | Dominik Brajdić
-F09    | Streamanje filma | Omogućuje prijavljenim korisnicima da na zahtjev drugih korisnika pružaju (strimaju) tražen film, odnosno pokreću i zaustavljaju prijenos. | Dominik Brajdić
+F04    | Odobravanje novih filmova |Korisniku admin može dodjeliti ulogu recenzenta koji će onda imati mogućnost odobravanja film ako je u skladu s Pravilnikom uploadanja filma .|Ivan Gadžić
+F05    | Dodavanje filma  | Svaki korisnik neovisno o teme dali je registriran ili ne ima mogućnost objaviti filmove koje ima pohranjene na vlastitom računalu dostupne za streamanje. | Dominik Mujanović
+F06    | Statistika filmova | Korisnik za svoje filmove upisane u aplikaciju ima mogućnost vidjeti statistiku (koliko puta je film pogledan, koliko ljudi trenutno gleda film, itd.) | Dominik Mujanović
+F07    | Mogućnost korištenja windwos servisa | Korisnik može birati želi li da windwos servis bude uključen ili isključen, za mogućnost streamanja filma. | Dominik Mujanović
+F08    | Pregled dostupnih filmova |  Pregled trenutno dostupnih filmova za gledanje. | Dominik Brajdić
+F09    | Upravljanje korisnicima  | Administrator ima mogućnost upravljati korisnicima, dodijeliti uloge administrator ili recenzent. | Dominik Brajdić
+F10    | Gledanje filma | Omogućuje se gledanje samo prijavljenim korisnicima dok bi svi korisnici imali pregled. | Dominik Brajdić
 
 
 ## Tehnologije i oprema
