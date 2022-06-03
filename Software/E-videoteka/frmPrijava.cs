@@ -39,11 +39,6 @@ namespace E_videoteka
             {
                 throw new ValidacijaPrijaveException("Polja ne mogu biti prazna.");
             }
-            
-            if(repozitorij.ProvjeriPrijavu(username, password))
-            {
-
-            }
         }
     }
 }
