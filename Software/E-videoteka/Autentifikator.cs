@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace E_videoteka
+﻿namespace E_videoteka
 {
     public class Autentifikator
     {
         public RepozitorijKorisnika repozitorij = new RepozitorijKorisnika();
         public void Registracija(string ime, string prezime, string email, string username, string password, string passwordrep)
         {
-            ProvjeriLozinku(password, passwordrep); 
+            ProvjeriLozinku(password, passwordrep);
             VerificirajRegistraciju(ime, prezime, email, username, password, passwordrep);
             repozitorij.DodajKorisnika(ime, prezime, email, username, password);
         }
@@ -25,35 +19,30 @@ namespace E_videoteka
 
         public void VerificirajRegistraciju(string ime, string prezime, string email, string username, string password, string passwordrep)
         {
-            if(ime == "")
+            if (ime == "")
             {
                 throw new InvalidInputException("Polje Ime ne može biti prazno");
             }
-            if(prezime == "")
+            if (prezime == "")
             {
                 throw new InvalidInputException("Polje Prezime ne može biti prazno");
             }
-            if(email == "")
+            if (email == "")
             {
                 throw new InvalidInputException("Polje E-mail ne može biti prazno");
             }
-            if(username == "")
+            if (username == "")
             {
                 throw new InvalidInputException("Polje Username ne može biti prazno");
             }
-            if(password == "")
+            if (password == "")
             {
                 throw new InvalidInputException("Polje Lozinka ne može biti prazno");
             }
-            if(passwordrep == "")
+            if (passwordrep == "")
             {
                 throw new InvalidInputException("Polje Ponovljena lozinka ne može biti prazno");
             }
-        }
-
-        internal void VerficirajPrijavu()
-        {
-            throw new NotImplementedException();
         }
     }
 }

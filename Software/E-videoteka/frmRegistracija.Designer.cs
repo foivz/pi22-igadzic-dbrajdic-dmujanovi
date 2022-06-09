@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtbIme = new System.Windows.Forms.TextBox();
-            this.txtbPrezime = new System.Windows.Forms.TextBox();
-            this.txtbUsername = new System.Windows.Forms.TextBox();
-            this.txtbEmail = new System.Windows.Forms.TextBox();
-            this.txtbLozinka = new System.Windows.Forms.TextBox();
             this.txtbPonovnaLozinka = new System.Windows.Forms.TextBox();
+            this.txtbLozinka = new System.Windows.Forms.TextBox();
+            this.txtbEmail = new System.Windows.Forms.TextBox();
+            this.txtbUsername = new System.Windows.Forms.TextBox();
+            this.txtbPrezime = new System.Windows.Forms.TextBox();
+            this.txtbIme = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnRegistriajSe = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -68,50 +68,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unesite korisničke podatke";
             // 
-            // label1
+            // txtbPonovnaLozinka
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ime:";
+            this.txtbPonovnaLozinka.Location = new System.Drawing.Point(169, 294);
+            this.txtbPonovnaLozinka.Name = "txtbPonovnaLozinka";
+            this.txtbPonovnaLozinka.PasswordChar = '*';
+            this.txtbPonovnaLozinka.Size = new System.Drawing.Size(191, 22);
+            this.txtbPonovnaLozinka.TabIndex = 11;
             // 
-            // label2
+            // txtbLozinka
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Prezime";
+            this.txtbLozinka.Location = new System.Drawing.Point(169, 238);
+            this.txtbLozinka.Name = "txtbLozinka";
+            this.txtbLozinka.PasswordChar = '*';
+            this.txtbLozinka.Size = new System.Drawing.Size(191, 22);
+            this.txtbLozinka.TabIndex = 10;
             // 
-            // label3
+            // txtbEmail
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Username:";
+            this.txtbEmail.Location = new System.Drawing.Point(169, 191);
+            this.txtbEmail.Name = "txtbEmail";
+            this.txtbEmail.Size = new System.Drawing.Size(191, 22);
+            this.txtbEmail.TabIndex = 9;
             // 
-            // label4
+            // txtbUsername
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 191);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "E-mail:";
+            this.txtbUsername.Location = new System.Drawing.Point(169, 140);
+            this.txtbUsername.Name = "txtbUsername";
+            this.txtbUsername.Size = new System.Drawing.Size(191, 22);
+            this.txtbUsername.TabIndex = 8;
             // 
-            // label5
+            // txtbPrezime
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 244);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Loznika:";
+            this.txtbPrezime.Location = new System.Drawing.Point(169, 82);
+            this.txtbPrezime.Name = "txtbPrezime";
+            this.txtbPrezime.Size = new System.Drawing.Size(191, 22);
+            this.txtbPrezime.TabIndex = 7;
+            // 
+            // txtbIme
+            // 
+            this.txtbIme.Location = new System.Drawing.Point(169, 33);
+            this.txtbIme.Name = "txtbIme";
+            this.txtbIme.Size = new System.Drawing.Size(191, 22);
+            this.txtbIme.TabIndex = 6;
             // 
             // label6
             // 
@@ -122,49 +121,50 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Ponovi lozinku:";
             // 
-            // txtbIme
+            // label5
             // 
-            this.txtbIme.Location = new System.Drawing.Point(169, 33);
-            this.txtbIme.Name = "txtbIme";
-            this.txtbIme.Size = new System.Drawing.Size(191, 22);
-            this.txtbIme.TabIndex = 6;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 244);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 16);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Loznika:";
             // 
-            // txtbPrezime
+            // label4
             // 
-            this.txtbPrezime.Location = new System.Drawing.Point(169, 82);
-            this.txtbPrezime.Name = "txtbPrezime";
-            this.txtbPrezime.Size = new System.Drawing.Size(191, 22);
-            this.txtbPrezime.TabIndex = 7;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 191);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "E-mail:";
             // 
-            // txtbUsername
+            // label3
             // 
-            this.txtbUsername.Location = new System.Drawing.Point(169, 140);
-            this.txtbUsername.Name = "txtbUsername";
-            this.txtbUsername.Size = new System.Drawing.Size(191, 22);
-            this.txtbUsername.TabIndex = 8;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Korisničko ime:";
             // 
-            // txtbEmail
+            // label2
             // 
-            this.txtbEmail.Location = new System.Drawing.Point(169, 191);
-            this.txtbEmail.Name = "txtbEmail";
-            this.txtbEmail.Size = new System.Drawing.Size(191, 22);
-            this.txtbEmail.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Prezime";
             // 
-            // txtbLozinka
+            // label1
             // 
-            this.txtbLozinka.Location = new System.Drawing.Point(169, 238);
-            this.txtbLozinka.Name = "txtbLozinka";
-            this.txtbLozinka.PasswordChar = '*';
-            this.txtbLozinka.Size = new System.Drawing.Size(191, 22);
-            this.txtbLozinka.TabIndex = 10;
-            // 
-            // txtbPonovnaLozinka
-            // 
-            this.txtbPonovnaLozinka.Location = new System.Drawing.Point(169, 294);
-            this.txtbPonovnaLozinka.Name = "txtbPonovnaLozinka";
-            this.txtbPonovnaLozinka.PasswordChar = '*';
-            this.txtbPonovnaLozinka.Size = new System.Drawing.Size(191, 22);
-            this.txtbPonovnaLozinka.TabIndex = 11;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ime:";
             // 
             // btnRegistriajSe
             // 
@@ -197,6 +197,7 @@
             this.Name = "frmRegistracija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registracija";
+            this.Load += new System.EventHandler(this.frmRegistracija_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

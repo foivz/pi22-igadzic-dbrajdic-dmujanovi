@@ -87,6 +87,7 @@
             this.Name = "frmGlavna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "e-Videoteka ";
+            this.Load += new System.EventHandler(this.frmGlavna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

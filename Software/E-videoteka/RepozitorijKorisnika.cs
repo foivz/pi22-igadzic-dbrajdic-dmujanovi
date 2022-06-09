@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace E_videoteka
 {
@@ -14,6 +10,7 @@ namespace E_videoteka
             {
                 Korisnik korisnik = new Korisnik
                 {
+                    ID_Korisnik = 10,
                     Ime = ime,
                     Prezime = prezime,
                     Email = email,
@@ -26,12 +23,33 @@ namespace E_videoteka
             }
         }
 
-        public void ProvjeriPrijavu(string username, string password)
+        public bool ProvjeriPrijavu(string username, string password)
         {
-            using(var context = new PI2247_DBEntities1())
+            using (var context = new PI2247_DBEntities1())
             {
                 var query = from p in context.Korisniks
                             where p.Username == username && p.Password == password
+                            select p;
+
+                if (query.Any())
+                {
+                    System.Windows.Forms.MessageBox.Show("Uspjesšno ste ulogirani.");
+                    return true;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Krivo korisnicko ime ili lozinka.");
+                    return false;
+                }
+            }
+        }
+
+        public void ProvjeraUloge()
+        {
+            using (var context = new PI2247_DBEntities1())
+            {
+                var query = from p in context.Korisniks
+                            where p.Uloga == "Korisnik"
                             select p;
             }
         }
