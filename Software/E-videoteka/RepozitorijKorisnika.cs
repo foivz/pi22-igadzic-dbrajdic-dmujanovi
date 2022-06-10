@@ -38,7 +38,7 @@ namespace E_videoteka
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("Krivo korisničko ime ili lozinka.");
+                    System.Windows.Forms.MessageBox.Show("Krivo korisnicko ime ili lozinka.");
                     return false;
                 }
             }
