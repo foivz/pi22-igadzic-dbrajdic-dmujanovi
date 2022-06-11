@@ -74,12 +74,6 @@
     <Compile Include="frmIzmjeniKorisnikaAdmin.Designer.cs">
       <DependentUpon>frmIzmjeniKorisnikaAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTestPrikaza.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTestPrikaza.Designer.cs">
-      <DependentUpon>frmTestPrikaza.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmGlavna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,9 +130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmIzmjeniKorisnikaAdmin.resx">
       <DependentUpon>frmIzmjeniKorisnikaAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTestPrikaza.resx">
-      <DependentUpon>frmTestPrikaza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGlavna.resx">
       <DependentUpon>frmGlavna.cs</DependentUpon>

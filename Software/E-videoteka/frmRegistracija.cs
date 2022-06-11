@@ -21,9 +21,6 @@ namespace E_videoteka
             string passwordrep = txtbPonovnaLozinka.Text;
 
             autentifikator.Registracija(ime, prezime, email, username, password, passwordrep);
-
-            frmTestPrikaza form = new frmTestPrikaza();
-            form.ShowDialog();
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)

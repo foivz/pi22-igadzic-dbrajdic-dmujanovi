@@ -12,7 +12,7 @@ namespace E_videoteka
 {
     public partial class frmIzmjeniKorisnikaAdmin : Form
     {
-        private Korisnik selektirani;
+        public Korisnik selektirani;
         public frmIzmjeniKorisnikaAdmin(Korisnik selektiraniKorisnik)
         {
             InitializeComponent();
@@ -40,16 +40,17 @@ namespace E_videoteka
                 selektirani.Uloga = uloga;
                 context.SaveChanges();
             }
+            Close();
         }
 
         private void frmIzmjeniKorisnikaAdmin_Load(object sender, EventArgs e)
         {
-            selektirani.Ime = txtbIme.Text;
-            selektirani.Prezime = txtbPrezime.Text;
-            selektirani.Email = txtbEmail.Text;
-            selektirani.Username = txtbUsername.Text;
-            selektirani.Password = txtbLozinka.Text;
-            selektirani.Uloga = cmbUloga.SelectedText;
+            txtbIme.Text = selektirani.Ime;
+            txtbPrezime.Text = selektirani.Prezime;
+            txtbEmail.Text = selektirani.Email;
+            txtbUsername.Text = selektirani.Username;
+            txtbLozinka.Text = selektirani.Password;
+            cmbUloga.SelectedText = selektirani.Uloga;
 
         }
 

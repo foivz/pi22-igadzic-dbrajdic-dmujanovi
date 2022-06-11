@@ -20,6 +20,7 @@ namespace E_videoteka
         private void frmAdminUpravljanjeKorisnicima_Load(object sender, EventArgs e)
         {
             DohvatiKorisnike();
+
         }
 
         private void DohvatiKorisnike()
@@ -28,6 +29,7 @@ namespace E_videoteka
             {
                 var query = from p in context.Korisniks
                             select p;
+                dgvUpravljanjeKorsincima.DataSource = query.ToList();
             }
         }
 
@@ -38,12 +40,22 @@ namespace E_videoteka
 
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
-            
+
             using (var context = new PI2247_DBEntities3())
             {
                 Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
-                context.Korisniks.Remove(selektirani);
-                context.SaveChanges();
+                if (selektirani.Uloga != "Admin")
+                {
+                    context.Korisniks.Attach(selektirani);
+                    context.Korisniks.Remove(selektirani);
+                    context.SaveChanges();
+                }
+                if (selektirani.Uloga == "Admin")
+                {
+                    MessageBox.Show("Ne moze se obrisati admin!");
+                }
+               
+
             }
             DohvatiKorisnike();
         }
