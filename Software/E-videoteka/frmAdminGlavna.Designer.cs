@@ -43,6 +43,7 @@
             this.btnUpravljanjeKorisnicima.TabIndex = 0;
             this.btnUpravljanjeKorisnicima.Text = "Upravljanje korisnicima";
             this.btnUpravljanjeKorisnicima.UseVisualStyleBackColor = true;
+            this.btnUpravljanjeKorisnicima.Click += new System.EventHandler(this.btnUpravljanjeKorisnicima_Click);
             // 
             // btnVideoteka
             // 
@@ -52,6 +53,7 @@
             this.btnVideoteka.TabIndex = 1;
             this.btnVideoteka.Text = "Videoteka";
             this.btnVideoteka.UseVisualStyleBackColor = true;
+            this.btnVideoteka.Click += new System.EventHandler(this.btnVideoteka_Click);
             // 
             // btnOdjava
             // 
@@ -61,6 +63,7 @@
             this.btnOdjava.TabIndex = 2;
             this.btnOdjava.Text = "Odjava";
             this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // pictureBox1
             // 

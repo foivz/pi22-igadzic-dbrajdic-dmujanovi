@@ -16,5 +16,20 @@ namespace E_videoteka
         {
             InitializeComponent();
         }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnVideoteka_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpravljanjeKorisnicima_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
