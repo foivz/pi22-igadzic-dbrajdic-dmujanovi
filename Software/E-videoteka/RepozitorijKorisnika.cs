@@ -16,7 +16,7 @@ namespace E_videoteka
     {
         public void DodajKorisnika(string ime, string prezime, string email, string username, string password)
         {
-            using (var context = new PI2247_DBEntities2())
+            using (var context = new PI2247_DBEntities3())
             {
                 Korisnik korisnik = new Korisnik
                 {
@@ -34,7 +34,7 @@ namespace E_videoteka
 
         public bool ProvjeriPrijavu(string username, string password)
         {
-            using (var context = new PI2247_DBEntities2())
+            using (var context = new PI2247_DBEntities3())
             {
                 var query = from p in context.Korisniks
                             where p.Username == username && p.Password == password
@@ -55,7 +55,7 @@ namespace E_videoteka
 
         public bool ProvjeraKorisnik()
         {
-            using(var context = new PI2247_DBEntities2())
+            using(var context = new PI2247_DBEntities3())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Korisnik"
@@ -63,6 +63,8 @@ namespace E_videoteka
                 if (query.Any())
                 {
                     return true;
+                    frmAdminGlavna frmAdminGlavna = new frmAdminGlavna();
+                    frmAdminGlavna.ShowDialog();
                 }
                 else
                 {
@@ -74,7 +76,7 @@ namespace E_videoteka
 
         public bool ProvjeraAdmina()
         {
-            using (var context = new PI2247_DBEntities2())
+            using (var context = new PI2247_DBEntities3())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Admin"
@@ -93,7 +95,7 @@ namespace E_videoteka
 
         public bool ProvjeraRecenzent()
         {
-            using (var context = new PI2247_DBEntities2())
+            using (var context = new PI2247_DBEntities3())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Recenzent"
