@@ -37,7 +37,7 @@
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Uloga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="PI2247_DBEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PI2247_DBEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
         </EntityContainer>
       </Schema>
@@ -45,7 +45,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities2">
+        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities3">
           <EntitySetMapping Name="Korisniks">
             <EntityTypeMapping TypeName="PI2247_DBModel.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">
