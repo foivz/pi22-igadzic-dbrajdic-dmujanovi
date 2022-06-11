@@ -1,4 +1,14 @@
 ﻿using System.Linq;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace E_videoteka
 {
@@ -6,11 +16,10 @@ namespace E_videoteka
     {
         public void DodajKorisnika(string ime, string prezime, string email, string username, string password)
         {
-            using (var context = new PI2247_DBEntities1())
+            using (var context = new PI2247_DBEntities2())
             {
                 Korisnik korisnik = new Korisnik
                 {
-                    ID_Korisnik = 10,
                     Ime = ime,
                     Prezime = prezime,
                     Email = email,
@@ -25,7 +34,7 @@ namespace E_videoteka
 
         public bool ProvjeriPrijavu(string username, string password)
         {
-            using (var context = new PI2247_DBEntities1())
+            using (var context = new PI2247_DBEntities2())
             {
                 var query = from p in context.Korisniks
                             where p.Username == username && p.Password == password
@@ -46,7 +55,7 @@ namespace E_videoteka
 
         public bool ProvjeraKorisnik()
         {
-            using (var context = new PI2247_DBEntities1())
+            using(var context = new PI2247_DBEntities2())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Korisnik"
@@ -65,7 +74,7 @@ namespace E_videoteka
 
         public bool ProvjeraAdmina()
         {
-            using (var context = new PI2247_DBEntities1())
+            using (var context = new PI2247_DBEntities2())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Admin"
@@ -84,7 +93,7 @@ namespace E_videoteka
 
         public bool ProvjeraRecenzent()
         {
-            using (var context = new PI2247_DBEntities1())
+            using (var context = new PI2247_DBEntities2())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Recenzent"
