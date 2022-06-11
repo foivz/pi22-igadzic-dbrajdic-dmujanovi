@@ -38,12 +38,21 @@ namespace E_videoteka
 
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
+            
+            using (var context = new PI2247_DBEntities2())
+            {
+                Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
+                context.Korisniks.Remove(selektirani);
+                context.SaveChanges();
+            }
             DohvatiKorisnike();
         }
 
         private void btnUrediKorisnika_Click(object sender, EventArgs e)
         {
-            Korisnik selektirani = dataGridView1.CurrentRow.DataBoundItem as Korisnik;
+            Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
+            frmIzmjeniKorisnikaAdmin frmIzmjeni = new frmIzmjeniKorisnikaAdmin(selektirani);
+            frmIzmjeni.ShowDialog();
 
             DohvatiKorisnike();
         }

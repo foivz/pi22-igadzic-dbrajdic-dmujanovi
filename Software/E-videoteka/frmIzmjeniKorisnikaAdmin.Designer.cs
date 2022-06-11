@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbUloga = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
@@ -135,16 +135,16 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Ime:";
             // 
-            // comboBox1
+            // cmbUloga
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbUloga.FormattingEnabled = true;
+            this.cmbUloga.Items.AddRange(new object[] {
             "Korisnik",
             "Recenzent"});
-            this.comboBox1.Location = new System.Drawing.Point(245, 357);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 24);
-            this.comboBox1.TabIndex = 21;
+            this.cmbUloga.Location = new System.Drawing.Point(245, 357);
+            this.cmbUloga.Name = "cmbUloga";
+            this.cmbUloga.Size = new System.Drawing.Size(253, 24);
+            this.cmbUloga.TabIndex = 21;
             // 
             // label6
             // 
@@ -164,6 +164,7 @@
             this.btnSpremi.TabIndex = 23;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // btnOdustani
             // 
@@ -173,6 +174,7 @@
             this.btnOdustani.TabIndex = 24;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // frmIzmjeniKorisnikaAdmin
             // 
@@ -182,7 +184,7 @@
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbUloga);
             this.Controls.Add(this.txtbLozinka);
             this.Controls.Add(this.txtbEmail);
             this.Controls.Add(this.txtbUsername);
@@ -195,6 +197,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmIzmjeniKorisnikaAdmin";
             this.Text = "frmIzmjeniKorisnikaAdmin";
+            this.Load += new System.EventHandler(this.frmIzmjeniKorisnikaAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,7 +215,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbUloga;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnOdustani;

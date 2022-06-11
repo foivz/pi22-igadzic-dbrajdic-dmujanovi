@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUpravljanjeKorsincima = new System.Windows.Forms.DataGridView();
             this.btnUrediKorisnika = new System.Windows.Forms.Button();
             this.btnIzbrisi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUpravljanjeKorsincima)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvUpravljanjeKorsincima
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(904, 340);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvUpravljanjeKorsincima.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUpravljanjeKorsincima.Location = new System.Drawing.Point(12, 12);
+            this.dgvUpravljanjeKorsincima.Name = "dgvUpravljanjeKorsincima";
+            this.dgvUpravljanjeKorsincima.RowHeadersWidth = 51;
+            this.dgvUpravljanjeKorsincima.RowTemplate.Height = 24;
+            this.dgvUpravljanjeKorsincima.Size = new System.Drawing.Size(904, 340);
+            this.dgvUpravljanjeKorsincima.TabIndex = 0;
             // 
             // btnUrediKorisnika
             // 
@@ -83,18 +83,18 @@
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.btnUrediKorisnika);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvUpravljanjeKorsincima);
             this.Name = "frmAdminUpravljanjeKorisnicima";
             this.Text = "Uprvaljanje korisnicima";
             this.Load += new System.EventHandler(this.frmAdminUpravljanjeKorisnicima_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUpravljanjeKorsincima)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUpravljanjeKorsincima;
         private System.Windows.Forms.Button btnUrediKorisnika;
         private System.Windows.Forms.Button btnIzbrisi;
         private System.Windows.Forms.Button btnOdustani;
