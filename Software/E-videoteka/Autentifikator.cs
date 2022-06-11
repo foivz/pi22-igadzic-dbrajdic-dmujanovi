@@ -44,6 +44,7 @@
                 throw new InvalidInputException("Polje Ponovljena lozinka ne može biti prazno");
             }
         }
+<<<<<<< HEAD
         public bool ProvjeriPrijavu(string username, string password)
         {
             using (var context = new PI2247_DBEntities2())
@@ -74,5 +75,7 @@
                             select p;
             }
         }
+=======
+>>>>>>> 74b15c64b2f9df5e1b51882d201517281d0467b1
     }
 }
