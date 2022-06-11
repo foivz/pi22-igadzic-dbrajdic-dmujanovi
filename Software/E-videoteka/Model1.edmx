@@ -9,13 +9,13 @@
           <Key>
             <PropertyRef Name="ID_Korisnik" />
           </Key>
-          <Property Name="ID_Korisnik" Type="int" Nullable="false" />
-          <Property Name="Ime" Type="char" MaxLength="40" Nullable="false" />
-          <Property Name="Prezime" Type="char" MaxLength="40" Nullable="false" />
-          <Property Name="Email" Type="char" MaxLength="40" Nullable="false" />
-          <Property Name="Username" Type="char" MaxLength="40" Nullable="false" />
-          <Property Name="Password" Type="char" MaxLength="40" Nullable="false" />
-          <Property Name="Uloga" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="ID_Korisnik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Uloga" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PI2247_DBModelStoreContainer">
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
@@ -29,15 +29,15 @@
           <Key>
             <PropertyRef Name="ID_Korisnik" />
           </Key>
-          <Property Name="ID_Korisnik" Type="Int32" Nullable="false" />
-          <Property Name="Ime" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Prezime" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Uloga" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Korisnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Uloga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="PI2247_DBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PI2247_DBEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
         </EntityContainer>
       </Schema>
@@ -45,7 +45,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities1">
+        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities2">
           <EntitySetMapping Name="Korisniks">
             <EntityTypeMapping TypeName="PI2247_DBModel.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">

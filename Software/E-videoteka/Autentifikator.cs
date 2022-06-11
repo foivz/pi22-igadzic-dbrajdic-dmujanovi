@@ -44,5 +44,36 @@
                 throw new InvalidInputException("Polje Ponovljena lozinka ne može biti prazno");
             }
         }
+        public bool ProvjeriPrijavu(string username, string password)
+        {
+            using (var context = new PI2247_DBEntities2())
+            {
+                var query = from p in context.Korisniks
+                            where p.Username == username && p.Password == password
+                            select p;
+
+                if (query.Any())
+                {
+                    System.Windows.Forms.MessageBox.Show("Uspjesšno ste ulogirani.");
+                    return true;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Krivo korisnicko ime ili lozinka.");
+                    return false;
+                }
+            }
+        }
+
+        public void ProvjeraUloge()
+        {
+            using (var context = new PI2247_DBEntities2())
+            {
+                var query = from p in context.Korisniks
+                            where p.Uloga == "Korisnik"
+                            select p;
+            }
+        }
     }
+}
 }
