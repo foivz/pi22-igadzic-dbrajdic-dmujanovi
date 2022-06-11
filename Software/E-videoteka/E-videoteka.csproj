@@ -62,6 +62,18 @@
     <Compile Include="frmAdminGlavna.Designer.cs">
       <DependentUpon>frmAdminGlavna.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdminUpravljanjeKorisnicima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUpravljanjeKorisnicima.Designer.cs">
+      <DependentUpon>frmAdminUpravljanjeKorisnicima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIzmjeniKorisnikaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzmjeniKorisnikaAdmin.Designer.cs">
+      <DependentUpon>frmIzmjeniKorisnikaAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTestPrikaza.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     <Compile Include="ValidacijaPrijaveException.cs" />
     <EmbeddedResource Include="frmAdminGlavna.resx">
       <DependentUpon>frmAdminGlavna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUpravljanjeKorisnicima.resx">
+      <DependentUpon>frmAdminUpravljanjeKorisnicima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzmjeniKorisnikaAdmin.resx">
+      <DependentUpon>frmIzmjeniKorisnikaAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTestPrikaza.resx">
       <DependentUpon>frmTestPrikaza.cs</DependentUpon>
