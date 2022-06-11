@@ -41,7 +41,7 @@ namespace E_videoteka
 
                 if (query.Any())
                 {
-                    System.Windows.Forms.MessageBox.Show("Uspjesšno ste ulogirani.");
+                    System.Windows.Forms.MessageBox.Show("Uspješno ste ulogirani.");
                     return true;
                 }
                 else
