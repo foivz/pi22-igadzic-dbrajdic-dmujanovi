@@ -119,6 +119,7 @@
             this.Name = "frmPrijava";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";
+            this.Load += new System.EventHandler(this.frmPrijava_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

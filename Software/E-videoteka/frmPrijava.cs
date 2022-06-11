@@ -16,6 +16,7 @@ namespace E_videoteka
         {
             frmRegistracija form = new frmRegistracija();
             form.ShowDialog();
+            this.Hide();
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -33,6 +34,14 @@ namespace E_videoteka
                 throw new ValidacijaPrijaveException("Polja ne mogu biti prazna.");
             }
             repozitorij.ProvjeriPrijavu(username, password);
+            repozitorij.ProvjeraKorisnik();
+            repozitorij.ProvjeraAdmina();
+            repozitorij.ProvjeraRecenzent();
+        }
+
+        private void frmPrijava_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

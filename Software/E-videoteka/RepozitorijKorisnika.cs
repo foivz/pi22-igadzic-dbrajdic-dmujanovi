@@ -6,11 +6,7 @@ namespace E_videoteka
     {
         public void DodajKorisnika(string ime, string prezime, string email, string username, string password)
         {
-<<<<<<< HEAD
-            using (var context = new PI2247_DBEntities2())
-=======
             using (var context = new PI2247_DBEntities1())
->>>>>>> 74b15c64b2f9df5e1b51882d201517281d0467b1
             {
                 Korisnik korisnik = new Korisnik
                 {
@@ -26,8 +22,6 @@ namespace E_videoteka
                 context.SaveChanges();
             }
         }
-<<<<<<< HEAD
-=======
 
         public bool ProvjeriPrijavu(string username, string password)
         {
@@ -50,15 +44,61 @@ namespace E_videoteka
             }
         }
 
-        public void ProvjeraUloge()
+        public bool ProvjeraKorisnik()
         {
             using (var context = new PI2247_DBEntities1())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Korisnik"
                             select p;
+                if (query.Any())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
         }
->>>>>>> 74b15c64b2f9df5e1b51882d201517281d0467b1
+
+        public bool ProvjeraAdmina()
+        {
+            using (var context = new PI2247_DBEntities1())
+            {
+                var query = from p in context.Korisniks
+                            where p.Uloga == "Admin"
+                            select p;
+
+                if (query.Any())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool ProvjeraRecenzent()
+        {
+            using (var context = new PI2247_DBEntities1())
+            {
+                var query = from p in context.Korisniks
+                            where p.Uloga == "Recenzent"
+                            select p;
+
+                if (query.Any())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }
