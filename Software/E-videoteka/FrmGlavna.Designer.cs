@@ -38,9 +38,10 @@
             // 
             // btnPrijava
             // 
-            this.btnPrijava.Location = new System.Drawing.Point(42, 356);
+            this.btnPrijava.Location = new System.Drawing.Point(56, 438);
+            this.btnPrijava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrijava.Name = "btnPrijava";
-            this.btnPrijava.Size = new System.Drawing.Size(127, 57);
+            this.btnPrijava.Size = new System.Drawing.Size(169, 70);
             this.btnPrijava.TabIndex = 0;
             this.btnPrijava.Text = "Prijavi se";
             this.btnPrijava.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // btnRegistracija
             // 
-            this.btnRegistracija.Location = new System.Drawing.Point(338, 356);
+            this.btnRegistracija.Location = new System.Drawing.Point(451, 438);
+            this.btnRegistracija.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistracija.Name = "btnRegistracija";
-            this.btnRegistracija.Size = new System.Drawing.Size(127, 57);
+            this.btnRegistracija.Size = new System.Drawing.Size(169, 70);
             this.btnRegistracija.TabIndex = 1;
             this.btnRegistracija.Text = "Registriaj se";
             this.btnRegistracija.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // btnGost
             // 
-            this.btnGost.Location = new System.Drawing.Point(640, 356);
+            this.btnGost.Location = new System.Drawing.Point(853, 438);
+            this.btnGost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGost.Name = "btnGost";
-            this.btnGost.Size = new System.Drawing.Size(127, 57);
+            this.btnGost.Size = new System.Drawing.Size(169, 70);
             this.btnGost.TabIndex = 2;
             this.btnGost.Text = "Gost";
             this.btnGost.UseVisualStyleBackColor = true;
@@ -69,21 +72,23 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(42, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(56, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(725, 316);
+            this.pictureBox1.Size = new System.Drawing.Size(967, 389);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // frmGlavna
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGost);
             this.Controls.Add(this.btnRegistracija);
             this.Controls.Add(this.btnPrijava);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGlavna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "e-Videoteka ";
