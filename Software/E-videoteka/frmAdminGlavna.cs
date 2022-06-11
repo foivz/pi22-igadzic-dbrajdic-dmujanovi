@@ -29,7 +29,8 @@ namespace E_videoteka
 
         private void btnUpravljanjeKorisnicima_Click(object sender, EventArgs e)
         {
-
+            frmAdminUpravljanjeKorisnicima frmAdminUpravljanje=new frmAdminUpravljanjeKorisnicima();
+            frmAdminUpravljanje.ShowDialog();
         }
     }
 }

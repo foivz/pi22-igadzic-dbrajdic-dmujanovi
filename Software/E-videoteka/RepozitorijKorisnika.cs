@@ -63,6 +63,8 @@ namespace E_videoteka
                 if (query.Any())
                 {
                     return true;
+                    frmAdminGlavna frmAdminGlavna = new frmAdminGlavna();
+                    frmAdminGlavna.ShowDialog();
                 }
                 else
                 {
