@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -52,65 +51,28 @@ namespace E_videoteka
                 }
             }
         }
-
-        public bool ProvjeraKorisnik()
+        
+        public Korisnik DohvatiKorisnika(string username, string password)
         {
-            using(var context = new PI2247_DBEntities3())
-            {
-                var query = from p in context.Korisniks
-                            where p.Uloga == "Korisnik"
-                            select p;
-                if (query.Any())
-                {
-                    return true;
-                    
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-        }
-
-        public bool ProvjeraAdmina()
-        {
+          Korisnik odabrani = new Korisnik();
+            List<Korisnik> listaKorisnika = new List<Korisnik>();
             using (var context = new PI2247_DBEntities3())
             {
                 var query = from p in context.Korisniks
-                            where p.Uloga == "Admin"
                             select p;
-
-                if (query.Any())
-                {
-                    frmAdminGlavna frmAdminGlavna = new frmAdminGlavna();
-                    frmAdminGlavna.ShowDialog();
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                listaKorisnika = query.ToList();
             }
-        }
-
-        public bool ProvjeraRecenzent()
-        {
-            using (var context = new PI2247_DBEntities3())
+            foreach (Korisnik item in listaKorisnika)
             {
-                var query = from p in context.Korisniks
-                            where p.Uloga == "Recenzent"
-                            select p;
-
-                if (query.Any())
+                if(item.Password == password && username == item.Username)
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    odabrani = item;
+                    break;
                 }
             }
+            return odabrani;
         }
+
+        
     }
 }

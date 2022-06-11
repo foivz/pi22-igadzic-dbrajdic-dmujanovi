@@ -29,14 +29,32 @@ namespace E_videoteka
             string username = txtbUsername.Text;
             string password = txtbPassword.Text;
 
+    
+
             if (txtbUsername.Text == "" || txtbPassword.Text == "")
             {
                 throw new ValidacijaPrijaveException("Polja ne mogu biti prazna.");
             }
-            repozitorij.ProvjeriPrijavu(username, password);
-            repozitorij.ProvjeraKorisnik();
-            repozitorij.ProvjeraAdmina();
-            repozitorij.ProvjeraRecenzent();
+
+            txtbPassword.Clear();
+            txtbUsername.Clear();
+            repozitorij.ProvjeriPrijavu(username, password); 
+            Korisnik dohvaceniKorisnik = repozitorij.DohvatiKorisnika(username,password);
+            if (dohvaceniKorisnik.Uloga == "Korisnik")
+            {
+                frmKorisnikPocetnaForma forma = new frmKorisnikPocetnaForma(dohvaceniKorisnik);
+                forma.ShowDialog();
+            }
+            if(dohvaceniKorisnik.Uloga == "Admin")
+            {
+                frmAdminGlavna forma = new frmAdminGlavna();
+                forma.ShowDialog();
+            }
+             if (dohvaceniKorisnik.Uloga == "Recenzent")
+            {
+
+            }
+           
         }
 
         private void frmPrijava_Load(object sender, EventArgs e)
