@@ -24,7 +24,7 @@ namespace E_videoteka
 
         private void DohvatiKorisnike()
         {
-            using (var context = new PI2247_DBEntities2())
+            using (var context = new PI2247_DBEntities3())
             {
                 var query = from p in context.Korisniks
                             select p;
