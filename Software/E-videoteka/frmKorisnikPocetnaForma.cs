@@ -29,5 +29,20 @@ namespace E_videoteka
             frmMojProfil forma = new frmMojProfil(proslijedeniKorisnik);
             forma.ShowDialog();
         }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVideoteka_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

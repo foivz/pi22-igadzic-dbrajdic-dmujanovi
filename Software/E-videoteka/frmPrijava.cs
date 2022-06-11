@@ -52,7 +52,8 @@ namespace E_videoteka
             }
              if (dohvaceniKorisnik.Uloga == "Recenzent")
             {
-
+                frmGlavnaRecenzent forma = new frmGlavnaRecenzent();
+                forma.ShowDialog();
             }
            
         }

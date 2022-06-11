@@ -68,6 +68,12 @@
     <Compile Include="frmAdminUpravljanjeKorisnicima.Designer.cs">
       <DependentUpon>frmAdminUpravljanjeKorisnicima.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGlavnaRecenzent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlavnaRecenzent.Designer.cs">
+      <DependentUpon>frmGlavnaRecenzent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIzmjeniKorisnikaAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdminUpravljanjeKorisnicima.resx">
       <DependentUpon>frmAdminUpravljanjeKorisnicima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlavnaRecenzent.resx">
+      <DependentUpon>frmGlavnaRecenzent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIzmjeniKorisnikaAdmin.resx">
       <DependentUpon>frmIzmjeniKorisnikaAdmin.cs</DependentUpon>

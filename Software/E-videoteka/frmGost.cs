@@ -14,5 +14,16 @@ namespace E_videoteka
         {
 
         }
+
+        private void btnPovratak_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnKerirajRacun_Click(object sender, EventArgs e)
+        {
+            frmRegistracija forma = new frmRegistracija();
+            forma.ShowDialog();
+        }
     }
 }

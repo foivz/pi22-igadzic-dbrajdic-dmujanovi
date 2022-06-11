@@ -44,6 +44,7 @@
             this.btnPovratak.TabIndex = 1;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // btnKerirajRacun
             // 
@@ -53,6 +54,7 @@
             this.btnKerirajRacun.TabIndex = 2;
             this.btnKerirajRacun.Text = "Kreiraj račun";
             this.btnKerirajRacun.UseVisualStyleBackColor = true;
+            this.btnKerirajRacun.Click += new System.EventHandler(this.btnKerirajRacun_Click);
             // 
             // btnVideoteka
             // 
