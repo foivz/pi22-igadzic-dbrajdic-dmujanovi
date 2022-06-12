@@ -21,5 +21,11 @@ namespace E_videoteka
         {
             Close();
         }
+
+        private void btnVideoteka_Click(object sender, EventArgs e)
+        {
+            frmVideoteka videoteka = new frmVideoteka();
+            videoteka.ShowDialog();
+        }
     }
 }

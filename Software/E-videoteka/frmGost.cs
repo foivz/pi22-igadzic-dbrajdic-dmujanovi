@@ -25,5 +25,11 @@ namespace E_videoteka
             frmRegistracija forma = new frmRegistracija();
             forma.ShowDialog();
         }
+
+        private void btnVideoteka_Click(object sender, EventArgs e)
+        {
+            frmVideoteka videoteka = new frmVideoteka();
+            videoteka.ShowDialog();
+        }
     }
 }
