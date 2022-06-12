@@ -38,18 +38,20 @@
             // dgvUpravljanjeKorsincima
             // 
             this.dgvUpravljanjeKorsincima.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUpravljanjeKorsincima.Location = new System.Drawing.Point(12, 12);
+            this.dgvUpravljanjeKorsincima.Location = new System.Drawing.Point(9, 10);
+            this.dgvUpravljanjeKorsincima.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvUpravljanjeKorsincima.Name = "dgvUpravljanjeKorsincima";
             this.dgvUpravljanjeKorsincima.RowHeadersWidth = 51;
             this.dgvUpravljanjeKorsincima.RowTemplate.Height = 24;
-            this.dgvUpravljanjeKorsincima.Size = new System.Drawing.Size(904, 340);
+            this.dgvUpravljanjeKorsincima.Size = new System.Drawing.Size(678, 276);
             this.dgvUpravljanjeKorsincima.TabIndex = 0;
             // 
             // btnUrediKorisnika
             // 
-            this.btnUrediKorisnika.Location = new System.Drawing.Point(40, 368);
+            this.btnUrediKorisnika.Location = new System.Drawing.Point(30, 299);
+            this.btnUrediKorisnika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUrediKorisnika.Name = "btnUrediKorisnika";
-            this.btnUrediKorisnika.Size = new System.Drawing.Size(199, 58);
+            this.btnUrediKorisnika.Size = new System.Drawing.Size(149, 47);
             this.btnUrediKorisnika.TabIndex = 1;
             this.btnUrediKorisnika.Text = "Izmjeni korisnika";
             this.btnUrediKorisnika.UseVisualStyleBackColor = true;
@@ -57,9 +59,10 @@
             // 
             // btnIzbrisi
             // 
-            this.btnIzbrisi.Location = new System.Drawing.Point(257, 368);
+            this.btnIzbrisi.Location = new System.Drawing.Point(193, 299);
+            this.btnIzbrisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIzbrisi.Name = "btnIzbrisi";
-            this.btnIzbrisi.Size = new System.Drawing.Size(199, 58);
+            this.btnIzbrisi.Size = new System.Drawing.Size(149, 47);
             this.btnIzbrisi.TabIndex = 2;
             this.btnIzbrisi.Text = "Izbrisi korisnika";
             this.btnIzbrisi.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(700, 368);
+            this.btnOdustani.Location = new System.Drawing.Point(525, 299);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(199, 58);
+            this.btnOdustani.Size = new System.Drawing.Size(149, 47);
             this.btnOdustani.TabIndex = 3;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
@@ -77,14 +81,16 @@
             // 
             // frmAdminUpravljanjeKorisnicima
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 450);
+            this.ClientSize = new System.Drawing.Size(696, 366);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.btnUrediKorisnika);
             this.Controls.Add(this.dgvUpravljanjeKorsincima);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAdminUpravljanjeKorisnicima";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uprvaljanje korisnicima";
             this.Load += new System.EventHandler(this.frmAdminUpravljanjeKorisnicima_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpravljanjeKorsincima)).EndInit();

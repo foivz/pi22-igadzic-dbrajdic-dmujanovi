@@ -175,6 +175,7 @@ namespace E_videoteka
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
             this.Name = "frmMojProfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMojProfil";
             this.Load += new System.EventHandler(this.frmMojProfil_Load);
             this.groupBox1.ResumeLayout(false);

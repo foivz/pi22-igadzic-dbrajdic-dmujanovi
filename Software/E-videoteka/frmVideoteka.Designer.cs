@@ -44,37 +44,41 @@ namespace E_videoteka
             // dgvDostupniFilmovi
             // 
             this.dgvDostupniFilmovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDostupniFilmovi.Location = new System.Drawing.Point(12, 45);
+            this.dgvDostupniFilmovi.Location = new System.Drawing.Point(9, 37);
+            this.dgvDostupniFilmovi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDostupniFilmovi.Name = "dgvDostupniFilmovi";
             this.dgvDostupniFilmovi.RowHeadersWidth = 51;
             this.dgvDostupniFilmovi.RowTemplate.Height = 24;
-            this.dgvDostupniFilmovi.Size = new System.Drawing.Size(1027, 298);
+            this.dgvDostupniFilmovi.Size = new System.Drawing.Size(770, 242);
             this.dgvDostupniFilmovi.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 22);
+            this.label1.Location = new System.Drawing.Point(45, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 17);
+            this.label1.Size = new System.Drawing.Size(131, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Trenutno dostupni filmovi :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 378);
+            this.label2.Location = new System.Drawing.Point(43, 307);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 17);
+            this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Windows servisi :";
             // 
             // rbtnUkljuci
             // 
             this.rbtnUkljuci.AutoSize = true;
-            this.rbtnUkljuci.Location = new System.Drawing.Point(63, 410);
+            this.rbtnUkljuci.Location = new System.Drawing.Point(47, 333);
+            this.rbtnUkljuci.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbtnUkljuci.Name = "rbtnUkljuci";
-            this.rbtnUkljuci.Size = new System.Drawing.Size(70, 21);
+            this.rbtnUkljuci.Size = new System.Drawing.Size(57, 17);
             this.rbtnUkljuci.TabIndex = 3;
             this.rbtnUkljuci.TabStop = true;
             this.rbtnUkljuci.Text = "Uključi";
@@ -83,9 +87,10 @@ namespace E_videoteka
             // rbtnIskljuci
             // 
             this.rbtnIskljuci.AutoSize = true;
-            this.rbtnIskljuci.Location = new System.Drawing.Point(150, 410);
+            this.rbtnIskljuci.Location = new System.Drawing.Point(112, 333);
+            this.rbtnIskljuci.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbtnIskljuci.Name = "rbtnIskljuci";
-            this.rbtnIskljuci.Size = new System.Drawing.Size(70, 21);
+            this.rbtnIskljuci.Size = new System.Drawing.Size(57, 17);
             this.rbtnIskljuci.TabIndex = 4;
             this.rbtnIskljuci.TabStop = true;
             this.rbtnIskljuci.Text = "Isključi";
@@ -93,9 +98,10 @@ namespace E_videoteka
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(549, 381);
+            this.btnOdustani.Location = new System.Drawing.Point(412, 310);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(141, 61);
+            this.btnOdustani.Size = new System.Drawing.Size(106, 50);
             this.btnOdustani.TabIndex = 5;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
@@ -103,36 +109,40 @@ namespace E_videoteka
             // 
             // btnDodajFilm
             // 
-            this.btnDodajFilm.Location = new System.Drawing.Point(727, 381);
+            this.btnDodajFilm.Location = new System.Drawing.Point(545, 310);
+            this.btnDodajFilm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDodajFilm.Name = "btnDodajFilm";
-            this.btnDodajFilm.Size = new System.Drawing.Size(141, 61);
+            this.btnDodajFilm.Size = new System.Drawing.Size(106, 50);
             this.btnDodajFilm.TabIndex = 6;
             this.btnDodajFilm.Text = "Dodaj film";
             this.btnDodajFilm.UseVisualStyleBackColor = true;
+            this.btnDodajFilm.Click += new System.EventHandler(this.btnDodajFilm_Click);
             // 
             // btnGledajFilm
             // 
-            this.btnGledajFilm.Location = new System.Drawing.Point(898, 381);
+            this.btnGledajFilm.Location = new System.Drawing.Point(674, 310);
+            this.btnGledajFilm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGledajFilm.Name = "btnGledajFilm";
-            this.btnGledajFilm.Size = new System.Drawing.Size(141, 61);
+            this.btnGledajFilm.Size = new System.Drawing.Size(106, 50);
             this.btnGledajFilm.TabIndex = 7;
             this.btnGledajFilm.Text = "Gledaj film";
             this.btnGledajFilm.UseVisualStyleBackColor = true;
             // 
             // btnPohrani
             // 
-            this.btnPohrani.Location = new System.Drawing.Point(241, 404);
+            this.btnPohrani.Location = new System.Drawing.Point(181, 328);
+            this.btnPohrani.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPohrani.Name = "btnPohrani";
-            this.btnPohrani.Size = new System.Drawing.Size(91, 32);
+            this.btnPohrani.Size = new System.Drawing.Size(68, 26);
             this.btnPohrani.TabIndex = 8;
             this.btnPohrani.Text = "Pohrani";
             this.btnPohrani.UseVisualStyleBackColor = true;
             // 
             // frmVideoteka
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 475);
+            this.ClientSize = new System.Drawing.Size(788, 386);
             this.Controls.Add(this.btnPohrani);
             this.Controls.Add(this.btnGledajFilm);
             this.Controls.Add(this.btnDodajFilm);
@@ -142,7 +152,9 @@ namespace E_videoteka
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDostupniFilmovi);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmVideoteka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVideoteka";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDostupniFilmovi)).EndInit();
             this.ResumeLayout(false);

@@ -68,6 +68,12 @@
     <Compile Include="frmAdminUpravljanjeKorisnicima.Designer.cs">
       <DependentUpon>frmAdminUpravljanjeKorisnicima.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDodajFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDodajFilm.Designer.cs">
+      <DependentUpon>frmDodajFilm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGlavnaRecenzent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,7 @@
       <DependentUpon>frmVideoteka.cs</DependentUpon>
     </Compile>
     <Compile Include="InvalidInputException.cs" />
+    <Compile Include="Korisnik.Code.cs" />
     <Compile Include="Korisnik.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -151,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdminUpravljanjeKorisnicima.resx">
       <DependentUpon>frmAdminUpravljanjeKorisnicima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDodajFilm.resx">
+      <DependentUpon>frmDodajFilm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGlavnaRecenzent.resx">
       <DependentUpon>frmGlavnaRecenzent.cs</DependentUpon>
