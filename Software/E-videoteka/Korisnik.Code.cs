@@ -8,6 +8,13 @@ namespace E_videoteka
 {
     public partial class Korisnik
     {
-        //public List<Film> listaFilmova;
+        /*
+        public static List<Filmovi> listaFilmova;
+
+        public Korisnik()
+        {
+       listaFilmova = new List<Filmovi>();
+        }
+        */
     }
 }

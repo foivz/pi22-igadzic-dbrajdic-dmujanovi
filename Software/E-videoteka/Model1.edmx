@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="PI2247_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Filmovi">
+          <Key>
+            <PropertyRef Name="ID_Film" />
+          </Key>
+          <Property Name="ID_Film" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GodinaIzdanja" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kategorija" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Trajanje" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LokacijaFilma" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_Korisnik" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Korisnik">
           <Key>
             <PropertyRef Name="ID_Korisnik" />
@@ -17,14 +29,44 @@
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Uloga" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Filmovi_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID_Korisnik" />
+            </Principal>
+            <Dependent Role="Filmovi">
+              <PropertyRef Name="ID_Korisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="PI2247_DBModelStoreContainer">
+          <EntitySet Name="Filmovi" EntityType="Self.Filmovi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Filmovi_Korisnik" Association="Self.FK_Filmovi_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Filmovi" EntitySet="Filmovi" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PI2247_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Filmovi">
+          <Key>
+            <PropertyRef Name="ID_Film" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GodinaIzdanja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kategorija" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Trajanje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LokacijaFilma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Korisnik" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Filmovi" ToRole="Korisnik" />
+        </EntityType>
         <EntityType Name="Korisnik">
           <Key>
             <PropertyRef Name="ID_Korisnik" />
@@ -36,16 +78,47 @@
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Uloga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Filmovis" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Korisnik" ToRole="Filmovi" />
         </EntityType>
-        <EntityContainer Name="PI2247_DBEntities3" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_Filmovi_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID_Korisnik" />
+            </Principal>
+            <Dependent Role="Filmovi">
+              <PropertyRef Name="ID_Korisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PI2247_DBEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Filmovis" EntityType="Self.Filmovi" />
           <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+          <AssociationSet Name="FK_Filmovi_Korisnik" Association="Self.FK_Filmovi_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisniks" />
+            <End Role="Filmovi" EntitySet="Filmovis" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities3">
+        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities4">
+          <EntitySetMapping Name="Filmovis">
+            <EntityTypeMapping TypeName="PI2247_DBModel.Filmovi">
+              <MappingFragment StoreEntitySet="Filmovi">
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="GodinaIzdanja" ColumnName="GodinaIzdanja" />
+                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+                <ScalarProperty Name="Trajanje" ColumnName="Trajanje" />
+                <ScalarProperty Name="LokacijaFilma" ColumnName="LokacijaFilma" />
+                <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Korisniks">
             <EntityTypeMapping TypeName="PI2247_DBModel.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">

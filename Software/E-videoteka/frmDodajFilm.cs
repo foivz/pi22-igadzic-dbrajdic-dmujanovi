@@ -29,20 +29,27 @@ namespace E_videoteka
             DodajFilmUBazu();
         }
 
+       // public static int brojac = 1;
         private void DodajFilmUBazu()
         {
-            string ime = txtNazivFilma.Text.ToString();
-            string trajanje = txtTrajanje.Text.ToString();
-            string zanr = (string)cmbKategorija.SelectedItem;
-            string lokacija = txtbLokacija.Text;
-            string godina = txtGodina.Text.ToString();
 
+            Filmovi novifilm = new Filmovi();
+            novifilm.GodinaIzdanja = txtGodina.Text.ToString();
+            novifilm.LokacijaFilma = txtbLokacija.Text;
+            novifilm.Kategorija = (string)cmbKategorija.SelectedItem;
+            novifilm.Trajanje = txtTrajanje.Text.ToString();
+            novifilm.Naziv = txtNazivFilma.Text.ToString();
+            novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+           // novifilm.ID_Film = brojac;
+           // brojac++;
 
-            using (var context = new PI2247_DBEntities3())
+            using (var context = new PI2247_DBEntities4())
             {
                 context.Korisniks.Attach(frmPrijava.ulogirani);
-              //  frmPrijava.ulogirani.
+                frmPrijava.ulogirani.Filmovis.Add(novifilm);
+                context.SaveChanges();
             }
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

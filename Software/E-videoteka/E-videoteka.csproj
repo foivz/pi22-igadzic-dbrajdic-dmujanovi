@@ -56,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autentifikator.cs" />
+    <Compile Include="Filmovi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminGlavna.cs">
       <SubType>Form</SubType>
     </Compile>
