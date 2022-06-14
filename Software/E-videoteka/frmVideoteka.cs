@@ -21,5 +21,10 @@ namespace E_videoteka
         {
             Close();
         }
+
+        private void btnDodajFilm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

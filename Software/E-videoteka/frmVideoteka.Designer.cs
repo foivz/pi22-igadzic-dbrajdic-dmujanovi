@@ -109,6 +109,7 @@ namespace E_videoteka
             this.btnDodajFilm.TabIndex = 6;
             this.btnDodajFilm.Text = "Dodaj film";
             this.btnDodajFilm.UseVisualStyleBackColor = true;
+            this.btnDodajFilm.Click += new System.EventHandler(this.btnDodajFilm_Click);
             // 
             // btnGledajFilm
             // 
