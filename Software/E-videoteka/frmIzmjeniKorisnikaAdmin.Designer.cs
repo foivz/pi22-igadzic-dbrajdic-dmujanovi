@@ -134,7 +134,7 @@
             "Korisnik",
             "Recenzent"});
             this.cmbUloga.Location = new System.Drawing.Point(184, 290);
-            this.cmbUloga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUloga.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUloga.Name = "cmbUloga";
             this.cmbUloga.Size = new System.Drawing.Size(191, 21);
             this.cmbUloga.TabIndex = 21;
@@ -151,7 +151,7 @@
             // btnSpremi
             // 
             this.btnSpremi.Location = new System.Drawing.Point(48, 344);
-            this.btnSpremi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSpremi.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(122, 41);
             this.btnSpremi.TabIndex = 23;
@@ -162,7 +162,7 @@
             // btnOdustani
             // 
             this.btnOdustani.Location = new System.Drawing.Point(252, 344);
-            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(122, 41);
             this.btnOdustani.TabIndex = 24;
@@ -189,8 +189,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmIzmjeniKorisnikaAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIzmjeniKorisnikaAdmin";
             this.Load += new System.EventHandler(this.frmIzmjeniKorisnikaAdmin_Load);
             this.ResumeLayout(false);

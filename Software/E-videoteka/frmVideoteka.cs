@@ -24,7 +24,10 @@ namespace E_videoteka
 
         private void btnDodajFilm_Click(object sender, EventArgs e)
         {
-
+            //this.Hide();
+            frmDodajFilm forma = new frmDodajFilm();
+            forma.ShowDialog();
+            this.Show();
         }
     }
 }

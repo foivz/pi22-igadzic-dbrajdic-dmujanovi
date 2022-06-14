@@ -89,6 +89,7 @@ namespace E_videoteka
             this.Controls.Add(this.btnVideoteka);
             this.Controls.Add(this.btnMojProfil);
             this.Name = "frmKorisnikPocetnaForma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmKorisnikPocetnaForma";
             this.Load += new System.EventHandler(this.frmKorisnikPocetnaForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
