@@ -13,10 +13,10 @@ namespace E_videoteka
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PI2247_DBEntities3 : DbContext
+    public partial class PI2247_DBEntities5 : DbContext
     {
-        public PI2247_DBEntities3()
-            : base("name=PI2247_DBEntities3")
+        public PI2247_DBEntities5()
+            : base("name=PI2247_DBEntities5")
         {
         }
     
@@ -26,5 +26,6 @@ namespace E_videoteka
         }
     
         public virtual DbSet<Korisnik> Korisniks { get; set; }
+        public virtual DbSet<Filmovi> Filmovis { get; set; }
     }
 }

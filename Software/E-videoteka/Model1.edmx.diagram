@@ -4,8 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fc4306aeced844ba91be1d6f91611b35" Name="Diagram1">
-        <EntityTypeShape EntityType="PI2247_DBModel.Korisnik" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="849aa77e653940f390db6b4d320950e2" Name="Diagram1">
+        <EntityTypeShape EntityType="PI2247_DBModel.Korisnik" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2247_DBModel.Filmovi" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="PI2247_DBModel.FK_Filmovi_Korisnik" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
