@@ -26,9 +26,39 @@ namespace E_videoteka
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+            ValidacijaUnosaFilma();
             DodajFilmNaPopisZaOdobrenje();
-            // DodajFilmUBazu();
             Close();
+        }
+
+        private void ValidacijaUnosaFilma()
+        {
+            if(txtbLokacija.Text == "" ||txtGodina.Text == "" || txtNazivFilma.Text == "" || txtTrajanje.Text == "")
+            {
+                throw new EmptyInputException("Unos ne može biti prazno polje!");
+            }
+            if(cmbKategorija.SelectedItem == null)
+            {
+                throw new EmptyInputException("Odaberite kategoriju!");
+            }
+            List<Filmovi> listaSvihFilmova = new List<Filmovi>();
+            using (var context = new PI2247_DBEntities4())
+            {
+                foreach (Korisnik korisnik in context.Korisniks)
+                {
+                    foreach (Filmovi f in korisnik.Filmovis)
+                    {
+                        listaSvihFilmova.Add(f);
+                    }
+                }
+            }
+            foreach (Filmovi item in listaSvihFilmova)
+            {
+                if(item.Naziv.ToLower() == txtNazivFilma.Text.ToLower())
+                {
+                    throw new InvalidInputException("Film koji ste unijeli već postoji u bazi podataka!");
+                }
+            }
         }
 
         private void DodajFilmNaPopisZaOdobrenje()
@@ -44,7 +74,7 @@ namespace E_videoteka
             frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
         }
 
-        // public static int brojac = 1;
+      
        
 
         private void button1_Click(object sender, EventArgs e)
