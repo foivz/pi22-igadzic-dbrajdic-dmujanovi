@@ -113,6 +113,12 @@
     <Compile Include="frmMojProfil.Designer.cs">
       <DependentUpon>frmMojProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOdobravanjeFilmova.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOdobravanjeFilmova.Designer.cs">
+      <DependentUpon>frmOdobravanjeFilmova.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMojProfil.resx">
       <DependentUpon>frmMojProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOdobravanjeFilmova.resx">
+      <DependentUpon>frmOdobravanjeFilmova.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrijava.resx">
       <DependentUpon>frmPrijava.cs</DependentUpon>

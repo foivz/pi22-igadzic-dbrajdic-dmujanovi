@@ -26,13 +26,13 @@ namespace E_videoteka
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            DodajFilmUBazu();
+            DodajFilmNaPopisZaOdobrenje();
+            // DodajFilmUBazu();
+            Close();
         }
 
-       // public static int brojac = 1;
-        private void DodajFilmUBazu()
+        private void DodajFilmNaPopisZaOdobrenje()
         {
-
             Filmovi novifilm = new Filmovi();
             novifilm.GodinaIzdanja = txtGodina.Text.ToString();
             novifilm.LokacijaFilma = txtbLokacija.Text;
@@ -40,17 +40,12 @@ namespace E_videoteka
             novifilm.Trajanje = txtTrajanje.Text.ToString();
             novifilm.Naziv = txtNazivFilma.Text.ToString();
             novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
-           // novifilm.ID_Film = brojac;
-           // brojac++;
 
-            using (var context = new PI2247_DBEntities4())
-            {
-                context.Korisniks.Attach(frmPrijava.ulogirani);
-                frmPrijava.ulogirani.Filmovis.Add(novifilm);
-                context.SaveChanges();
-            }
-            Close();
+            frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
         }
+
+        // public static int brojac = 1;
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
