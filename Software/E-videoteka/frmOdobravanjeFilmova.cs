@@ -45,6 +45,10 @@ namespace E_videoteka
         private void DodajFilmUBazu()
         {
             Filmovi odabraniFilm = dgvPopisFilmovaNaListiČekanja.CurrentRow.DataBoundItem as Filmovi;
+            odabraniFilm.ID_Gost = 0;
+            //odabraniFilm.Gost.Ime = "---";
+            //odabraniFilm.Gost.Adresa = "-----";
+
             int idkorisnika = odabraniFilm.ID_Korisnik;
             Korisnik cijiJeFilm = new Korisnik();
             List<Korisnik> listaKorisnika = new List<Korisnik>();
@@ -73,7 +77,7 @@ namespace E_videoteka
         {
             Filmovi odabraniFilm = dgvPopisFilmovaNaListiČekanja.CurrentRow.DataBoundItem as Filmovi;
             popisFilmovaNaCekanju.Remove(odabraniFilm);
-         
+            OsvjeziPopisFilmova();
 
         }
     }

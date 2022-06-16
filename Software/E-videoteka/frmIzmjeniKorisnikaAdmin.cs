@@ -23,23 +23,23 @@ namespace E_videoteka
         {
 
 
-            using (var context = new PI2247_DBEntities7())
+            using (var contex = new PI2247_DBEntities7())
             {
-                string ime = txtbIme.Text;
-                string prezime = txtbPrezime.Text;
-                string email = txtbEmail.Text;
-                string username = txtbUsername.Text;
-                string lozinka = txtbLozinka.Text;
+                string ime = txtbIme.Text.ToString();
+                string prezime = txtbPrezime.Text.ToString();
+                string email = txtbEmail.Text.ToString();
+                string username = txtbUsername.Text.ToString();
+                string lozinka = txtbLozinka.Text.ToString();
                 string uloga = cmbUloga.SelectedItem as string;
 
-                context.Korisniks.Attach(selektirani);
+                contex.Korisniks.Attach(selektirani);
                 selektirani.Ime = ime;
                 selektirani.Prezime = prezime;
                 selektirani.Email = email;
                 selektirani.Username = username;
                 selektirani.Password = lozinka;
                 selektirani.Uloga = uloga;
-                context.SaveChanges();
+                contex.SaveChanges();
             }
             Close();
         }

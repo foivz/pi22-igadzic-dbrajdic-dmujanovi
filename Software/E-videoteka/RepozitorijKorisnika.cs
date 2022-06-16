@@ -26,6 +26,7 @@ namespace E_videoteka
                     Username = username,
                     Password = password,
                     Uloga = "Korisnik",
+                    Adresa = "Adresa nije potrebna:"
                 };
                 context.Korisniks.Add(korisnik);
                 context.SaveChanges();
