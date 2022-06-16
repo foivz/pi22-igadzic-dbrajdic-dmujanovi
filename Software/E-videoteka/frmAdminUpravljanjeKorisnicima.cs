@@ -25,11 +25,16 @@ namespace E_videoteka
 
         private void DohvatiKorisnike()
         {
+<<<<<<< HEAD
             using (var context = new PI2247_DBEntities5())
+=======
+            using (var context = new PI2247_DBEntities4())
+>>>>>>> DodajFilm
             {
                 var query = from p in context.Korisniks
                             select p;
                 dgvUpravljanjeKorsincima.DataSource = query.ToList();
+                dgvUpravljanjeKorsincima.Columns["Filmovis"].Visible = false;
             }
         }
 
@@ -41,7 +46,11 @@ namespace E_videoteka
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
 
+<<<<<<< HEAD
             using (var context = new PI2247_DBEntities5())
+=======
+            using (var context = new PI2247_DBEntities4())
+>>>>>>> DodajFilm
             {
                 Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
                 if (selektirani.Uloga != "Admin")

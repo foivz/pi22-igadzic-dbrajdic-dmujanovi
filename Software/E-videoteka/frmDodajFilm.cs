@@ -26,24 +26,56 @@ namespace E_videoteka
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            DodajFilmUBazu();
+            ValidacijaUnosaFilma();
+            DodajFilmNaPopisZaOdobrenje();
+            Close();
         }
 
-        private void DodajFilmUBazu()
+        private void ValidacijaUnosaFilma()
         {
-            string ime = txtNazivFilma.Text.ToString();
-            string trajanje = txtTrajanje.Text.ToString();
-            string zanr = (string)cmbKategorija.SelectedItem;
-            string lokacija = txtbLokacija.Text;
-            string godina = txtGodina.Text.ToString();
-
-
-            using (var context = new PI2247_DBEntities3())
+            if(txtbLokacija.Text == "" ||txtGodina.Text == "" || txtNazivFilma.Text == "" || txtTrajanje.Text == "")
             {
-                context.Korisniks.Attach(frmPrijava.ulogirani);
-              //  frmPrijava.ulogirani.
+                throw new EmptyInputException("Unos ne može biti prazno polje!");
+            }
+            if(cmbKategorija.SelectedItem == null)
+            {
+                throw new EmptyInputException("Odaberite kategoriju!");
+            }
+            List<Filmovi> listaSvihFilmova = new List<Filmovi>();
+            using (var context = new PI2247_DBEntities4())
+            {
+                foreach (Korisnik korisnik in context.Korisniks)
+                {
+                    foreach (Filmovi f in korisnik.Filmovis)
+                    {
+                        listaSvihFilmova.Add(f);
+                    }
+                }
+            }
+            foreach (Filmovi item in listaSvihFilmova)
+            {
+                if(item.Naziv.ToLower() == txtNazivFilma.Text.ToLower())
+                {
+                    throw new InvalidInputException("Film koji ste unijeli već postoji u bazi podataka!");
+                }
             }
         }
+
+        private void DodajFilmNaPopisZaOdobrenje()
+        {
+            Filmovi novifilm = new Filmovi();
+            novifilm.GodinaIzdanja = txtGodina.Text.ToString();
+            novifilm.LokacijaFilma = txtbLokacija.Text;
+            novifilm.Kategorija = (string)cmbKategorija.SelectedItem;
+            novifilm.Trajanje = txtTrajanje.Text.ToString();
+            novifilm.Naziv = txtNazivFilma.Text.ToString();
+            novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+
+            frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
+        }
+
+      
+       
 
         private void button1_Click(object sender, EventArgs e)
         {

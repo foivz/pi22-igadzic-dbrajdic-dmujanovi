@@ -41,7 +41,7 @@ namespace E_videoteka
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(32, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(370, 271);
             this.pictureBox1.TabIndex = 11;
@@ -50,7 +50,7 @@ namespace E_videoteka
             // btnOdjava
             // 
             this.btnOdjava.Location = new System.Drawing.Point(430, 234);
-            this.btnOdjava.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOdjava.Margin = new System.Windows.Forms.Padding(2);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(128, 65);
             this.btnOdjava.TabIndex = 10;
@@ -61,7 +61,7 @@ namespace E_videoteka
             // btnVideoteka
             // 
             this.btnVideoteka.Location = new System.Drawing.Point(430, 130);
-            this.btnVideoteka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVideoteka.Margin = new System.Windows.Forms.Padding(2);
             this.btnVideoteka.Name = "btnVideoteka";
             this.btnVideoteka.Size = new System.Drawing.Size(128, 65);
             this.btnVideoteka.TabIndex = 9;
@@ -72,12 +72,13 @@ namespace E_videoteka
             // btnOdobravanjeFilmova
             // 
             this.btnOdobravanjeFilmova.Location = new System.Drawing.Point(430, 42);
-            this.btnOdobravanjeFilmova.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOdobravanjeFilmova.Margin = new System.Windows.Forms.Padding(2);
             this.btnOdobravanjeFilmova.Name = "btnOdobravanjeFilmova";
             this.btnOdobravanjeFilmova.Size = new System.Drawing.Size(128, 65);
             this.btnOdobravanjeFilmova.TabIndex = 8;
             this.btnOdobravanjeFilmova.Text = "Odobravanje filmova";
             this.btnOdobravanjeFilmova.UseVisualStyleBackColor = true;
+            this.btnOdobravanjeFilmova.Click += new System.EventHandler(this.btnOdobravanjeFilmova_Click);
             // 
             // frmGlavnaRecenzent
             // 
