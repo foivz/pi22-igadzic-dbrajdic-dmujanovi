@@ -59,10 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autentifikator.cs" />
-<<<<<<< HEAD
-=======
+
+
     <Compile Include="Exceptions\EmptyInputException.cs" />
->>>>>>> DodajFilm
+
     <Compile Include="Filmovi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
