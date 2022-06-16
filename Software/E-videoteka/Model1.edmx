@@ -50,6 +50,7 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="PI2247_DBModelStoreContainer">
+          <EntitySet Name="Filmovi" EntityType="Self.Filmovi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Filmovi" EntityType="Self.Filmovi" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -72,6 +73,19 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PI2247_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Filmovi">
+          <Key>
+            <PropertyRef Name="ID_Film" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GodinaIzdanja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kategorija" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Trajanje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LokacijaFilma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Korisnik" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Filmovi" ToRole="Korisnik" />
+        </EntityType>
         <EntityType Name="Korisnik">
           <Key>
             <PropertyRef Name="ID_Korisnik" />

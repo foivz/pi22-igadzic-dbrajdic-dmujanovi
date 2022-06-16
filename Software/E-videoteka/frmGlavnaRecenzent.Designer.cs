@@ -29,6 +29,7 @@ namespace E_videoteka
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGlavnaRecenzent));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnOdjava = new System.Windows.Forms.Button();
             this.btnVideoteka = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@ namespace E_videoteka
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(32, 28);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";

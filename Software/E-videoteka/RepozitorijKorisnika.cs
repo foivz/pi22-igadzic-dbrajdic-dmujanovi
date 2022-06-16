@@ -41,7 +41,7 @@ namespace E_videoteka
 
                 if (query.Any())
                 {
-                    System.Windows.Forms.MessageBox.Show("Uspjesšno ste ulogirani.");
+                    System.Windows.Forms.MessageBox.Show("Uspješno ste ulogirani.");
                     return true;
                 }
                 else
@@ -54,7 +54,7 @@ namespace E_videoteka
         
         public Korisnik DohvatiKorisnika(string username, string password)
         {
-          Korisnik odabrani = new Korisnik();
+            Korisnik odabrani = new Korisnik();
             List<Korisnik> listaKorisnika = new List<Korisnik>();
             using (var context = new PI2247_DBEntities5())
             {
@@ -72,7 +72,5 @@ namespace E_videoteka
             }
             return odabrani;
         }
-
-        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.ServiceProcess;
 
 namespace E_videoteka
 {
