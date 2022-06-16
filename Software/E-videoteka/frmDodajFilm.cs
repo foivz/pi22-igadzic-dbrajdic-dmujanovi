@@ -63,6 +63,7 @@ namespace E_videoteka
 
         private void DodajFilmNaPopisZaOdobrenje()
         {
+            
             Filmovi novifilm = new Filmovi();
             novifilm.GodinaIzdanja = txtGodina.Text.ToString();
             novifilm.LokacijaFilma = txtbLokacija.Text;
@@ -70,6 +71,9 @@ namespace E_videoteka
             novifilm.Trajanje = txtTrajanje.Text.ToString();
             novifilm.Naziv = txtNazivFilma.Text.ToString();
             novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+            novifilm.ID_Gost = 0;
+            
+            
 
             frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
         }
