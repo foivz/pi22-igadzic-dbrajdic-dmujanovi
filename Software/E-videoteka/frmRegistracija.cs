@@ -6,6 +6,7 @@ namespace E_videoteka
     public partial class frmRegistracija : Form
     {
         public Autentifikator autentifikator = new Autentifikator();
+        public PokretacServisa pokretacServisa = new PokretacServisa();
         public frmRegistracija()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace E_videoteka
             string passwordrep = txtbPonovnaLozinka.Text;
 
             autentifikator.Registracija(ime, prezime, email, username, password, passwordrep);
+            pokretacServisa.PokreniServer();
             Close();
         }
 
