@@ -12,21 +12,16 @@ namespace E_videoteka
     using System;
     using System.Collections.Generic;
     
-    public partial class Korisnik
+    public partial class Gost
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Korisnik()
+        public Gost()
         {
             this.Filmovis = new HashSet<Filmovi>();
         }
     
-        public int ID_Korisnik { get; set; }
+        public int ID_Gosta { get; set; }
         public string Ime { get; set; }
-        public string Prezime { get; set; }
-        public string Email { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Uloga { get; set; }
         public string Adresa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

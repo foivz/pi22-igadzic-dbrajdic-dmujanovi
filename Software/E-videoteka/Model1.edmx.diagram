@@ -4,15 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-<<<<<<< HEAD
-      <Diagram DiagramId="849aa77e653940f390db6b4d320950e2" Name="Diagram1">
-        <EntityTypeShape EntityType="PI2247_DBModel.Korisnik" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="6d79ef8577514b758eaffce4eec958df" Name="Diagram1">
         <EntityTypeShape EntityType="PI2247_DBModel.Filmovi" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-=======
-      <Diagram DiagramId="80d2487c23a64752b8687678a332c1cc" Name="Diagram1">
-        <EntityTypeShape EntityType="PI2247_DBModel.Filmovi" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2247_DBModel.Korisnik" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
->>>>>>> DodajFilm
+        <EntityTypeShape EntityType="PI2247_DBModel.Gost" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2247_DBModel.Korisnik" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="PI2247_DBModel.FK_Filmovi_Gost" ManuallyRouted="false" />
         <AssociationConnector Association="PI2247_DBModel.FK_Filmovi_Korisnik" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

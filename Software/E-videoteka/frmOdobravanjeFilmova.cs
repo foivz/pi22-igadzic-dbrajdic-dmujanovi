@@ -48,7 +48,7 @@ namespace E_videoteka
             int idkorisnika = odabraniFilm.ID_Korisnik;
             Korisnik cijiJeFilm = new Korisnik();
             List<Korisnik> listaKorisnika = new List<Korisnik>();
-            var context = new PI2247_DBEntities4();
+            var context = new PI2247_DBEntities7();
                  
                 var query = from k in context.Korisniks
                             select k;

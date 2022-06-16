@@ -7,10 +7,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-<<<<<<< HEAD
-
-=======
->>>>>>> DodajFilm
 
 
 namespace E_videoteka

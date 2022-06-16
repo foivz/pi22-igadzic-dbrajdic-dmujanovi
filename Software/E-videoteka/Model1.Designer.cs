@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-﻿// T4 code generation is enabled for model 'C:\Users\ivang\Documents\GitHub\pi22-igadzic-dbrajdic-dmujanovi\Software\E-videoteka\Model1.edmx'. 
-=======
-﻿// T4 code generation is enabled for model 'C:\Users\domin\Documents\GitHub\pi22-igadzic-dbrajdic-dmujanovi\Software\E-videoteka\Model1.edmx'. 
->>>>>>> DodajFilm
+﻿// T4 code generation is enabled for model 'C:\Users\renat\OneDrive\Dokumenti\GitHub\pi22-igadzic-dbrajdic-dmujanovi\Software\E-videoteka\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

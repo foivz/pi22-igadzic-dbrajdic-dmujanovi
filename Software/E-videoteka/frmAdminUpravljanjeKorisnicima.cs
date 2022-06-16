@@ -26,7 +26,7 @@ namespace E_videoteka
         private void DohvatiKorisnike()
         {
 
-            using (var context = new PI2247_DBEntities5())
+            using (var context = new PI2247_DBEntities7())
 
 
             {
@@ -50,7 +50,7 @@ namespace E_videoteka
         {
 
 
-            using (var context = new PI2247_DBEntities5())
+            using (var context = new PI2247_DBEntities7())
 
             
 

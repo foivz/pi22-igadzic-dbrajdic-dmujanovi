@@ -21,7 +21,9 @@ namespace E_videoteka
         public string Trajanje { get; set; }
         public string LokacijaFilma { get; set; }
         public int ID_Korisnik { get; set; }
+        public int ID_Gost { get; set; }
     
+        public virtual Gost Gost { get; set; }
         public virtual Korisnik Korisnik { get; set; }
     }
 }

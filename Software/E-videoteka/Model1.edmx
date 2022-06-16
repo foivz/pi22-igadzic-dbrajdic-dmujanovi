@@ -5,31 +5,26 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="PI2247_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-<<<<<<< HEAD
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Filmovi">
           <Key>
             <PropertyRef Name="ID_Film" />
-            <PropertyRef Name="Naziv" />
-            <PropertyRef Name="GodinaIzdanja" />
-            <PropertyRef Name="Kategorija" />
-            <PropertyRef Name="Trajanje" />
-            <PropertyRef Name="LokacijaFilma" />
-            <PropertyRef Name="ID_Korisnik" />
-=======
-        <EntityType Name="Filmovi">
-          <Key>
-            <PropertyRef Name="ID_Film" />
->>>>>>> DodajFilm
           </Key>
           <Property Name="ID_Film" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="GodinaIzdanja" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Kategorija" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Trajanje" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LokacijaFilma" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LokacijaFilma" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="ID_Korisnik" Type="int" Nullable="false" />
+          <Property Name="ID_Gost" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gost">
+          <Key>
+            <PropertyRef Name="ID_Gosta" />
+          </Key>
+          <Property Name="ID_Gosta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adresa" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -42,7 +37,20 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Uloga" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adresa" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Filmovi_Gost">
+          <End Role="Gost" Type="Self.Gost" Multiplicity="1" />
+          <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gost">
+              <PropertyRef Name="ID_Gosta" />
+            </Principal>
+            <Dependent Role="Filmovi">
+              <PropertyRef Name="ID_Gost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Filmovi_Korisnik">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
           <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
@@ -57,21 +65,12 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
         </Association>
         <EntityContainer Name="PI2247_DBModelStoreContainer">
           <EntitySet Name="Filmovi" EntityType="Self.Filmovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gost" EntityType="Self.Gost" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
-<<<<<<< HEAD
-          <EntitySet Name="Filmovi" EntityType="Self.Filmovi" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Filmovi].[ID_Film] AS [ID_Film], 
-    [Filmovi].[Naziv] AS [Naziv], 
-    [Filmovi].[GodinaIzdanja] AS [GodinaIzdanja], 
-    [Filmovi].[Kategorija] AS [Kategorija], 
-    [Filmovi].[Trajanje] AS [Trajanje], 
-    [Filmovi].[LokacijaFilma] AS [LokacijaFilma], 
-    [Filmovi].[ID_Korisnik] AS [ID_Korisnik]
-    FROM [dbo].[Filmovi] AS [Filmovi]</DefiningQuery>
-          </EntitySet>
-=======
->>>>>>> DodajFilm
+          <AssociationSet Name="FK_Filmovi_Gost" Association="Self.FK_Filmovi_Gost">
+            <End Role="Gost" EntitySet="Gost" />
+            <End Role="Filmovi" EntitySet="Filmovi" />
+          </AssociationSet>
           <AssociationSet Name="FK_Filmovi_Korisnik" Association="Self.FK_Filmovi_Korisnik">
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Filmovi" EntitySet="Filmovi" />
@@ -91,9 +90,20 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
           <Property Name="GodinaIzdanja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Kategorija" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Trajanje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LokacijaFilma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LokacijaFilma" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ID_Korisnik" Type="Int32" Nullable="false" />
+          <Property Name="ID_Gost" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gost" Relationship="Self.FK_Filmovi_Gost" FromRole="Filmovi" ToRole="Gost" />
           <NavigationProperty Name="Korisnik" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Filmovi" ToRole="Korisnik" />
+        </EntityType>
+        <EntityType Name="Gost">
+          <Key>
+            <PropertyRef Name="ID_Gosta" />
+          </Key>
+          <Property Name="ID_Gosta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Filmovis" Relationship="Self.FK_Filmovi_Gost" FromRole="Gost" ToRole="Filmovi" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -106,30 +116,21 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Uloga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Filmovis" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Korisnik" ToRole="Filmovi" />
         </EntityType>
-<<<<<<< HEAD
-        <EntityType Name="Filmovi">
-          <Key>
-            <PropertyRef Name="ID_Film" />
-            <PropertyRef Name="Naziv" />
-            <PropertyRef Name="GodinaIzdanja" />
-            <PropertyRef Name="Kategorija" />
-            <PropertyRef Name="Trajanje" />
-            <PropertyRef Name="LokacijaFilma" />
-            <PropertyRef Name="ID_Korisnik" />
-          </Key>
-          <Property Name="ID_Film" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="GodinaIzdanja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Kategorija" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Trajanje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LokacijaFilma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ID_Korisnik" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Filmovi" ToRole="Korisnik" />
-        </EntityType>
-=======
->>>>>>> DodajFilm
+        <Association Name="FK_Filmovi_Gost">
+          <End Role="Gost" Type="Self.Gost" Multiplicity="1" />
+          <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gost">
+              <PropertyRef Name="ID_Gosta" />
+            </Principal>
+            <Dependent Role="Filmovi">
+              <PropertyRef Name="ID_Gost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Filmovi_Korisnik">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
           <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
@@ -142,15 +143,14 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <EntityContainer Name="PI2247_DBEntities5" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+        <EntityContainer Name="PI2247_DBEntities7" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Filmovis" EntityType="Self.Filmovi" />
-=======
-        <EntityContainer Name="PI2247_DBEntities4" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Filmovis" EntityType="Self.Filmovi" />
+          <EntitySet Name="Gosts" EntityType="Self.Gost" />
           <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
->>>>>>> DodajFilm
+          <AssociationSet Name="FK_Filmovi_Gost" Association="Self.FK_Filmovi_Gost">
+            <End Role="Gost" EntitySet="Gosts" />
+            <End Role="Filmovi" EntitySet="Filmovis" />
+          </AssociationSet>
           <AssociationSet Name="FK_Filmovi_Korisnik" Association="Self.FK_Filmovi_Korisnik">
             <End Role="Korisnik" EntitySet="Korisniks" />
             <End Role="Filmovi" EntitySet="Filmovis" />
@@ -161,10 +161,7 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-<<<<<<< HEAD
-        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities5">
-=======
-        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities4">
+        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities7">
           <EntitySetMapping Name="Filmovis">
             <EntityTypeMapping TypeName="PI2247_DBModel.Filmovi">
               <MappingFragment StoreEntitySet="Filmovi">
@@ -175,10 +172,19 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
                 <ScalarProperty Name="Trajanje" ColumnName="Trajanje" />
                 <ScalarProperty Name="LokacijaFilma" ColumnName="LokacijaFilma" />
                 <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+                <ScalarProperty Name="ID_Gost" ColumnName="ID_Gost" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
->>>>>>> DodajFilm
+          <EntitySetMapping Name="Gosts">
+            <EntityTypeMapping TypeName="PI2247_DBModel.Gost">
+              <MappingFragment StoreEntitySet="Gost">
+                <ScalarProperty Name="ID_Gosta" ColumnName="ID_Gosta" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Korisniks">
             <EntityTypeMapping TypeName="PI2247_DBModel.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">
@@ -189,19 +195,7 @@ warning 6002: The table/view 'PI2247_DB.dbo.Filmovi' does not have a primary key
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Uloga" ColumnName="Uloga" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Filmovis">
-            <EntityTypeMapping TypeName="PI2247_DBModel.Filmovi">
-              <MappingFragment StoreEntitySet="Filmovi">
-                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
-                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
-                <ScalarProperty Name="GodinaIzdanja" ColumnName="GodinaIzdanja" />
-                <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
-                <ScalarProperty Name="Trajanje" ColumnName="Trajanje" />
-                <ScalarProperty Name="LokacijaFilma" ColumnName="LokacijaFilma" />
-                <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
