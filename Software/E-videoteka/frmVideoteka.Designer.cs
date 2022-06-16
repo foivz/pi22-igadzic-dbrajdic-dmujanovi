@@ -148,7 +148,7 @@ namespace E_videoteka
             this.btnMojiFilmovi.TabIndex = 9;
             this.btnMojiFilmovi.Text = "Prikaži moje filmove";
             this.btnMojiFilmovi.UseVisualStyleBackColor = true;
-            this.btnMojiFilmovi.Click += new System.EventHandler(this.btnMojiFilmovi_Click);
+            
             // 
             // btnSviFilmovi
             // 
