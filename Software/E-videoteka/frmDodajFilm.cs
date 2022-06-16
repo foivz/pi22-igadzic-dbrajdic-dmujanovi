@@ -42,7 +42,7 @@ namespace E_videoteka
                 throw new EmptyInputException("Odaberite kategoriju!");
             }
             List<Filmovi> listaSvihFilmova = new List<Filmovi>();
-            using (var context = new PI2247_DBEntities4())
+            using (var context = new PI2247_DBEntities5())
             {
                 foreach (Korisnik korisnik in context.Korisniks)
                 {
