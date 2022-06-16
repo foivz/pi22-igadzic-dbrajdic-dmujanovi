@@ -16,7 +16,6 @@ namespace E_videoteka
         public void DodajKorisnika(string ime, string prezime, string email, string username, string password)
         {
             using (var context = new PI2247_DBEntities7())
-
             {
                 Korisnik korisnik = new Korisnik
                 {
@@ -33,11 +32,9 @@ namespace E_videoteka
 
             }
         }
-
         public bool ProvjeriPrijavu(string username, string password)
         {
             using (var context = new PI2247_DBEntities7())
-
             {
                 var query = from p in context.Korisniks
                             where p.Username == username && p.Password == password
@@ -45,12 +42,12 @@ namespace E_videoteka
 
                 if (query.Any())
                 {
-                    System.Windows.Forms.MessageBox.Show("Uspješno ste ulogirani.");
+                    MessageBox.Show("Uspješno ste ulogirani.");
                     return true;
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("Krivo korisničko ime ili lozinka.");
+                    MessageBox.Show("Krivo korisničko ime ili lozinka.");
                     return false;
                 }
             }
@@ -60,7 +57,6 @@ namespace E_videoteka
         {
             Korisnik odabrani = new Korisnik();
             List<Korisnik> listaKorisnika = new List<Korisnik>();
-
             using (var context = new PI2247_DBEntities7())
             {
                 var query = from p in context.Korisniks
