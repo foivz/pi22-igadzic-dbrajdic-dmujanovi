@@ -20,7 +20,7 @@ namespace E_videoteka
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.WindowStyle = ProcessWindowStyle.Normal;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = prviDio + trenutniDirektorijPrograma + drugiDio;
+            startInfo.Arguments = ;
             process.StartInfo = startInfo;
             process.Start();
         }
