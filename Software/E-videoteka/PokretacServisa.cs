@@ -5,31 +5,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.IO;
 
 namespace E_videoteka
 {
-    public class PokretacServisa
+    public class PokretacServisa : IDisposable
     {
-        public void PokreniServer()
-        {
-            string trenutniDirektorijPrograma = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
-            string prviDio = "sc create WorkerService binpath=";
-            string drugiDio = "WorkerService.exe start=\"demand\" displayname=\"e-Videoteka\"";
+        private Process cmdProcess;
+        private StreamWriter streamWriter;
+        private AutoResetEvent outputMainHandel;
+        private string cmdOutput;
 
-            Process process = new Process();
-            process.StartInfo.FileName = "cmd.exe";
-            process.StartInfo.CreateNoWindow = false;
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.UseShellExecute = false;
-            process.Start();
-            process.StandardInput.Write("sc");
-            process.StandardInput.Flush();
-            process.StandardInput.WriteLine("sc create WorkerService binpath=" + trenutniDirektorijPrograma + "WorkerService.exe start=\"demand\" displayname=\"e-Videoteka\"");
-            process.StandardInput.Flush();
-            Console.WriteLine(process.StandardOutput.ReadToEnd());
-            process.StandardInput.Close();
-            //process.WaitForExit();
+        string trenutniDirektorijPrograma = Path.GetDirectoryName(Application.ExecutablePath);
+        string prviDio = "sc create WorkerService binpath=";
+        string drugiDio = "WorkerService.exe start=\"demand\" displayname=\"e-Videoteka\"";
+
+        public PokretacServisa(string cmdPath)
+        {
+            cmdProcess = new Process();
+            outputMainHandel = new AutoResetEvent(false);
+            cmdOutput = string.Empty;
+
+            ProcessStartInfo processStartInfo = new ProcessStartInfo();
+            processStartInfo.FileName = cmdPath;
+            processStartInfo.UseShellExecute = false;
+            processStartInfo.RedirectStandardInput = true;
+            processStartInfo.RedirectStandardOutput = true;
+            processStartInfo.CreateNoWindow = true;
+
+            cmdProcess.StartInfo = processStartInfo;
+            cmdProcess.Start();
+
+            streamWriter = cmdProcess.StandardInput;
+            cmdProcess.BeginOutputReadLine();
+        }
+
+        public string ExecuteCommand(string command)
+        {
+            cmdOutput = string.Empty;
+
+            streamWriter.WriteLine(command);
+            streamWriter.WriteLine(prviDio + trenutniDirektorijPrograma + drugiDio);
+            outputMainHandel.WaitOne();
+            return cmdOutput;
+        }
+
+        public void Dispose()
+        {
+            cmdProcess.Close();
+            cmdProcess.Dispose();
+
+            streamWriter.Close();
+            streamWriter.Dispose();
         }
     }
 }
