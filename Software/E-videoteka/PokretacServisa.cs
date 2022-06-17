@@ -17,14 +17,19 @@ namespace E_videoteka
             string drugiDio = "WorkerService.exe start=\"demand\" displayname=\"e-Videoteka\"";
 
             Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.WindowStyle = ProcessWindowStyle.Normal;
-            startInfo.FileName = "cmd.exe";
-            process.StartInfo = startInfo;
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.CreateNoWindow = false;
             process.StartInfo.RedirectStandardInput = true;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.UseShellExecute = false;
             process.Start();
-            process.StandardInput.Write("cd");
+            process.StandardInput.Write("sc");
+            process.StandardInput.Flush();
+            process.StandardInput.WriteLine("sc create WorkerService binpath=" + trenutniDirektorijPrograma + "WorkerService.exe start=\"demand\" displayname=\"e-Videoteka\"");
+            process.StandardInput.Flush();
+            Console.WriteLine(process.StandardOutput.ReadToEnd());
+            process.StandardInput.Close();
+            //process.WaitForExit();
         }
     }
 }

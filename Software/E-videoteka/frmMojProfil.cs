@@ -37,9 +37,6 @@ namespace E_videoteka
         {
 
             using (var context = new PI2247_DBEntities7())
-
-            
-
             {
                 string ime = txtbIme.Text;
                 string prezime = txtbPrezime.Text;
