@@ -63,7 +63,7 @@ namespace E_videoteka
 
         private void DodajFilmNaPopisZaOdobrenje()
         {
-            
+
             Filmovi novifilm = new Filmovi();
             novifilm.GodinaIzdanja = txtGodina.Text.ToString();
             novifilm.LokacijaFilma = txtbLokacija.Text;
@@ -86,6 +86,11 @@ namespace E_videoteka
             ofd.ShowDialog();
             string lokacija = System.IO.Path.GetDirectoryName(ofd.FileName);
             txtbLokacija.Text = lokacija;
+        }
+
+        private void frmDodajFilm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

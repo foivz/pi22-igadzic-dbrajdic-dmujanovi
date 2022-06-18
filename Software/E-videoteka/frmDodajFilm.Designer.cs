@@ -30,19 +30,19 @@ namespace E_videoteka
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNazivFilma = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtGodina = new System.Windows.Forms.TextBox();
-            this.txtTrajanje = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmbKategorija = new System.Windows.Forms.ComboBox();
             this.txtbLokacija = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTrajanje = new System.Windows.Forms.TextBox();
+            this.txtGodina = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNazivFilma = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnSpremi = new System.Windows.Forms.Button();
-            this.cmbKategorija = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,62 +67,36 @@ namespace E_videoteka
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unos podataka o filmu";
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Naziv filma:";
+            this.button1.Location = new System.Drawing.Point(287, 167);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Otvori";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtNazivFilma
+            // cmbKategorija
             // 
-            this.txtNazivFilma.Location = new System.Drawing.Point(143, 39);
-            this.txtNazivFilma.Name = "txtNazivFilma";
-            this.txtNazivFilma.Size = new System.Drawing.Size(121, 20);
-            this.txtNazivFilma.TabIndex = 1;
+            this.cmbKategorija.FormattingEnabled = true;
+            this.cmbKategorija.Items.AddRange(new object[] {
+            "Akcijski",
+            "Komedija",
+            "Romantični",
+            "SF",
+            "Dokumentarac"});
+            this.cmbKategorija.Location = new System.Drawing.Point(143, 218);
+            this.cmbKategorija.Name = "cmbKategorija";
+            this.cmbKategorija.Size = new System.Drawing.Size(121, 21);
+            this.cmbKategorija.TabIndex = 9;
             // 
-            // label2
+            // txtbLokacija
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Godina izdanja:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Trajanje (min) :";
-            // 
-            // txtGodina
-            // 
-            this.txtGodina.Location = new System.Drawing.Point(143, 83);
-            this.txtGodina.Name = "txtGodina";
-            this.txtGodina.Size = new System.Drawing.Size(121, 20);
-            this.txtGodina.TabIndex = 4;
-            // 
-            // txtTrajanje
-            // 
-            this.txtTrajanje.Location = new System.Drawing.Point(143, 125);
-            this.txtTrajanje.Name = "txtTrajanje";
-            this.txtTrajanje.Size = new System.Drawing.Size(121, 20);
-            this.txtTrajanje.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 176);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Lokacija:";
+            this.txtbLokacija.Location = new System.Drawing.Point(143, 169);
+            this.txtbLokacija.Name = "txtbLokacija";
+            this.txtbLokacija.Size = new System.Drawing.Size(121, 20);
+            this.txtbLokacija.TabIndex = 8;
             // 
             // label5
             // 
@@ -133,12 +107,62 @@ namespace E_videoteka
             this.label5.TabIndex = 7;
             this.label5.Text = "Kategorija:";
             // 
-            // txtbLokacija
+            // label4
             // 
-            this.txtbLokacija.Location = new System.Drawing.Point(143, 169);
-            this.txtbLokacija.Name = "txtbLokacija";
-            this.txtbLokacija.Size = new System.Drawing.Size(121, 20);
-            this.txtbLokacija.TabIndex = 8;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 176);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Lokacija:";
+            // 
+            // txtTrajanje
+            // 
+            this.txtTrajanje.Location = new System.Drawing.Point(143, 125);
+            this.txtTrajanje.Name = "txtTrajanje";
+            this.txtTrajanje.Size = new System.Drawing.Size(121, 20);
+            this.txtTrajanje.TabIndex = 5;
+            // 
+            // txtGodina
+            // 
+            this.txtGodina.Location = new System.Drawing.Point(143, 83);
+            this.txtGodina.Name = "txtGodina";
+            this.txtGodina.Size = new System.Drawing.Size(121, 20);
+            this.txtGodina.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 132);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Trajanje (min) :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Godina izdanja:";
+            // 
+            // txtNazivFilma
+            // 
+            this.txtNazivFilma.Location = new System.Drawing.Point(143, 39);
+            this.txtNazivFilma.Name = "txtNazivFilma";
+            this.txtNazivFilma.Size = new System.Drawing.Size(121, 20);
+            this.txtNazivFilma.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Naziv filma:";
             // 
             // btnOdustani
             // 
@@ -160,30 +184,6 @@ namespace E_videoteka
             this.btnSpremi.UseVisualStyleBackColor = true;
             this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
-            // cmbKategorija
-            // 
-            this.cmbKategorija.FormattingEnabled = true;
-            this.cmbKategorija.Items.AddRange(new object[] {
-            "Akcijski",
-            "Komedija",
-            "Romantični",
-            "SF",
-            "Dokumentarac"});
-            this.cmbKategorija.Location = new System.Drawing.Point(143, 218);
-            this.cmbKategorija.Name = "cmbKategorija";
-            this.cmbKategorija.Size = new System.Drawing.Size(121, 21);
-            this.cmbKategorija.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(287, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Otvori";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -199,6 +199,7 @@ namespace E_videoteka
             this.Name = "frmDodajFilm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDodajFilm";
+            this.Load += new System.EventHandler(this.frmDodajFilm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
