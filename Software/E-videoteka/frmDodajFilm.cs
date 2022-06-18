@@ -30,7 +30,7 @@ namespace E_videoteka
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             ValidacijaUnosaFilma();
-            DodajFilmNaPopisZaOdobrenje();
+            DodajFilmUBazu();
             Close();
         }
 
@@ -64,9 +64,9 @@ namespace E_videoteka
             }
         }
 
-        private void DodajFilmNaPopisZaOdobrenje()
+        private void DodajFilmUBazu()
         {
-
+            
             Filmovi novifilm = new Filmovi();
             novifilm.GodinaIzdanja = txtGodina.Text.ToString();
             novifilm.LokacijaFilma = txtbLokacija.Text;
@@ -76,7 +76,7 @@ namespace E_videoteka
             Korisnik test = frmPrijava.ulogirani;
             if (test.Username == null)
             {
-                //Korisnik gost = new Korisnik();
+                //PRVI PUT
                 string ime = "Gost";
                 string prezime = "Gost";
                 string password = "Gost";
@@ -88,13 +88,21 @@ namespace E_videoteka
                 repozitorij.DodajKorisnika(ime,prezime,email,username,password,adresa, uloga);
                 Korisnik gost = repozitorij.DohvatiKorisnikaPoAdresi(adresa);
                 novifilm.ID_Korisnik = gost.ID_Korisnik;
+
             }
             if (test.Username != null)
             {
                 novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+                //novifilm.
+                using(var context = new PI2247_DBEntities())
+                {
+                    context.Korisniks.Attach(frmPrijava.ulogirani);
+                    frmPrijava.ulogirani.Filmovis.Add(novifilm);
+                    context.SaveChanges();
+                }
             }
            
-            frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
+          //  frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
         }
 
         private string DohvatiAdresu()
