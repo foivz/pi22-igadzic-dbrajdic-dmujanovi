@@ -52,6 +52,9 @@ namespace E_videoteka
                 txtbEmail.ReadOnly= true;
                 txtbUsername.ReadOnly=true;
                 txtbLozinka.ReadOnly = true;
+                cmbUloga.SelectedText = "Admin";
+                cmbUloga.Enabled =false;
+                btnSpremi.Enabled = false;
                 
             }
             txtbIme.Text = selektirani.Ime;
@@ -59,7 +62,7 @@ namespace E_videoteka
             txtbEmail.Text = selektirani.Email;
             txtbUsername.Text = selektirani.Username;
             txtbLozinka.Text = selektirani.Password;
-            cmbUloga.SelectedText = selektirani.Uloga;
+            cmbUloga.SelectedItem = selektirani.Uloga;
 
 
         }
