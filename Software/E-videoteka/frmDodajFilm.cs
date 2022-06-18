@@ -69,6 +69,15 @@ namespace E_videoteka
             novifilm.Kategorija = (string)cmbKategorija.SelectedItem;
             novifilm.Trajanje = txtTrajanje.Text.ToString();
             novifilm.Naziv = txtNazivFilma.Text.ToString();
+            if(frmPrijava.ulogirani == null)
+            {
+                Korisnik gost = new Korisnik();
+                gost.Ime = "Gost";
+                gost.Prezime = "Gost";
+                gost.Password = "Gost";
+                gost.Email = "Gost@foi.hr";
+                gost.Uloga = "Gost";
+            }
             novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
 
             frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
