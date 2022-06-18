@@ -35,16 +35,35 @@ namespace E_videoteka
 
         private void frmVideoteka_Load(object sender, EventArgs e)
         {
-           
+            DohvatiDostupneFilmove();
         }
 
-
-        
-        
+        private void DohvatiDostupneFilmove()
+        {
+            using (var context = new PI2247_DBEntities1())
+            {
+                var query = from p in context.Films
+                            where p.Odobren.ToString() == "Da"
+                            select p;
+                dgvDostupniFilmovi.DataSource = query.ToList();
+            }
+        }
 
         private void btnSviFilmovi_Click(object sender, EventArgs e)
         {
-          
+            DohvatiDostupneFilmove();
+        }
+
+        private void btnMojiFilmovi_Click(object sender, EventArgs e)
+        {
+            using (var context = new PI2247_DBEntities1())
+            {
+                context.Korisniks.Attach(frmPrijava.ulogirani);
+                var query = from f in frmPrijava.ulogirani.Films
+                            select f;
+                dgvDostupniFilmovi.DataSource = query.ToList();
+
+            }
         }
     }
 }

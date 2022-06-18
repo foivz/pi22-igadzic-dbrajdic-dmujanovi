@@ -12,7 +12,7 @@ namespace E_videoteka
     using System;
     using System.Collections.Generic;
     
-    public partial class Filmovi
+    public partial class Film
     {
         public int ID_Film { get; set; }
         public string Naziv { get; set; }
@@ -20,7 +20,8 @@ namespace E_videoteka
         public string Kategorija { get; set; }
         public string Trajanje { get; set; }
         public string LokacijaFilma { get; set; }
-        public int ID_Korisnik { get; set; }
+        public string Odobren { get; set; }
+        public int ID_Korsinik { get; set; }
     
         public virtual Korisnik Korisnik { get; set; }
     }

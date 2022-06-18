@@ -5,7 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="PI2247_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Filmovi">
+        <EntityType Name="Film">
           <Key>
             <PropertyRef Name="ID_Film" />
           </Key>
@@ -15,7 +15,8 @@
           <Property Name="Kategorija" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Trajanje" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="LokacijaFilma" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="ID_Korisnik" Type="int" Nullable="false" />
+          <Property Name="Odobren" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_Korsinik" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -30,26 +31,26 @@
           <Property Name="Uloga" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Adresa" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_Filmovi_Korisnik">
+        <Association Name="FK_Film_Korisnici">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Korisnik">
               <PropertyRef Name="ID_Korisnik" />
             </Principal>
-            <Dependent Role="Filmovi">
-              <PropertyRef Name="ID_Korisnik" />
+            <Dependent Role="Film">
+              <PropertyRef Name="ID_Korsinik" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="PI2247_DBModelStoreContainer">
-          <EntitySet Name="Filmovi" EntityType="Self.Filmovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Filmovi_Korisnik" Association="Self.FK_Filmovi_Korisnik">
+          <AssociationSet Name="FK_Film_Korisnici" Association="Self.FK_Film_Korisnici">
             <End Role="Korisnik" EntitySet="Korisnik" />
-            <End Role="Filmovi" EntitySet="Filmovi" />
+            <End Role="Film" EntitySet="Film" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -57,7 +58,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PI2247_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Filmovi">
+        <EntityType Name="Film">
           <Key>
             <PropertyRef Name="ID_Film" />
           </Key>
@@ -67,8 +68,9 @@
           <Property Name="Kategorija" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Trajanje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LokacijaFilma" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ID_Korisnik" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Filmovi" ToRole="Korisnik" />
+          <Property Name="Odobren" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Korsinik" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Film_Korisnici" FromRole="Film" ToRole="Korisnik" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -82,28 +84,28 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Uloga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Filmovis" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Korisnik" ToRole="Filmovi" />
+          <NavigationProperty Name="Films" Relationship="Self.FK_Film_Korisnici" FromRole="Korisnik" ToRole="Film" />
         </EntityType>
-        <Association Name="FK_Filmovi_Korisnik">
+        <Association Name="FK_Film_Korisnici">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Korisnik">
               <PropertyRef Name="ID_Korisnik" />
             </Principal>
-            <Dependent Role="Filmovi">
-              <PropertyRef Name="ID_Korisnik" />
+            <Dependent Role="Film">
+              <PropertyRef Name="ID_Korsinik" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PI2247_DBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Filmovis" EntityType="Self.Filmovi" />
+        <EntityContainer Name="PI2247_DBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Films" EntityType="Self.Film" />
           <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
-          <AssociationSet Name="FK_Filmovi_Korisnik" Association="Self.FK_Filmovi_Korisnik">
+          <AssociationSet Name="FK_Film_Korisnici" Association="Self.FK_Film_Korisnici">
             <End Role="Korisnik" EntitySet="Korisniks" />
-            <End Role="Filmovi" EntitySet="Filmovis" />
+            <End Role="Film" EntitySet="Films" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -111,17 +113,18 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities">
-          <EntitySetMapping Name="Filmovis">
-            <EntityTypeMapping TypeName="PI2247_DBModel.Filmovi">
-              <MappingFragment StoreEntitySet="Filmovi">
+        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities1">
+          <EntitySetMapping Name="Films">
+            <EntityTypeMapping TypeName="PI2247_DBModel.Film">
+              <MappingFragment StoreEntitySet="Film">
                 <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
                 <ScalarProperty Name="Naziv" ColumnName="Naziv" />
                 <ScalarProperty Name="GodinaIzdanja" ColumnName="GodinaIzdanja" />
                 <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
                 <ScalarProperty Name="Trajanje" ColumnName="Trajanje" />
                 <ScalarProperty Name="LokacijaFilma" ColumnName="LokacijaFilma" />
-                <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+                <ScalarProperty Name="Odobren" ColumnName="Odobren" />
+                <ScalarProperty Name="ID_Korsinik" ColumnName="ID_Korsinik" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
