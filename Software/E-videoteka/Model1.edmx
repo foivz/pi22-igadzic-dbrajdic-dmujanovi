@@ -16,15 +16,6 @@
           <Property Name="Trajanje" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="LokacijaFilma" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="ID_Korisnik" Type="int" Nullable="false" />
-          <Property Name="ID_Gost" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Gost">
-          <Key>
-            <PropertyRef Name="ID_Gosta" />
-          </Key>
-          <Property Name="ID_Gosta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Adresa" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -33,26 +24,16 @@
           <Property Name="ID_Korisnik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Prezime" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Uloga" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Adresa" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adresa" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_Filmovi_Gost">
-          <End Role="Gost" Type="Self.Gost" Multiplicity="1" />
-          <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gost">
-              <PropertyRef Name="ID_Gosta" />
-            </Principal>
-            <Dependent Role="Filmovi">
-              <PropertyRef Name="ID_Gost" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Filmovi_Korisnik">
-          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Korisnik">
@@ -65,12 +46,7 @@
         </Association>
         <EntityContainer Name="PI2247_DBModelStoreContainer">
           <EntitySet Name="Filmovi" EntityType="Self.Filmovi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Gost" EntityType="Self.Gost" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Filmovi_Gost" Association="Self.FK_Filmovi_Gost">
-            <End Role="Gost" EntitySet="Gost" />
-            <End Role="Filmovi" EntitySet="Filmovi" />
-          </AssociationSet>
           <AssociationSet Name="FK_Filmovi_Korisnik" Association="Self.FK_Filmovi_Korisnik">
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Filmovi" EntitySet="Filmovi" />
@@ -92,18 +68,7 @@
           <Property Name="Trajanje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LokacijaFilma" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ID_Korisnik" Type="Int32" Nullable="false" />
-          <Property Name="ID_Gost" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Gost" Relationship="Self.FK_Filmovi_Gost" FromRole="Filmovi" ToRole="Gost" />
           <NavigationProperty Name="Korisnik" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Filmovi" ToRole="Korisnik" />
-        </EntityType>
-        <EntityType Name="Gost">
-          <Key>
-            <PropertyRef Name="ID_Gosta" />
-          </Key>
-          <Property Name="ID_Gosta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Adresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Filmovis" Relationship="Self.FK_Filmovi_Gost" FromRole="Gost" ToRole="Filmovi" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -112,27 +77,17 @@
           <Property Name="ID_Korisnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Uloga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Adresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Filmovis" Relationship="Self.FK_Filmovi_Korisnik" FromRole="Korisnik" ToRole="Filmovi" />
         </EntityType>
-        <Association Name="FK_Filmovi_Gost">
-          <End Role="Gost" Type="Self.Gost" Multiplicity="1" />
-          <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gost">
-              <PropertyRef Name="ID_Gosta" />
-            </Principal>
-            <Dependent Role="Filmovi">
-              <PropertyRef Name="ID_Gost" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Filmovi_Korisnik">
-          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Filmovi" Type="Self.Filmovi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Korisnik">
@@ -143,14 +98,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PI2247_DBEntities7" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PI2247_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Filmovis" EntityType="Self.Filmovi" />
-          <EntitySet Name="Gosts" EntityType="Self.Gost" />
           <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
-          <AssociationSet Name="FK_Filmovi_Gost" Association="Self.FK_Filmovi_Gost">
-            <End Role="Gost" EntitySet="Gosts" />
-            <End Role="Filmovi" EntitySet="Filmovis" />
-          </AssociationSet>
           <AssociationSet Name="FK_Filmovi_Korisnik" Association="Self.FK_Filmovi_Korisnik">
             <End Role="Korisnik" EntitySet="Korisniks" />
             <End Role="Filmovi" EntitySet="Filmovis" />
@@ -161,7 +111,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities7">
+        <EntityContainerMapping StorageEntityContainer="PI2247_DBModelStoreContainer" CdmEntityContainer="PI2247_DBEntities">
           <EntitySetMapping Name="Filmovis">
             <EntityTypeMapping TypeName="PI2247_DBModel.Filmovi">
               <MappingFragment StoreEntitySet="Filmovi">
@@ -172,16 +122,6 @@
                 <ScalarProperty Name="Trajanje" ColumnName="Trajanje" />
                 <ScalarProperty Name="LokacijaFilma" ColumnName="LokacijaFilma" />
                 <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
-                <ScalarProperty Name="ID_Gost" ColumnName="ID_Gost" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Gosts">
-            <EntityTypeMapping TypeName="PI2247_DBModel.Gost">
-              <MappingFragment StoreEntitySet="Gost">
-                <ScalarProperty Name="ID_Gosta" ColumnName="ID_Gosta" />
-                <ScalarProperty Name="Ime" ColumnName="Ime" />
-                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -191,9 +131,9 @@
                 <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="Prezime" ColumnName="Prezime" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Uloga" ColumnName="Uloga" />
                 <ScalarProperty Name="Adresa" ColumnName="Adresa" />
               </MappingFragment>

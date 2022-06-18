@@ -42,7 +42,7 @@ namespace E_videoteka
                 throw new EmptyInputException("Odaberite kategoriju!");
             }
             List<Filmovi> listaSvihFilmova = new List<Filmovi>();
-            using (var context = new PI2247_DBEntities7())
+            using (var context = new PI2247_DBEntities())
             {
                 foreach (Korisnik korisnik in context.Korisniks)
                 {
@@ -71,7 +71,7 @@ namespace E_videoteka
             novifilm.Trajanje = txtTrajanje.Text.ToString();
             novifilm.Naziv = txtNazivFilma.Text.ToString();
             novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
-            novifilm.ID_Gost = 0;
+           
             
             
 
