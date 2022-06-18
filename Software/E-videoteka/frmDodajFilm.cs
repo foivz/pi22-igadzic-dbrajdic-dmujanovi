@@ -30,7 +30,7 @@ namespace E_videoteka
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             ValidacijaUnosaFilma();
-            DodajFilmUBazu();
+            DodajFilmNaPopisZaOdobrenje();
             Close();
         }
 
@@ -64,7 +64,7 @@ namespace E_videoteka
             }
         }
 
-        private void DodajFilmUBazu()
+        private void DodajFilmNaPopisZaOdobrenje()
         {
             
             Filmovi novifilm = new Filmovi();
@@ -93,12 +93,9 @@ namespace E_videoteka
             if (test.Username != null)
             {
                 novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
-                //novifilm.
                 using(var context = new PI2247_DBEntities())
                 {
-                    context.Korisniks.Attach(frmPrijava.ulogirani);
-                    frmPrijava.ulogirani.Filmovis.Add(novifilm);
-                    context.SaveChanges();
+
                 }
             }
            
