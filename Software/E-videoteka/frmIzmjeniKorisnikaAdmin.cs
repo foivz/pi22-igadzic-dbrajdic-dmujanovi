@@ -44,12 +44,22 @@ namespace E_videoteka
 
         private void frmIzmjeniKorisnikaAdmin_Load(object sender, EventArgs e)
         {
+            if (selektirani.Uloga == "Admin")
+            {
+                txtbIme.ReadOnly = true;
+                txtbPrezime.ReadOnly =true;
+                txtbEmail.ReadOnly= true;
+                txtbUsername.ReadOnly=true;
+                txtbLozinka.ReadOnly = true;
+                
+            }
             txtbIme.Text = selektirani.Ime;
             txtbPrezime.Text = selektirani.Prezime;
             txtbEmail.Text = selektirani.Email;
             txtbUsername.Text = selektirani.Username;
             txtbLozinka.Text = selektirani.Password;
             cmbUloga.SelectedText = selektirani.Uloga;
+
 
         }
 
