@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +15,7 @@ namespace E_videoteka
     public partial class frmDodajFilm : Form
     {
         public OpenFileDialog ofd;
+        public RepozitorijKorisnika repozitorij = new RepozitorijKorisnika();
         public frmDodajFilm()
         {
             ofd = new OpenFileDialog();
@@ -70,25 +73,44 @@ namespace E_videoteka
             novifilm.Kategorija = (string)cmbKategorija.SelectedItem;
             novifilm.Trajanje = txtTrajanje.Text.ToString();
             novifilm.Naziv = txtNazivFilma.Text.ToString();
-            if(frmPrijava.ulogirani == null)
+            Korisnik test = frmPrijava.ulogirani;
+            if (test.Username == null)
             {
-                Korisnik gost = new Korisnik();
-                gost.Ime = "Gost";
-                gost.Prezime = "Gost";
-                gost.Password = "Gost";
-                gost.Email = "Gost@foi.hr";
-                gost.Uloga = "Gost";
+                //Korisnik gost = new Korisnik();
+                string ime = "Gost";
+                string prezime = "Gost";
+                string password = "Gost";
+                string email = "Gost@foi.hr";
+                string uloga = "Gost";
+                string username = "Gost";
+                string adresa = DohvatiAdresu();
+                
+                repozitorij.DodajKorisnika(ime,prezime,email,username,password,adresa, uloga);
+                Korisnik gost = repozitorij.DohvatiKorisnikaPoAdresi(adresa);
+                novifilm.ID_Korisnik = gost.ID_Korisnik;
             }
-            novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+            if (test.Username != null)
+            {
+                novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+            }
            
-            
-            
-
             frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
         }
 
-      
-       
+        private string DohvatiAdresu()
+        {
+           
+                var host = Dns.GetHostEntry(Dns.GetHostName());
+                foreach (var ip in host.AddressList)
+                {
+                    if (ip.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        return ip.ToString();
+                    }
+                }
+                throw new Exception("No network adapters with an IPv4 address in the system!");
+            
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

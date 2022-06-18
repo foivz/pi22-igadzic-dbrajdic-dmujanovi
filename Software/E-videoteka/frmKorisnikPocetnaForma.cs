@@ -32,6 +32,7 @@ namespace E_videoteka
 
         private void btnOdjava_Click(object sender, EventArgs e)
         {
+            frmPrijava.ulogirani = null;
             Close();
         }
 

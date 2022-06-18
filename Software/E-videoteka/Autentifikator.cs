@@ -7,7 +7,9 @@
         {
             ProvjeriLozinku(password, passwordrep);
             VerificirajRegistraciju(ime, prezime, email, username, password, passwordrep);
-            repozitorij.DodajKorisnika(ime, prezime, email, username, password);
+            string adresa = "Adresa nije potrebna";
+            string uloga = "Korisnik";
+            repozitorij.DodajKorisnika(ime, prezime, email, username, password, adresa, uloga);
         }
         private void ProvjeriLozinku(string password, string passwordrep)
         {

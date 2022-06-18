@@ -13,7 +13,7 @@ namespace E_videoteka
 {
     public class RepozitorijKorisnika
     {   
-        public void DodajKorisnika(string ime, string prezime, string email, string username, string password)
+        public void DodajKorisnika(string ime, string prezime, string email, string username, string password, string adresa, string uloga)
         {
             using (var context = new PI2247_DBEntities())
             {
@@ -24,8 +24,8 @@ namespace E_videoteka
                     Email = email,
                     Username = username,
                     Password = password,
-                    Uloga = "Korisnik",
-                    Adresa = "Adresa nije potrebna:"
+                    Uloga = uloga,
+                    Adresa = adresa
                 };
                 context.Korisniks.Add(korisnik);
                 context.SaveChanges();
@@ -73,5 +73,28 @@ namespace E_videoteka
             }
             return odabrani;
         }
+
+        public Korisnik DohvatiKorisnikaPoAdresi(string adresa)
+        {
+            Korisnik odabrani = new Korisnik();
+            List<Korisnik> listaKorisnika = new List<Korisnik>();
+            using (var context = new PI2247_DBEntities())
+            {
+                var query = from p in context.Korisniks
+                            select p;
+                listaKorisnika = query.ToList();
+            }
+            foreach (Korisnik item in listaKorisnika)
+            {
+                if (item.Adresa == adresa)
+                {
+                    odabrani = item;
+                    break;
+                }
+            }
+            return odabrani;
+        }
+
+
     }
 }

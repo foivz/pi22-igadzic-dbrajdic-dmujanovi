@@ -21,15 +21,16 @@ namespace E_videoteka
             string passwordrep = txtbPonovnaLozinka.Text;
 
             autentifikator.Registracija(ime, prezime, email, username, password, passwordrep);
-           /* using(PokretacServisa cmdServis = new PokretacServisa("cmd.exe"))
-            {
-                string consolCommand = string.Empty;
-                consolCommand = Console.ReadLine();
-                string output = cmdServis.ExecuteCommand(consolCommand);
-                Console.WriteLine(output);
-            }
+            /* using(PokretacServisa cmdServis = new PokretacServisa("cmd.exe"))
+             {
+                 string consolCommand = string.Empty;
+                 consolCommand = Console.ReadLine();
+                 string output = cmdServis.ExecuteCommand(consolCommand);
+                 Console.WriteLine(output);
+             }
+
+            */
             Close();
-           */
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
