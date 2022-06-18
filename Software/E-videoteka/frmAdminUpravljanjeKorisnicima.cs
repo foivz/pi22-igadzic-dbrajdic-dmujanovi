@@ -30,7 +30,7 @@ namespace E_videoteka
                             select p;
                 dgvUpravljanjeKorsincima.DataSource = query.ToList();
 
-                dgvUpravljanjeKorsincima.Columns["Filmovis"].Visible = false;
+                dgvUpravljanjeKorsincima.Columns["Films"].Visible = false;
             }
         }
 
