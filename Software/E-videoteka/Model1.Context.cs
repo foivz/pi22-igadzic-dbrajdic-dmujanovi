@@ -13,10 +13,10 @@ namespace E_videoteka
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PI2247_DBEntities : DbContext
+    public partial class PI2247_DBEntities1 : DbContext
     {
-        public PI2247_DBEntities()
-            : base("name=PI2247_DBEntities")
+        public PI2247_DBEntities1()
+            : base("name=PI2247_DBEntities1")
         {
         }
     
@@ -25,7 +25,7 @@ namespace E_videoteka
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Filmovi> Filmovis { get; set; }
+        public virtual DbSet<Film> Films { get; set; }
         public virtual DbSet<Korisnik> Korisniks { get; set; }
     }
 }

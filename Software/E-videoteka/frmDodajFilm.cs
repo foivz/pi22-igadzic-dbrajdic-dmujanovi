@@ -44,18 +44,18 @@ namespace E_videoteka
             {
                 throw new EmptyInputException("Odaberite kategoriju!");
             }
-            List<Filmovi> listaSvihFilmova = new List<Filmovi>();
-            using (var context = new PI2247_DBEntities())
+            List<Film> listaSvihFilmova = new List<Film>();
+            using (var context = new PI2247_DBEntities1())
             {
                 foreach (Korisnik korisnik in context.Korisniks)
                 {
-                    foreach (Filmovi f in korisnik.Filmovis)
+                    foreach (Film f in korisnik.Films)
                     {
                         listaSvihFilmova.Add(f);
                     }
                 }
             }
-            foreach (Filmovi item in listaSvihFilmova)
+            foreach (Film item in listaSvihFilmova)
             {
                 if(item.Naziv.ToLower() == txtNazivFilma.Text.ToLower())
                 {
@@ -67,7 +67,7 @@ namespace E_videoteka
         private void DodajFilmNaPopisZaOdobrenje()
         {
 
-            Filmovi novifilm = new Filmovi();
+            Film novifilm = new Film();
             novifilm.GodinaIzdanja = txtGodina.Text.ToString();
             novifilm.LokacijaFilma = txtbLokacija.Text;
             novifilm.Kategorija = (string)cmbKategorija.SelectedItem;
@@ -87,11 +87,11 @@ namespace E_videoteka
                 
                 repozitorij.DodajKorisnika(ime,prezime,email,username,password,adresa, uloga);
                 Korisnik gost = repozitorij.DohvatiKorisnikaPoAdresi(adresa);
-                novifilm.ID_Korisnik = gost.ID_Korisnik;
+                novifilm.ID_Korsinik = gost.ID_Korisnik;
             }
             if (test.Username != null)
             {
-                novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+                novifilm.ID_Korsinik = frmPrijava.ulogirani.ID_Korisnik;
             }
            
             frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);

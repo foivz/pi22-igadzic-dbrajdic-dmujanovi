@@ -60,7 +60,7 @@
   <ItemGroup>
     <Compile Include="Autentifikator.cs" />
     <Compile Include="Exceptions\EmptyInputException.cs" />
-    <Compile Include="Filmovi.cs">
+    <Compile Include="Film.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="frmAdminGlavna.cs">

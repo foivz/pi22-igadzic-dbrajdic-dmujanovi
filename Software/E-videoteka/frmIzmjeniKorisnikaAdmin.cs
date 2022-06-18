@@ -21,7 +21,7 @@ namespace E_videoteka
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            using (var contex = new PI2247_DBEntities())
+            using (var contex = new PI2247_DBEntities1())
             {
                 string ime = txtbIme.Text.ToString();
                 string prezime = txtbPrezime.Text.ToString();

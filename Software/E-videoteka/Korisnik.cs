@@ -17,7 +17,7 @@ namespace E_videoteka
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Korisnik()
         {
-            this.Filmovis = new HashSet<Filmovi>();
+            this.Films = new HashSet<Film>();
         }
     
         public int ID_Korisnik { get; set; }
@@ -30,6 +30,6 @@ namespace E_videoteka
         public string Adresa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Filmovi> Filmovis { get; set; }
+        public virtual ICollection<Film> Films { get; set; }
     }
 }

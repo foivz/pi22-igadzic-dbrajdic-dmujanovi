@@ -24,7 +24,7 @@ namespace E_videoteka
 
         private void DohvatiKorisnike()
         {
-            using (var context = new PI2247_DBEntities())
+            using (var context = new PI2247_DBEntities1())
             {
                 var query = from p in context.Korisniks
                             select p;
@@ -41,7 +41,7 @@ namespace E_videoteka
 
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
-            using (var context = new PI2247_DBEntities())
+            using (var context = new PI2247_DBEntities1())
             {
                 Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
                 if (selektirani.Uloga != "Admin")

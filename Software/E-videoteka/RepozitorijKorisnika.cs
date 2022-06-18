@@ -15,7 +15,7 @@ namespace E_videoteka
     {   
         public void DodajKorisnika(string ime, string prezime, string email, string username, string password, string adresa, string uloga)
         {
-            using (var context = new PI2247_DBEntities())
+            using (var context = new PI2247_DBEntities1())
             {
                 Korisnik korisnik = new Korisnik
                 {
@@ -34,7 +34,7 @@ namespace E_videoteka
         }
         public bool ProvjeriPrijavu(string username, string password)
         {
-            using (var context = new PI2247_DBEntities())
+            using (var context = new PI2247_DBEntities1())
             {
                 var query = from p in context.Korisniks
                             where p.Username == username && p.Password == password
@@ -57,7 +57,7 @@ namespace E_videoteka
         {
             Korisnik odabrani = new Korisnik();
             List<Korisnik> listaKorisnika = new List<Korisnik>();
-            using (var context = new PI2247_DBEntities())
+            using (var context = new PI2247_DBEntities1())
             {
                 var query = from p in context.Korisniks
                             select p;
@@ -78,7 +78,7 @@ namespace E_videoteka
         {
             Korisnik odabrani = new Korisnik();
             List<Korisnik> listaKorisnika = new List<Korisnik>();
-            using (var context = new PI2247_DBEntities())
+            using (var context = new PI2247_DBEntities1())
             {
                 var query = from p in context.Korisniks
                             select p;

@@ -12,7 +12,7 @@ namespace E_videoteka
 {
     public partial class frmOdobravanjeFilmova : Form
     {
-        public static List<Filmovi> popisFilmovaNaCekanju = new List<Filmovi>();
+        public static List<Film> popisFilmovaNaCekanju = new List<Film>();
         public frmOdobravanjeFilmova()
         {
             InitializeComponent();
@@ -44,14 +44,14 @@ namespace E_videoteka
 
         private void DodajFilmUBazu()
         {
-            Filmovi odabraniFilm = dgvPopisFilmovaNaListiČekanja.CurrentRow.DataBoundItem as Filmovi;
+            Film odabraniFilm = dgvPopisFilmovaNaListiČekanja.CurrentRow.DataBoundItem as Film;
           
             
 
-            int idkorisnika = odabraniFilm.ID_Korisnik;
+            int idkorisnika = odabraniFilm.ID_Korsinik;
             Korisnik cijiJeFilm = new Korisnik();
             List<Korisnik> listaKorisnika = new List<Korisnik>();
-            var context = new PI2247_DBEntities();
+            var context = new PI2247_DBEntities1();
                  
                 var query = from k in context.Korisniks
                             select k;
@@ -65,7 +65,7 @@ namespace E_videoteka
                     }
                 }
                      context.Korisniks.Attach(cijiJeFilm);
-                     cijiJeFilm.Filmovis.Add(odabraniFilm);
+                     cijiJeFilm.Films.Add(odabraniFilm);
                      context.SaveChanges();
             dgvPopisFilmovaNaListiČekanja.DataSource = null;
             popisFilmovaNaCekanju.Remove(odabraniFilm);
@@ -74,7 +74,7 @@ namespace E_videoteka
 
         private void btnUkloni_Click(object sender, EventArgs e)
         {
-            Filmovi odabraniFilm = dgvPopisFilmovaNaListiČekanja.CurrentRow.DataBoundItem as Filmovi;
+            Film odabraniFilm = dgvPopisFilmovaNaListiČekanja.CurrentRow.DataBoundItem as Film;
             popisFilmovaNaCekanju.Remove(odabraniFilm);
             OsvjeziPopisFilmova();
 
