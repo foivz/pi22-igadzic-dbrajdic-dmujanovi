@@ -92,10 +92,20 @@ namespace E_videoteka
             if (test.Username != null)
             {
                 novifilm.ID_Korsinik = frmPrijava.ulogirani.ID_Korisnik;
+                novifilm.Odobren = "Ne";
+                using (var context = new PI2247_DBEntities1())
+                {
+                    context.Korisniks.Attach(frmPrijava.ulogirani);
+                    frmPrijava.ulogirani.Films.Add(novifilm);
+                    context.SaveChanges();
+                }
             }
-           
-          //  frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
+
+            //  frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
         }
+
+        //  frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
+    
 
         private string DohvatiAdresu()
         {

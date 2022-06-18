@@ -46,6 +46,7 @@ namespace E_videoteka
                             where p.Odobren.ToString() == "Da"
                             select p;
                 dgvDostupniFilmovi.DataSource = query.ToList();
+                dgvDostupniFilmovi.Columns["Korisnik"].Visible = false;
             }
         }
 
@@ -62,6 +63,7 @@ namespace E_videoteka
                 var query = from f in frmPrijava.ulogirani.Films
                             select f;
                 dgvDostupniFilmovi.DataSource = query.ToList();
+                dgvDostupniFilmovi.Columns["Korisnik"].Visible = false;
 
             }
         }

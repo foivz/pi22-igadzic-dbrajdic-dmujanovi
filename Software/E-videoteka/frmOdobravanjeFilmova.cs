@@ -12,7 +12,7 @@ namespace E_videoteka
 {
     public partial class frmOdobravanjeFilmova : Form
     {
-        public static List<Film> popisFilmovaNaCekanju = new List<Film>();
+       public List<Film> listaFilmova = new List<Film>();
         public frmOdobravanjeFilmova()
         {
             InitializeComponent();
@@ -26,8 +26,16 @@ namespace E_videoteka
 
         private void OsvjeziPopisFilmova()
         {
+            
+            using(var context = new PI2247_DBEntities1())
+            {
+                var query = from f in context.Films
+                            where f.Odobren == "Ne"
+                            select f;
+                listaFilmova = query.ToList();
+            }
             dgvPopisFilmovaNaListiČekanja.DataSource = null;
-            dgvPopisFilmovaNaListiČekanja.DataSource = popisFilmovaNaCekanju;
+          dgvPopisFilmovaNaListiČekanja.DataSource = listaFilmova;
             dgvPopisFilmovaNaListiČekanja.Columns["Korisnik"].Visible = false;
         }
 
@@ -45,38 +53,26 @@ namespace E_videoteka
         private void DodajFilmUBazu()
         {
             Film odabraniFilm = dgvPopisFilmovaNaListiČekanja.CurrentRow.DataBoundItem as Film;
-          
-            
+            using(var context = new PI2247_DBEntities1())
+            {
+                context.Films.Attach(odabraniFilm);
+                odabraniFilm.Odobren = "Da";
+                context.SaveChanges();
+            }
 
-            int idkorisnika = odabraniFilm.ID_Korsinik;
-            Korisnik cijiJeFilm = new Korisnik();
-            List<Korisnik> listaKorisnika = new List<Korisnik>();
-            var context = new PI2247_DBEntities1();
-                 
-                var query = from k in context.Korisniks
-                            select k;
-                listaKorisnika = query.ToList();
-                foreach (Korisnik item in listaKorisnika)
-                {
-                    if(item.ID_Korisnik == idkorisnika)
-                    {
-                        cijiJeFilm = item;
-                        break;
-                    }
-                }
-                     context.Korisniks.Attach(cijiJeFilm);
-                     cijiJeFilm.Films.Add(odabraniFilm);
-                     context.SaveChanges();
-            dgvPopisFilmovaNaListiČekanja.DataSource = null;
-            popisFilmovaNaCekanju.Remove(odabraniFilm);
-            dgvPopisFilmovaNaListiČekanja.DataSource = popisFilmovaNaCekanju;
+            OsvjeziPopisFilmova();
         }
 
         private void btnUkloni_Click(object sender, EventArgs e)
         {
             Film odabraniFilm = dgvPopisFilmovaNaListiČekanja.CurrentRow.DataBoundItem as Film;
-            popisFilmovaNaCekanju.Remove(odabraniFilm);
-            OsvjeziPopisFilmova();
+            using (var contex = new PI2247_DBEntities1())
+            {
+                contex.Films.Attach(odabraniFilm);
+                contex.Films.Remove(odabraniFilm);
+                contex.SaveChanges();
+            }   
+           OsvjeziPopisFilmova();
 
         }
     }
