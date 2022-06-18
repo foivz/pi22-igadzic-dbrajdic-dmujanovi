@@ -13,10 +13,10 @@ namespace E_videoteka
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PI2247_DBEntities4 : DbContext
+    public partial class PI2247_DBEntities : DbContext
     {
-        public PI2247_DBEntities4()
-            : base("name=PI2247_DBEntities4")
+        public PI2247_DBEntities()
+            : base("name=PI2247_DBEntities")
         {
         }
     

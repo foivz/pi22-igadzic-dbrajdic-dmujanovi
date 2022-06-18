@@ -28,6 +28,7 @@ namespace E_videoteka
         {
             frmRegistracija form = new frmRegistracija();
             form.ShowDialog();
+
         }
 
         private void btnGost_Click(object sender, EventArgs e)

@@ -5,10 +5,7 @@ namespace E_videoteka
 {
     public partial class frmPrijava : Form
     {
-
         public static Korisnik ulogirani = new Korisnik();
-
-
         Autentifikator autentifikator = new Autentifikator();
         RepozitorijKorisnika repozitorij = new RepozitorijKorisnika();
         public frmPrijava()
@@ -32,9 +29,6 @@ namespace E_videoteka
         {
             string username = txtbUsername.Text;
             string password = txtbPassword.Text;
-
-    
-
             if (txtbUsername.Text == "" || txtbPassword.Text == "")
             {
                 throw new ValidacijaPrijaveException("Polja ne mogu biti prazna.");

@@ -21,36 +21,48 @@ namespace E_videoteka
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            
-            using (var context = new PI2247_DBEntities4())
+            using (var contex = new PI2247_DBEntities())
             {
-                string ime = txtbIme.Text;
-                string prezime = txtbPrezime.Text;
-                string email = txtbEmail.Text;
-                string username = txtbUsername.Text;
-                string lozinka = txtbLozinka.Text;
+                string ime = txtbIme.Text.ToString();
+                string prezime = txtbPrezime.Text.ToString();
+                string email = txtbEmail.Text.ToString();
+                string username = txtbUsername.Text.ToString();
+                string lozinka = txtbLozinka.Text.ToString();
                 string uloga = cmbUloga.SelectedItem as string;
 
-                context.Korisniks.Attach(selektirani);
+                contex.Korisniks.Attach(selektirani);
                 selektirani.Ime = ime;
                 selektirani.Prezime = prezime;
                 selektirani.Email = email;
                 selektirani.Username = username;
                 selektirani.Password = lozinka;
                 selektirani.Uloga = uloga;
-                context.SaveChanges();
+                contex.SaveChanges();
             }
             Close();
         }
 
         private void frmIzmjeniKorisnikaAdmin_Load(object sender, EventArgs e)
         {
+            if (selektirani.Uloga == "Admin")
+            {
+                txtbIme.ReadOnly = true;
+                txtbPrezime.ReadOnly =true;
+                txtbEmail.ReadOnly= true;
+                txtbUsername.ReadOnly=true;
+                txtbLozinka.ReadOnly = true;
+                cmbUloga.SelectedText = "Admin";
+                cmbUloga.Enabled =false;
+                btnSpremi.Enabled = false;
+                
+            }
             txtbIme.Text = selektirani.Ime;
             txtbPrezime.Text = selektirani.Prezime;
             txtbEmail.Text = selektirani.Email;
             txtbUsername.Text = selektirani.Username;
             txtbLozinka.Text = selektirani.Password;
-            cmbUloga.SelectedText = selektirani.Uloga;
+            cmbUloga.SelectedItem = selektirani.Uloga;
+
 
         }
 

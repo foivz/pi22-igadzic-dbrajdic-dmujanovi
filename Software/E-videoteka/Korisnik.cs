@@ -23,10 +23,11 @@ namespace E_videoteka
         public int ID_Korisnik { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public string Email { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public string Email { get; set; }
         public string Uloga { get; set; }
+        public string Adresa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Filmovi> Filmovis { get; set; }

@@ -42,7 +42,7 @@ namespace E_videoteka
                 throw new EmptyInputException("Odaberite kategoriju!");
             }
             List<Filmovi> listaSvihFilmova = new List<Filmovi>();
-            using (var context = new PI2247_DBEntities4())
+            using (var context = new PI2247_DBEntities())
             {
                 foreach (Korisnik korisnik in context.Korisniks)
                 {
@@ -63,6 +63,7 @@ namespace E_videoteka
 
         private void DodajFilmNaPopisZaOdobrenje()
         {
+
             Filmovi novifilm = new Filmovi();
             novifilm.GodinaIzdanja = txtGodina.Text.ToString();
             novifilm.LokacijaFilma = txtbLokacija.Text;
@@ -79,6 +80,9 @@ namespace E_videoteka
                 gost.Uloga = "Gost";
             }
             novifilm.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+           
+            
+            
 
             frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
         }
@@ -91,6 +95,11 @@ namespace E_videoteka
             ofd.ShowDialog();
             string lokacija = System.IO.Path.GetDirectoryName(ofd.FileName);
             txtbLokacija.Text = lokacija;
+        }
+
+        private void frmDodajFilm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
