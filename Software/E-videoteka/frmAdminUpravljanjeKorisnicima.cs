@@ -63,6 +63,7 @@ namespace E_videoteka
 
         private void btnUrediKorisnika_Click(object sender, EventArgs e)
         {
+            
             Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
             frmIzmjeniKorisnikaAdmin frmIzmjeni = new frmIzmjeniKorisnikaAdmin(selektirani);
             frmIzmjeni.ShowDialog();
