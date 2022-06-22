@@ -3,6 +3,7 @@
     public class Autentifikator
     {
         public RepozitorijKorisnika repozitorij = new RepozitorijKorisnika();
+
         public void Registracija(string ime, string prezime, string email, string username, string password, string passwordrep)
         {
             ProvjeriLozinku(password, passwordrep);
@@ -11,6 +12,7 @@
             string uloga = "Korisnik";
             repozitorij.DodajKorisnika(ime, prezime, email, username, password, adresa, uloga);
         }
+
         private void ProvjeriLozinku(string password, string passwordrep)
         {
             if (password != passwordrep)
