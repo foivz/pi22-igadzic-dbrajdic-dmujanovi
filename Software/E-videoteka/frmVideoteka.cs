@@ -34,6 +34,7 @@ namespace E_videoteka
         private void frmVideoteka_Load(object sender, EventArgs e)
         {
             DohvatiDostupneFilmove();
+            rbtnUkljuci.Checked = true;
         }
 
         private void DohvatiDostupneFilmove()
@@ -68,6 +69,8 @@ namespace E_videoteka
 
         private void btnPohrani_Click(object sender, EventArgs e)
         {
+            PokretacServisa.provjeriStanjeUkljuceno();
+            PokretacServisa.provjeriStanjeIskljuceno();
             if(rbtnUkljuci.Checked)
             {
                 PokretacServisa.pokreniServis();
