@@ -21,15 +21,7 @@ namespace E_videoteka
             string passwordrep = txtbPonovnaLozinka.Text;
 
             autentifikator.Registracija(ime, prezime, email, username, password, passwordrep);
-            /* using(PokretacServisa cmdServis = new PokretacServisa("cmd.exe"))
-             {
-                 string consolCommand = string.Empty;
-                 consolCommand = Console.ReadLine();
-                 string output = cmdServis.ExecuteCommand(consolCommand);
-                 Console.WriteLine(output);
-             }
-
-            */
+            PokretacServisa.pokreniServis();
             Close();
         }
 

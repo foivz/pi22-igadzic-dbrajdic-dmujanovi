@@ -31,8 +31,6 @@ namespace E_videoteka
             
         }
 
-        
-
         private void frmVideoteka_Load(object sender, EventArgs e)
         {
             DohvatiDostupneFilmove();
@@ -65,6 +63,18 @@ namespace E_videoteka
                 dgvDostupniFilmovi.DataSource = query.ToList();
                 dgvDostupniFilmovi.Columns["Korisnik"].Visible = false;
 
+            }
+        }
+
+        private void btnPohrani_Click(object sender, EventArgs e)
+        {
+            if(rbtnUkljuci.Checked)
+            {
+                PokretacServisa.pokreniServis();
+            }
+            if(rbtnIskljuci.Checked)
+            {
+                PokretacServisa.zaustaviServis();
             }
         }
     }

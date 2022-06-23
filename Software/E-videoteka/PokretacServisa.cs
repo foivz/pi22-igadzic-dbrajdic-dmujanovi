@@ -7,57 +7,40 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using System.ServiceProcess;
 
 namespace E_videoteka
 {
-    public class PokretacServisa : IDisposable
+    public static class PokretacServisa
     {
-        private Process cmdProcess;
-        private StreamWriter streamWriter;
-        private AutoResetEvent outputMainHandel;
-        private string cmdOutput;
+        static string trenutniDirektorijPrograma = Path.GetDirectoryName(Application.ExecutablePath);
+        static string prviDio = "sc create WorkerService binpath=";
+        static string drugiDio = "WorkerService.exe start=\"demand\" displayname=\"e-Videoteka\"";
 
-        string trenutniDirektorijPrograma = Path.GetDirectoryName(Application.ExecutablePath);
-        string prviDio = "sc create WorkerService binpath=";
-        string drugiDio = "WorkerService.exe start=\"demand\" displayname=\"e-Videoteka\"";
-
-        public PokretacServisa(string cmdPath)
+        public static void kreirajServis()
         {
-            cmdProcess = new Process();
-            outputMainHandel = new AutoResetEvent(false);
-            cmdOutput = string.Empty;
-
-            ProcessStartInfo processStartInfo = new ProcessStartInfo();
-            processStartInfo.FileName = cmdPath;
-            processStartInfo.UseShellExecute = false;
-            processStartInfo.RedirectStandardInput = true;
-            processStartInfo.RedirectStandardOutput = true;
-            processStartInfo.CreateNoWindow = true;
-
-            cmdProcess.StartInfo = processStartInfo;
-            cmdProcess.Start();
-
-            streamWriter = cmdProcess.StandardInput;
-            cmdProcess.BeginOutputReadLine();
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C " + prviDio + trenutniDirektorijPrograma + "\\WorkerService\\" + drugiDio;
+            startInfo.Verb = "runas";
+            process.StartInfo = startInfo;
+            process.Start();
         }
 
-        public string ExecuteCommand(string command)
+        public static void pokreniServis()
         {
-            cmdOutput = string.Empty;
-
-            streamWriter.WriteLine(command);
-            streamWriter.WriteLine(prviDio + trenutniDirektorijPrograma + drugiDio);
-            outputMainHandel.WaitOne();
-            return cmdOutput;
+            ServiceController sc = new ServiceController();
+            sc.ServiceName = "WorkerService";
+            sc.Start();
         }
 
-        public void Dispose()
+        public static void zaustaviServis()
         {
-            cmdProcess.Close();
-            cmdProcess.Dispose();
-
-            streamWriter.Close();
-            streamWriter.Dispose();
+            ServiceController sc = new ServiceController();
+            sc.ServiceName = "WorkerService";
+            sc.Stop();
         }
     }
 }
