@@ -40,13 +40,18 @@ namespace E_videoteka
 
         private void DohvatiDostupneFilmove()
         {
-            using (var context = new PI2247_DBEntities1())
+            if (rbtnUkljuci.Enabled)
             {
-                var query = from p in context.Films
-                            where p.Odobren.ToString() == "Da"
-                            select p;
-                dgvDostupniFilmovi.DataSource = query.ToList();
+                using (var context = new PI2247_DBEntities1())
+                {
+                    var query = from p in context.Films
+                                where p.Odobren.ToString() == "Da"
+                                select p;
+                    dgvDostupniFilmovi.DataSource = query.ToList();
+                }
+
             }
+            
         }
 
         private void btnSviFilmovi_Click(object sender, EventArgs e)
