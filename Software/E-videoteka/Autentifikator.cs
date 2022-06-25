@@ -13,7 +13,7 @@
             repozitorij.DodajKorisnika(ime, prezime, email, username, password, adresa, uloga);
         }
 
-        private void ProvjeriLozinku(string password, string passwordrep)
+        public void ProvjeriLozinku(string password, string passwordrep)
         {
             if (password != passwordrep)
             {

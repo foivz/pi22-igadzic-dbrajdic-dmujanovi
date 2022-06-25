@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace E_videoteka
 {
     [Serializable]
-    internal class ValidacijaPrijaveException : Exception
+    public class ValidacijaPrijaveException : Exception
     {
         public ValidacijaPrijaveException()
         {

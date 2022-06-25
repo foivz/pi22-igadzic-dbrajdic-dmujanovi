@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace E_videoteka
 {
     [Serializable]
-    internal class EmptyInputException : Exception
+    public class EmptyInputException : Exception
     {
         public EmptyInputException()
         {

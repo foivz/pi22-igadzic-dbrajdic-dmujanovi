@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace E_videoteka
 {
     [Serializable]
-    internal class PasswordMissMatchException : Exception
+    public class PasswordMissMatchException : Exception
     {
         public PasswordMissMatchException()
         {
