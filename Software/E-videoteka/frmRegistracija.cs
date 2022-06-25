@@ -22,6 +22,7 @@ namespace E_videoteka
 
             autentifikator.Registracija(ime, prezime, email, username, password, passwordrep);
             PokretacServisa.kreirajServis();
+            PokretacServisa.pokreniServis();
             Close();
         }
 

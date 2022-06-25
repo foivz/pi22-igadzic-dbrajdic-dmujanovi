@@ -66,16 +66,14 @@ namespace E_videoteka
             }
         }
 
-        private void btnPohrani_Click(object sender, EventArgs e)
+        private void rbtnUkljuci_CheckedChanged(object sender, EventArgs e)
         {
-            if(rbtnUkljuci.Checked)
-            {
-                PokretacServisa.pokreniServis();
-            }
-            if(rbtnIskljuci.Checked)
-            {
-                PokretacServisa.zaustaviServis();
-            }
+            PokretacServisa.pokreniServis();
+        }
+
+        private void rbtnIskljuci_CheckedChanged(object sender, EventArgs e)
+        {
+            PokretacServisa.zaustaviServis();
         }
     }
 }
