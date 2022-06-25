@@ -31,11 +31,10 @@ namespace E_videoteka
             
         }
 
-        
-
         private void frmVideoteka_Load(object sender, EventArgs e)
         {
             DohvatiDostupneFilmove();
+            rbtnUkljuci.Checked = true;
         }
 
         private void DohvatiDostupneFilmove()
@@ -49,9 +48,7 @@ namespace E_videoteka
                                 select p;
                     dgvDostupniFilmovi.DataSource = query.ToList();
                 }
-
             }
-            
         }
 
         private void btnSviFilmovi_Click(object sender, EventArgs e)
@@ -67,7 +64,18 @@ namespace E_videoteka
                 var query = from f in frmPrijava.ulogirani.Films
                             select f;
                 dgvDostupniFilmovi.DataSource = query.ToList();
+            }
+        }
 
+        private void btnPohrani_Click(object sender, EventArgs e)
+        {
+            if(rbtnUkljuci.Checked)
+            {
+                PokretacServisa.pokreniServis();
+            }
+            if(rbtnIskljuci.Checked)
+            {
+                PokretacServisa.zaustaviServis();
             }
         }
     }

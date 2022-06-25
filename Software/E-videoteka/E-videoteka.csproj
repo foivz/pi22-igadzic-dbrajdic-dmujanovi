@@ -167,7 +167,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepozitorijKorisnika.cs" />
     <Compile Include="Exceptions\ValidacijaPrijaveException.cs" />
-    <Compile Include="StanjeServisaException.cs" />
     <EmbeddedResource Include="frmAdminGlavna.resx">
       <DependentUpon>frmAdminGlavna.cs</DependentUpon>
     </EmbeddedResource>

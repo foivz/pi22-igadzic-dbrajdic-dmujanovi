@@ -29,7 +29,6 @@ namespace E_videoteka
                 };
                 context.Korisniks.Add(korisnik);
                 context.SaveChanges();
-
             }
         }
         public bool ProvjeriPrijavu(string username, string password)

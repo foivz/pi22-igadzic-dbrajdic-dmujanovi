@@ -42,25 +42,5 @@ namespace E_videoteka
             sc.ServiceName = "WorkerService";
             sc.Stop();
         }
-
-        public static void provjeriStanjeUkljuceno()
-        {
-            ServiceController sc = new ServiceController();
-            sc.ServiceName = "WorkerService";
-            if (sc.Status.Equals(ServiceControllerStatus.Running))
-            {
-                throw new StanjeServisaException("Servis je vec pokrenut");
-            }
-        }
-
-        public static void provjeriStanjeIskljuceno()
-        {
-            ServiceController sc = new ServiceController();
-            sc.ServiceName = "WorkerService";
-            if (sc.Status.Equals(ServiceControllerStatus.Stopped))
-            {
-                throw new StanjeServisaException("Servis je vec zaustavljen");
-            }
-        }
     }
 }
