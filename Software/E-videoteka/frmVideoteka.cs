@@ -28,7 +28,6 @@ namespace E_videoteka
             frmDodajFilm forma = new frmDodajFilm();
             forma.ShowDialog();
             this.Show();
-            
         }
 
         private void frmVideoteka_Load(object sender, EventArgs e)
