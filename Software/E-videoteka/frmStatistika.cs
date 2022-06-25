@@ -36,6 +36,11 @@ namespace E_videoteka
             int sveukupnoFilmovi = 0;
             int gosti = 0;
             int registriraniKorisnici = 0;
+            int akcijski = 0;
+            int komedija = 0;
+            int romanticni = 0;
+            int dokumentarac = 0;
+            int SF = 0;
 
             List<Korisnik> listaKorisnika = new List<Korisnik>();
             List<Film> listaFIlmova = new List<Film>();
@@ -51,6 +56,26 @@ namespace E_videoteka
             foreach (Film item in listaFIlmova)
             {
                 sveukupnoFilmovi++;
+                if(item.Kategorija.ToString() == "Akcijski")
+                {
+                    akcijski++;
+                }
+                if (item.Kategorija.ToString() == "Komedija")
+                {
+                    komedija++;
+                }
+                if (item.Kategorija.ToString() == "Dokumentarac")
+                {
+                    dokumentarac++;
+                }
+                if (item.Kategorija.ToString() == "Romanticni")
+                {
+                    romanticni++;
+                }
+                if (item.Kategorija.ToString() == "SF")
+                {
+                    SF++;
+                }
             }
             foreach (Korisnik item in listaKorisnika)
             {
@@ -74,6 +99,11 @@ namespace E_videoteka
             txtRecenzenti.Text = recenzenti.ToString();
             txtRegistrirani.Text = registriraniKorisnici.ToString();
             txtSveukupno.Text = sveukupnoKorisnici.ToString();
+            txtbAkcijski.Text = akcijski.ToString();
+            txtbDokumentarac.Text = dokumentarac.ToString();
+            txtbKomedija.Text = komedija.ToString();
+            txtbRomanticni.Text = romanticni.ToString();
+            txtSF.Text = SF.ToString();
         }
 
         private void frmStatistika_KeyDown(object sender, KeyEventArgs e)
