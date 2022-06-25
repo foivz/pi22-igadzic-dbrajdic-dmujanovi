@@ -33,5 +33,11 @@ namespace E_videoteka
             frmAdminUpravljanjeKorisnicima frmAdminUpravljanje=new frmAdminUpravljanjeKorisnicima();
             frmAdminUpravljanje.ShowDialog();
         }
+
+        private void btnStatistika_Click(object sender, EventArgs e)
+        {
+            frmStatistika forma = new frmStatistika();
+            forma.ShowDialog();
+        }
     }
 }
