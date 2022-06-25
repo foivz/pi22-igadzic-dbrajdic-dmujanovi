@@ -21,7 +21,7 @@ namespace E_videoteka
             string passwordrep = txtbPonovnaLozinka.Text;
 
             autentifikator.Registracija(ime, prezime, email, username, password, passwordrep);
-            PokretacServisa.pokreniServis();
+            PokretacServisa.kreirajServis();
             Close();
         }
 
