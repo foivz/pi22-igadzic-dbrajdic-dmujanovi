@@ -17,7 +17,7 @@ namespace E_videoteka
         static string prviDio = "sc create WorkerService binpath=";
         static string drugiDio = "WorkerService.exe start=\"demand\" displayname=\"e-Videoteka\"";
 
-        public static void kreirajServis() 
+        public static void kreirajServis()
         {
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();

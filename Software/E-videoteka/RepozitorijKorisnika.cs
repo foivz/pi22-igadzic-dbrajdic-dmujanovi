@@ -93,7 +93,5 @@ namespace E_videoteka
             }
             return odabrani;
         }
-
-
     }
 }
