@@ -105,6 +105,8 @@
             this.Name = "frmAdminGlavna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMIN";
+            this.Load += new System.EventHandler(this.frmAdminGlavna_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAdminGlavna_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

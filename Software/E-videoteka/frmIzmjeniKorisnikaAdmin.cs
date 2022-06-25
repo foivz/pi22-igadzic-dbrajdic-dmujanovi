@@ -44,6 +44,9 @@ namespace E_videoteka
 
         private void frmIzmjeniKorisnikaAdmin_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmIzmjeniKorisnikaAdmin_KeyDown);
+
             if (selektirani.Uloga == "Admin")
             {
                 txtbIme.ReadOnly = true;
@@ -69,6 +72,18 @@ namespace E_videoteka
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmIzmjeniKorisnikaAdmin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "IzmjeniKorisnikaForma.htm");
+            }
         }
     }
 }

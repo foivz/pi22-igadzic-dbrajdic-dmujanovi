@@ -21,11 +21,16 @@ namespace E_videoteka
 
         private void frmMojProfil_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmMojProfil_KeyDown);
+
             txtbIme.Text = proslijedeniKorisnik.Ime.ToString();
             txtbPrezime.Text = proslijedeniKorisnik.Prezime.ToString();
             txtbEmail.Text = proslijedeniKorisnik.Email.ToString();
             txtbLozinka.Text = proslijedeniKorisnik.Password.ToString();
             txtbUsername.Text = proslijedeniKorisnik.Username.ToString();
+
+
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -53,6 +58,18 @@ namespace E_videoteka
                 context.SaveChanges();
             }
             Close();
+        }
+
+        private void frmMojProfil_KeyDown(object sender, KeyEventArgs e)
+        {
+                 if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "MojProfilForma.htm");
+            }
         }
     }
 }

@@ -20,6 +20,9 @@ namespace E_videoteka
         private void frmAdminUpravljanjeKorisnicima_Load(object sender, EventArgs e)
         {
             DohvatiKorisnike();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmAdminUpravljanjeKorisnicima_KeyDown);
+
         }
 
         private void DohvatiKorisnike()
@@ -66,6 +69,18 @@ namespace E_videoteka
             frmIzmjeni.ShowDialog();
 
             DohvatiKorisnike();
+        }
+
+        private void frmAdminUpravljanjeKorisnicima_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "UpravljanjeKorisnicimaForma.htm");
+            }
         }
     }
 }

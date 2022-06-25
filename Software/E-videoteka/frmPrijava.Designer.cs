@@ -99,7 +99,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label3.Location = new System.Drawing.Point(52, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 16);
+            this.label3.Size = new System.Drawing.Size(243, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Nemate korisnički račun? Registriraj se!";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -120,6 +120,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";
             this.Load += new System.EventHandler(this.frmPrijava_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrijava_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

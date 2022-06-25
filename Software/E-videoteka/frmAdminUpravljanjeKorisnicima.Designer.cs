@@ -93,6 +93,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uprvaljanje korisnicima";
             this.Load += new System.EventHandler(this.frmAdminUpravljanjeKorisnicima_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAdminUpravljanjeKorisnicima_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpravljanjeKorsincima)).EndInit();
             this.ResumeLayout(false);
 

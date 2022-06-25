@@ -12,7 +12,8 @@ namespace E_videoteka
 
         private void frmGost_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmGost_KeyDown);
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -30,6 +31,18 @@ namespace E_videoteka
         {
             frmVideoteka videoteka = new frmVideoteka();
             videoteka.ShowDialog();
+        }
+
+        private void frmGost_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "PocetnaFormaGost.htm");
+            }
         }
     }
 }

@@ -117,7 +117,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 294);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 16);
+            this.label6.Size = new System.Drawing.Size(97, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Ponovi lozinku:";
             // 
@@ -126,7 +126,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 244);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 16);
+            this.label5.Size = new System.Drawing.Size(57, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Loznika:";
             // 
@@ -135,7 +135,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 191);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 16);
+            this.label4.Size = new System.Drawing.Size(49, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "E-mail:";
             // 
@@ -144,7 +144,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 16);
+            this.label3.Size = new System.Drawing.Size(98, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Korisničko ime:";
             // 
@@ -153,7 +153,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Prezime";
             // 
@@ -162,7 +162,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 16);
+            this.label1.Size = new System.Drawing.Size(33, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ime:";
             // 
@@ -198,6 +198,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registracija";
             this.Load += new System.EventHandler(this.frmRegistracija_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmRegistracija_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

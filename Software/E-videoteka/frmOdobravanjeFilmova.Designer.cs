@@ -98,6 +98,8 @@ namespace E_videoteka
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOdobravanjeFilmova";
             this.Load += new System.EventHandler(this.frmOdobravanjeFilmova_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmOdobravanjeFilmova_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmOdobravanjeFilmova_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisFilmovaNaListiČekanja)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

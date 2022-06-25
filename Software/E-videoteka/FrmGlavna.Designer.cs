@@ -88,6 +88,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "e-Videoteka ";
             this.Load += new System.EventHandler(this.frmGlavna_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGlavna_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

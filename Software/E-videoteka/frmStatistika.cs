@@ -25,6 +25,8 @@ namespace E_videoteka
         private void frmStatistika_Load(object sender, EventArgs e)
         {
             DohvatiStatistiku();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmStatistika_KeyDown);
         }
 
         private void DohvatiStatistiku()
@@ -72,6 +74,18 @@ namespace E_videoteka
             txtRecenzenti.Text = recenzenti.ToString();
             txtRegistrirani.Text = registriraniKorisnici.ToString();
             txtSveukupno.Text = sveukupnoKorisnici.ToString();
+        }
+
+        private void frmStatistika_KeyDown(object sender, KeyEventArgs e)
+        {
+                if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "StatistikaForma.htm");
+            }
         }
     }
 }

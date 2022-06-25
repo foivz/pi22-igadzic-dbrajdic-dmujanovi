@@ -92,6 +92,8 @@ namespace E_videoteka
             this.Name = "frmGlavnaRecenzent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGlavnaRecenzent";
+            this.Load += new System.EventHandler(this.frmGlavnaRecenzent_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGlavnaRecenzent_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

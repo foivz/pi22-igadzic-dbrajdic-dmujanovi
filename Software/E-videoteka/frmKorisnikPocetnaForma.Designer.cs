@@ -94,6 +94,7 @@ namespace E_videoteka
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmKorisnikPocetnaForma";
             this.Load += new System.EventHandler(this.frmKorisnikPocetnaForma_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmKorisnikPocetnaForma_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

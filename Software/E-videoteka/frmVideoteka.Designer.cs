@@ -171,6 +171,7 @@ namespace E_videoteka
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVideoteka";
             this.Load += new System.EventHandler(this.frmVideoteka_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmVideoteka_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDostupniFilmovi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

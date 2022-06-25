@@ -32,8 +32,11 @@ namespace E_videoteka
 
         private void frmVideoteka_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmVideoteka_KeyDown);
             DohvatiDostupneFilmove();
             rbtnUkljuci.Checked = true;
+
         }
 
         private void DohvatiDostupneFilmove()
@@ -77,6 +80,18 @@ namespace E_videoteka
         private void rbtnIskljuci_CheckedChanged(object sender, EventArgs e)
         {
           //  PokretacServisa.zaustaviServis();
+        }
+
+        private void frmVideoteka_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "FormaVideoteka.htm");
+            }
         }
     }
 }

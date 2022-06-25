@@ -200,6 +200,7 @@ namespace E_videoteka
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDodajFilm";
             this.Load += new System.EventHandler(this.frmDodajFilm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDodajFilm_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

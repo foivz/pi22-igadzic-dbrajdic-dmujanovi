@@ -33,5 +33,23 @@ namespace E_videoteka
             frmOdobravanjeFilmova forma = new frmOdobravanjeFilmova();
             forma.ShowDialog();
         }
+
+        private void frmGlavnaRecenzent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "PocetnaFormaRecenzent.htm");
+            }
+        }
+
+        private void frmGlavnaRecenzent_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmGlavnaRecenzent_KeyDown);
+        }
     }
 }

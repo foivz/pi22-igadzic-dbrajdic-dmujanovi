@@ -126,7 +126,20 @@ namespace E_videoteka
 
         private void frmDodajFilm_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmDodajFilm_KeyDown);
+        }
 
+        private void frmDodajFilm_KeyDown(object sender, KeyEventArgs e)
+        {
+             if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "DodajFilmForma.htm");
+            }
         }
     }
 }

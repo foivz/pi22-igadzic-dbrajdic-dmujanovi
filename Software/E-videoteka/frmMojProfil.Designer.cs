@@ -178,6 +178,7 @@ namespace E_videoteka
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMojProfil";
             this.Load += new System.EventHandler(this.frmMojProfil_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMojProfil_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -20,6 +20,8 @@ namespace E_videoteka
 
         private void frmOdobravanjeFilmova_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmOdobravanjeFilmova_KeyDown);
             OsvjeziPopisFilmova();
             
         }
@@ -74,6 +76,24 @@ namespace E_videoteka
             }   
            OsvjeziPopisFilmova();
 
+        }
+
+        private void frmOdobravanjeFilmova_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void frmOdobravanjeFilmova_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyCode == Keys.F1)
+            {
+                var path = System.IO.Path.GetDirectoryName(
+                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6);
+                string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
+                Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "OdobravanjeFilmovaForma.htm");
+            }
         }
     }
 }
