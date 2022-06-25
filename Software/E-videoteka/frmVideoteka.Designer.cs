@@ -139,7 +139,7 @@ namespace E_videoteka
             this.btnPohrani.TabIndex = 8;
             this.btnPohrani.Text = "Pohrani";
             this.btnPohrani.UseVisualStyleBackColor = true;
-            this.btnPohrani.Click += new System.EventHandler(this.btnPohrani_Click);
+            
             // 
             // btnMojiFilmovi
             // 
