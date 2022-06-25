@@ -76,18 +76,48 @@ namespace E_videoteka
             Korisnik test = frmPrijava.ulogirani;
             if (test.Username == null)
             {
-                //PRVI PUT
-                string ime = "Gost";
-                string prezime = "Gost";
-                string password = "Gost";
-                string email = "Gost@foi.hr";
-                string uloga = "Gost";
-                string username = "Gost";
                 string adresa = DohvatiAdresu();
-                
-                repozitorij.DodajKorisnika(ime,prezime,email,username,password,adresa, uloga);
+                //provjeravam dal vec postoji korisnik na toj adresi
                 Korisnik gost = repozitorij.DohvatiKorisnikaPoAdresi(adresa);
-                novifilm.ID_Korsinik = gost.ID_Korisnik;
+                //prvi put, ako ne postoji
+                if (gost.Username == null)
+                {
+
+
+
+                    //PRVI PUT
+                    string ime = "Gost";
+                    string prezime = "Gost";
+                    string password = "Gost";
+                    string email = "Gost@foi.hr";
+                    string uloga = "Gost";
+                    string username = "Gost";
+
+
+                    repozitorij.DodajKorisnika(ime, prezime, email, username, password, adresa, uloga);
+                    Korisnik noviKorisnik = repozitorij.DohvatiKorisnikaPoAdresi(adresa);
+                    novifilm.ID_Korsinik = noviKorisnik.ID_Korisnik;
+                    novifilm.Odobren = "Ne";
+                    using (var context = new PI2247_DBEntities1())
+                    {
+                        context.Korisniks.Attach(noviKorisnik);
+                        noviKorisnik.Films.Add(novifilm);
+                        context.SaveChanges();
+                    }
+                }
+                //drugi put
+                if (gost.Username == "Gost")
+                {
+                    novifilm.ID_Korsinik = gost.ID_Korisnik;
+                    novifilm.Odobren = "Ne";
+                    using (var context = new PI2247_DBEntities1())
+                    {
+                        context.Korisniks.Attach(gost);
+                        gost.Films.Add(novifilm);
+                        context.SaveChanges();
+                    }
+                }
+
             }
             if (test.Username != null)
             {

@@ -63,13 +63,17 @@ namespace E_videoteka
 
         private void btnMojiFilmovi_Click(object sender, EventArgs e)
         {
-            using (var context = new PI2247_DBEntities1())
+            if(frmPrijava.ulogirani != null)
             {
-                context.Korisniks.Attach(frmPrijava.ulogirani);
-                var query = from f in frmPrijava.ulogirani.Films
-                            select f;
-                dgvDostupniFilmovi.DataSource = query.ToList();
+                using (var context = new PI2247_DBEntities1())
+                {
+                    context.Korisniks.Attach(frmPrijava.ulogirani);
+                    var query = from f in frmPrijava.ulogirani.Films
+                                select f;
+                    dgvDostupniFilmovi.DataSource = query.ToList();
+                }
             }
+            
         }
 
         private void rbtnUkljuci_CheckedChanged(object sender, EventArgs e)
