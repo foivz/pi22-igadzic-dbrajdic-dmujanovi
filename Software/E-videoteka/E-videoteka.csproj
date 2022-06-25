@@ -148,7 +148,6 @@
       <DependentUpon>frmVideoteka.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\InvalidInputException.cs" />
-    <Compile Include="Korisnik.Code.cs" />
     <Compile Include="Korisnik.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

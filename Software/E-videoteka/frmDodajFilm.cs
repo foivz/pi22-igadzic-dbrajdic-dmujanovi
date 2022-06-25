@@ -100,12 +100,7 @@ namespace E_videoteka
                     context.SaveChanges();
                 }
             }
-
-            //  frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
         }
-
-        //  frmOdobravanjeFilmova.popisFilmovaNaCekanju.Add(novifilm);
-    
 
         private string DohvatiAdresu()
         {

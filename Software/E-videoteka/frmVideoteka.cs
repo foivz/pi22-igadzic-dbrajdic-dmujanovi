@@ -68,12 +68,12 @@ namespace E_videoteka
 
         private void rbtnUkljuci_CheckedChanged(object sender, EventArgs e)
         {
-            PokretacServisa.pokreniServis();
+           // PokretacServisa.pokreniServis();
         }
 
         private void rbtnIskljuci_CheckedChanged(object sender, EventArgs e)
         {
-            PokretacServisa.zaustaviServis();
+          //  PokretacServisa.zaustaviServis();
         }
     }
 }
