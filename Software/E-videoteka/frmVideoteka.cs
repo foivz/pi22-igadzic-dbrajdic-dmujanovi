@@ -31,22 +31,27 @@ namespace E_videoteka
             
         }
 
+        
+
         private void frmVideoteka_Load(object sender, EventArgs e)
         {
             DohvatiDostupneFilmove();
-            rbtnUkljuci.Checked = true;
         }
 
         private void DohvatiDostupneFilmove()
         {
-            using (var context = new PI2247_DBEntities1())
+            if (rbtnUkljuci.Enabled)
             {
-                var query = from p in context.Films
-                            where p.Odobren.ToString() == "Da"
-                            select p;
-                dgvDostupniFilmovi.DataSource = query.ToList();
-                dgvDostupniFilmovi.Columns["Korisnik"].Visible = false;
+                using (var context = new PI2247_DBEntities1())
+                {
+                    var query = from p in context.Films
+                                where p.Odobren.ToString() == "Da"
+                                select p;
+                    dgvDostupniFilmovi.DataSource = query.ToList();
+                }
+
             }
+            
         }
 
         private void btnSviFilmovi_Click(object sender, EventArgs e)
@@ -62,22 +67,7 @@ namespace E_videoteka
                 var query = from f in frmPrijava.ulogirani.Films
                             select f;
                 dgvDostupniFilmovi.DataSource = query.ToList();
-                dgvDostupniFilmovi.Columns["Korisnik"].Visible = false;
 
-            }
-        }
-
-        private void btnPohrani_Click(object sender, EventArgs e)
-        {
-            PokretacServisa.provjeriStanjeUkljuceno();
-            PokretacServisa.provjeriStanjeIskljuceno();
-            if(rbtnUkljuci.Checked)
-            {
-                PokretacServisa.pokreniServis();
-            }
-            if(rbtnIskljuci.Checked)
-            {
-                PokretacServisa.zaustaviServis();
             }
         }
     }
