@@ -73,7 +73,6 @@ namespace E_videoteka
                     dgvDostupniFilmovi.DataSource = query.ToList();
                 }
             }
-            
         }
 
         private void rbtnUkljuci_CheckedChanged(object sender, EventArgs e)

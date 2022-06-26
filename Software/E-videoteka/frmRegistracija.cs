@@ -53,10 +53,7 @@ namespace E_videoteka
                 }
                 PokretacServisa.kreirajServis();
                 Close();
-            }
-            
-          
-            
+            } 
         }
 
         private string DohvatiAdresuKorisnika()
