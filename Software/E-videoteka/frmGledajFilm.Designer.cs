@@ -30,38 +30,52 @@ namespace E_videoteka
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGledajFilm));
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.axwmpFilm = new AxWMPLib.AxWindowsMediaPlayer();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            this.btnIskljuci = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.axwmpFilm)).BeginInit();
             this.SuspendLayout();
             // 
-            // axWindowsMediaPlayer1
+            // axwmpFilm
             // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(860, 486);
-            this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.axwmpFilm.Enabled = true;
+            this.axwmpFilm.Location = new System.Drawing.Point(0, 0);
+            this.axwmpFilm.Name = "axwmpFilm";
+            this.axwmpFilm.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axwmpFilm.OcxState")));
+            this.axwmpFilm.Size = new System.Drawing.Size(860, 486);
+            this.axwmpFilm.TabIndex = 0;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 452);
+            this.textBox1.Location = new System.Drawing.Point(595, 464);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(265, 22);
             this.textBox1.TabIndex = 4;
+            // 
+            // btnIskljuci
+            // 
+            this.btnIskljuci.BackColor = System.Drawing.SystemColors.MenuText;
+            this.btnIskljuci.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIskljuci.Location = new System.Drawing.Point(0, 0);
+            this.btnIskljuci.Name = "btnIskljuci";
+            this.btnIskljuci.Size = new System.Drawing.Size(89, 42);
+            this.btnIskljuci.TabIndex = 5;
+            this.btnIskljuci.Text = "Iskljuci";
+            this.btnIskljuci.UseVisualStyleBackColor = false;
+            this.btnIskljuci.Click += new System.EventHandler(this.btnIskljuci_Click);
             // 
             // frmGledajFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 486);
+            this.Controls.Add(this.btnIskljuci);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Controls.Add(this.axwmpFilm);
             this.Name = "frmGledajFilm";
             this.Text = "frmGledajFilm";
             this.Load += new System.EventHandler(this.frmGledajFilm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axwmpFilm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,7 +83,8 @@ namespace E_videoteka
 
         #endregion
 
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private AxWMPLib.AxWindowsMediaPlayer axwmpFilm;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnIskljuci;
     }
 }
