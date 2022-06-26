@@ -150,7 +150,7 @@ namespace E_videoteka
         private void button1_Click(object sender, EventArgs e)
         {
             ofd.ShowDialog();
-            string lokacija = System.IO.Path.GetDirectoryName(ofd.FileName);
+            string lokacija = ofd.FileName;
             txtbLokacija.Text = lokacija;
         }
 
