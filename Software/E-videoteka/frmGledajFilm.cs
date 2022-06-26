@@ -23,9 +23,13 @@ namespace E_videoteka
         {
             textBox1.Text = odabrani.LokacijaFilma.ToString();
             textBox1.Visible = false;
-            axWindowsMediaPlayer1.URL = textBox1.Text;
-            axWindowsMediaPlayer1.settings.autoStart = true;
+            axwmpFilm.URL = textBox1.Text;
+            axwmpFilm.settings.autoStart = true;
         }
 
+        private void btnIskljuci_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
