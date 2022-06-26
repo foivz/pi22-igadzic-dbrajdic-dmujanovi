@@ -97,5 +97,11 @@ namespace E_videoteka
                 Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "FormaVideoteka.htm");
             }
         }
+
+        private void btnGledajFilm_Click(object sender, EventArgs e)
+        {
+            Film odabraniFilm = dgvDostupniFilmovi.CurrentRow.DataBoundItem as Film;
+
+        }
     }
 }
