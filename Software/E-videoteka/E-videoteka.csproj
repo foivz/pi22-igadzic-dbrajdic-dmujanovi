@@ -87,6 +87,12 @@
     <Compile Include="frmGlavnaRecenzent.Designer.cs">
       <DependentUpon>frmGlavnaRecenzent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGledajFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGledajFilm.Designer.cs">
+      <DependentUpon>frmGledajFilm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIzmjeniKorisnikaAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     <EmbeddedResource Include="frmGlavnaRecenzent.resx">
       <DependentUpon>frmGlavnaRecenzent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGledajFilm.resx">
+      <DependentUpon>frmGledajFilm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIzmjeniKorisnikaAdmin.resx">
       <DependentUpon>frmIzmjeniKorisnikaAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +267,25 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
