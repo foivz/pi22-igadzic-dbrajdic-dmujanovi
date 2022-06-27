@@ -36,6 +36,10 @@ namespace E_videoteka
             this.KeyDown += new KeyEventHandler(frmVideoteka_KeyDown);
             DohvatiDostupneFilmove();
             rbtnUkljuci.Checked = true;
+            if (frmPrijava.ulogirani.Username==null)
+            {
+                btnGledajFilm.Enabled = false;
+            }
 
         }
 
