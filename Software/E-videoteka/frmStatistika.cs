@@ -77,5 +77,18 @@ namespace E_videoteka
                 dgvPopisSvihFilmova.Columns["Korisnik"].Visible = false;
             }
         }
+
+        private void btnReportKorisnika_Click(object sender, EventArgs e)
+        {
+            frmReportSvihKorisnika forma = new frmReportSvihKorisnika();
+            forma.ShowDialog();
+        }
+
+        private void btnIzvjestajFilmova_Click(object sender, EventArgs e)
+        {
+            Korisnik odabrani = dgvPopisSvihKorisnika.CurrentRow.DataBoundItem as Korisnik;
+            frmReportFilmovaKorisnika forma = new frmReportFilmovaKorisnika(odabrani.ID_Korisnik);
+            forma.ShowDialog();
+        }
     }
 }

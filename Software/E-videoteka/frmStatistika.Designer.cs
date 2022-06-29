@@ -34,13 +34,15 @@ namespace E_videoteka
             this.dgvPopisSvihFilmova = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReportKorisnika = new System.Windows.Forms.Button();
+            this.btnIzvjestajFilmova = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisSvihKorisnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisSvihFilmova)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(344, 430);
+            this.btnOdustani.Location = new System.Drawing.Point(507, 459);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(100, 32);
             this.btnOdustani.TabIndex = 1;
@@ -83,11 +85,33 @@ namespace E_videoteka
             this.label2.TabIndex = 5;
             this.label2.Text = "Popis filmova korisnika:";
             // 
+            // btnReportKorisnika
+            // 
+            this.btnReportKorisnika.Location = new System.Drawing.Point(16, 446);
+            this.btnReportKorisnika.Name = "btnReportKorisnika";
+            this.btnReportKorisnika.Size = new System.Drawing.Size(137, 31);
+            this.btnReportKorisnika.TabIndex = 6;
+            this.btnReportKorisnika.Text = "Izvještaj svih korisnika";
+            this.btnReportKorisnika.UseVisualStyleBackColor = true;
+            this.btnReportKorisnika.Click += new System.EventHandler(this.btnReportKorisnika_Click);
+            // 
+            // btnIzvjestajFilmova
+            // 
+            this.btnIzvjestajFilmova.Location = new System.Drawing.Point(168, 446);
+            this.btnIzvjestajFilmova.Name = "btnIzvjestajFilmova";
+            this.btnIzvjestajFilmova.Size = new System.Drawing.Size(137, 31);
+            this.btnIzvjestajFilmova.TabIndex = 7;
+            this.btnIzvjestajFilmova.Text = "Izvještaj filmova";
+            this.btnIzvjestajFilmova.UseVisualStyleBackColor = true;
+            this.btnIzvjestajFilmova.Click += new System.EventHandler(this.btnIzvjestajFilmova_Click);
+            // 
             // frmStatistika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 503);
+            this.Controls.Add(this.btnIzvjestajFilmova);
+            this.Controls.Add(this.btnReportKorisnika);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPopisSvihFilmova);
@@ -111,5 +135,7 @@ namespace E_videoteka
         private System.Windows.Forms.DataGridView dgvPopisSvihFilmova;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnReportKorisnika;
+        private System.Windows.Forms.Button btnIzvjestajFilmova;
     }
 }
