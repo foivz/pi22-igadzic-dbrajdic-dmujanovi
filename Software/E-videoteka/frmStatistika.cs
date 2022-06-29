@@ -24,86 +24,27 @@ namespace E_videoteka
 
         private void frmStatistika_Load(object sender, EventArgs e)
         {
-            DohvatiStatistiku();
+            PopuniDgv();
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(frmStatistika_KeyDown);
         }
 
-        private void DohvatiStatistiku()
+        private void PopuniDgv()
         {
-            int sveukupnoKorisnici = 0;
-            int recenzenti = 0;
-            int sveukupnoFilmovi = 0;
-            int gosti = 0;
-            int registriraniKorisnici = 0;
-            int akcijski = 0;
-            int komedija = 0;
-            int romanticni = 0;
-            int dokumentarac = 0;
-            int SF = 0;
-
-            List<Korisnik> listaKorisnika = new List<Korisnik>();
-            List<Film> listaFIlmova = new List<Film>();
-            using(var context = new PI2247_DBEntities1())
+            List<Korisnik> listaSvihKorisnika = new List<Korisnik>();
+            using (var context = new PI2247_DBEntities1())
             {
                 var query = from k in context.Korisniks
                             select k;
-                var upit = from f in context.Films
-                           select f;
-                listaKorisnika = query.ToList();
-                listaFIlmova = upit.ToList();
+                listaSvihKorisnika = query.ToList();
+                dgvPopisSvihKorisnika.DataSource = listaSvihKorisnika;
+                dgvPopisSvihKorisnika.Columns["Films"].Visible = false;
+                dgvPopisSvihKorisnika.Columns["Adresa"].Visible = false;
+                dgvPopisSvihKorisnika.Columns["Uloga"].Visible = false;
+                dgvPopisSvihKorisnika.Columns["Email"].Visible = false;
+                dgvPopisSvihKorisnika.Columns["Password"].Visible = false;
+                dgvPopisSvihKorisnika.Columns["ID_Korisnik"].Visible = false;
             }
-            foreach (Film item in listaFIlmova)
-            {
-                sveukupnoFilmovi++;
-                if(item.Kategorija.ToString() == "Akcijski")
-                {
-                    akcijski++;
-                }
-                if (item.Kategorija.ToString() == "Komedija")
-                {
-                    komedija++;
-                }
-                if (item.Kategorija.ToString() == "Dokumentarac")
-                {
-                    dokumentarac++;
-                }
-                if (item.Kategorija.ToString() == "Romanticni")
-                {
-                    romanticni++;
-                }
-                if (item.Kategorija.ToString() == "SF")
-                {
-                    SF++;
-                }
-            }
-            foreach (Korisnik item in listaKorisnika)
-            {
-                sveukupnoKorisnici++;
-                if (item.Uloga.ToString() == "Korisnik")
-                {
-                    registriraniKorisnici++;
-                }
-                if (item.Uloga.ToString() == "Recenzent")
-                {
-                    recenzenti++;
-                }
-                if (item.Uloga.ToString() == "Gost")
-                {
-                    gosti++;
-                }
-                
-            }
-            txtFilmovi.Text = sveukupnoFilmovi.ToString();
-            txtGosti.Text = gosti.ToString();
-            txtRecenzenti.Text = recenzenti.ToString();
-            txtRegistrirani.Text = registriraniKorisnici.ToString();
-            txtSveukupno.Text = sveukupnoKorisnici.ToString();
-            txtbAkcijski.Text = akcijski.ToString();
-            txtbDokumentarac.Text = dokumentarac.ToString();
-            txtbKomedija.Text = komedija.ToString();
-            txtbRomanticni.Text = romanticni.ToString();
-            txtSF.Text = SF.ToString();
         }
 
         private void frmStatistika_KeyDown(object sender, KeyEventArgs e)
@@ -115,6 +56,25 @@ namespace E_videoteka
                 path = path.Substring(6);
                 string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
                 Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "StatistikaForma.htm");
+            }
+        }
+
+        private void dgvPopisSvihKorisnika_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Korisnik odabraniKorisnik = dgvPopisSvihKorisnika.CurrentRow.DataBoundItem as Korisnik;
+            List<Film> listaFilmovaOdabranogKorisnika = new List<Film>();
+            using(var context = new PI2247_DBEntities1())
+            {
+                context.Korisniks.Attach(odabraniKorisnik);
+                var query = from f in odabraniKorisnik.Films
+                            select f;
+                listaFilmovaOdabranogKorisnika = query.ToList();
+                dgvPopisSvihFilmova.DataSource = listaFilmovaOdabranogKorisnika;
+                dgvPopisSvihFilmova.Columns["ID_Korsinik"].Visible = false;
+                dgvPopisSvihFilmova.Columns["ID_Film"].Visible = false;
+                dgvPopisSvihFilmova.Columns["LokacijaFilma"].Visible = false;
+                dgvPopisSvihFilmova.Columns["Odobren"].Visible = false;
+                dgvPopisSvihFilmova.Columns["Korisnik"].Visible = false;
             }
         }
     }
