@@ -159,6 +159,12 @@
     <Compile Include="frmReportFilmovaKorisnika.Designer.cs">
       <DependentUpon>frmReportFilmovaKorisnika.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportSvihFilmova.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSvihFilmova.Designer.cs">
+      <DependentUpon>frmReportSvihFilmova.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportSvihKorisnika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     <EmbeddedResource Include="frmReportFilmovaKorisnika.resx">
       <DependentUpon>frmReportFilmovaKorisnika.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSvihFilmova.resx">
+      <DependentUpon>frmReportSvihFilmova.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportSvihKorisnika.resx">
       <DependentUpon>frmReportSvihKorisnika.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +271,7 @@
     </Compile>
     <EmbeddedResource Include="rptReportFilma.rdlc" />
     <EmbeddedResource Include="rptSviKorisnici.rdlc" />
+    <EmbeddedResource Include="SviFilmovi.rdlc" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
