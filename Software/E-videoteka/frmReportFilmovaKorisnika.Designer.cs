@@ -54,6 +54,7 @@ namespace E_videoteka
             this.reportViewer.ServerReport.BearerToken = null;
             this.reportViewer.Size = new System.Drawing.Size(800, 450);
             this.reportViewer.TabIndex = 0;
+            this.reportViewer.Load += new System.EventHandler(this.reportViewer_Load);
             // 
             // FilmBindingSource
             // 

@@ -39,5 +39,10 @@ namespace E_videoteka
 
             this.reportViewer.RefreshReport();
         }
+
+        private void reportViewer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

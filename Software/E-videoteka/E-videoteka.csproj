@@ -272,6 +272,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rptPogledaniFilmovi.rdlc" />
     <EmbeddedResource Include="rptReportFilma.rdlc" />
     <EmbeddedResource Include="rptSviKorisnici.rdlc" />
     <EmbeddedResource Include="SviFilmovi.rdlc" />

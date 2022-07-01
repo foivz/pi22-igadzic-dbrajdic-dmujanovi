@@ -52,7 +52,8 @@ namespace E_videoteka
                     dgvDostupniFilmovi.Columns["Korisnik"].Visible = false;
                     dgvDostupniFilmovi.Columns["Odobren"].Visible = false;
                     dgvDostupniFilmovi.Columns["ID_Korsinik"].Visible = false;
-                   // dgvDostupniFilmovi.Columns["Gledan"].Visible = false;
+                    dgvDostupniFilmovi.Columns["Gledan"].Visible = false;
+                    dgvDostupniFilmovi.Columns["AktivnostKorisnikas"].Visible = false;
                 }
             }
         }
@@ -101,15 +102,15 @@ namespace E_videoteka
 
         private void btnGledajFilm_Click(object sender, EventArgs e)
         {
-            /*
+            
             Film odabrani = dgvDostupniFilmovi.CurrentRow.DataBoundItem as Film;
             using(var context = new PI2247_DBEntities1())
             {
                 context.Films.Attach(odabrani);
-                odabrani.gledan += 1;
+                odabrani.Gledan += 1;
                 context.SaveChanges();
             }
-            */
+            
         }
     }
 }

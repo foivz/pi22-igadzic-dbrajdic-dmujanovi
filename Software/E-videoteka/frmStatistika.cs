@@ -103,67 +103,58 @@ namespace E_videoteka
         {
             cmbKorisnici.Text = "";
             cmbZanrovi.Text = "";
+            rbStarost.Checked = false;
+            rbGledanost.Checked = false;
+            rbPoKategorijama.Checked = false;
             PrikaziSveFilmove();
         }
 
         private void btnFiltriraj_Click(object sender, EventArgs e)
         {
+
+            if(rbGledanost.Checked == true)
+            {
+                List<Film> filtrirana = listaFilmova.OrderByDescending(x => x.Gledan).ToList();
+                dgvPopisSvihFilmova.DataSource = filtrirana;
+                UrediTablicu();
+            }
+            if (rbPoKategorijama.Checked == true)
+            {
+                List<Film> filtrirana = listaFilmova.OrderBy(x => x.Kategorija).ToList();
+                dgvPopisSvihFilmova.DataSource = filtrirana;
+                UrediTablicu();
+            }
+            if (rbStarost.Checked == true)
+            {
+                List<Film> filtriranaLista = new List<Film>();
+                foreach (var item in listaFilmova)
+                {
+                    int razlika = (2022 - int.Parse(item.GodinaIzdanja));
+                    if (razlika > 10)
+                    {
+                        filtriranaLista.Add(item);
+                    }
+                }
+                dgvPopisSvihFilmova.DataSource = filtriranaLista;
+                UrediTablicu();
+            }
+
+        }
+
+        private void btnPrikaziOdabrano_Click(object sender, EventArgs e)
+        {
             Korisnik odabrani = DohvatiKorisnika();
             List<Film> filtriranaLista = new List<Film>();
             string zanr = cmbZanrovi.Text.ToString();
-
-            if (cmbKorisnici.Text == "")
+            foreach (var item in listaFilmova)
             {
-                if (checkbox.Checked == true)
+                if (item.ID_Korsinik == odabrani.ID_Korisnik && item.Kategorija == zanr)
                 {
-                    foreach (var item in listaFilmova)
-                    {
-                        int razlika = 2022 - int.Parse(item.GodinaIzdanja);
-                        if (razlika > 10)
-                        {
-                            filtriranaLista.Add(item);
-                        }
-
-                    }
-                }
-                if(checkbox.Checked == false)
-                {
-                    PrikaziSveFilmove();
+                    filtriranaLista.Add(item);
                 }
             }
-
-            
-                if (checkbox.Checked == true)
-                {
-
-                    foreach (var item in listaFilmova)
-                    {
-                        int razlika = 2022 - int.Parse(item.GodinaIzdanja);
-                        if (razlika > 10 && item.Kategorija == zanr && item.ID_Korsinik == odabrani.ID_Korisnik)
-                        {
-                            filtriranaLista.Add(item);
-                        }
-
-                    }
-                    dgvPopisSvihFilmova.DataSource = filtriranaLista;
-                    UrediTablicu();
-                }
-                if (checkbox.Checked != true)
-                {
-
-                    foreach (var item in listaFilmova)
-                    {
-                        if (item.Kategorija == zanr && item.ID_Korsinik == odabrani.ID_Korisnik)
-                        {
-                            filtriranaLista.Add(item);
-                        }
-
-                    }
-                    dgvPopisSvihFilmova.DataSource = filtriranaLista;
-                    UrediTablicu();
-                }
-            
-
+            dgvPopisSvihFilmova.DataSource = filtriranaLista;
+            UrediTablicu();
         }
 
         private Korisnik DohvatiKorisnika()
@@ -219,12 +210,35 @@ namespace E_videoteka
                 cmbZanrovi.Text = "";
             }
             cmbZanrovi.DataSource = listaZanrova;
+
+            List<Film> filtriranaLista = new List<Film>();
+            foreach (var item in listaFilmova)
+            {
+                if (item.ID_Korsinik == odabrani.ID_Korisnik)
+                {
+                    filtriranaLista.Add(item);
+                }
+            }
+            dgvPopisSvihFilmova.DataSource = filtriranaLista;
+            UrediTablicu();
+
         }
 
         private void btnIzvještajSvih_Click(object sender, EventArgs e)
         {
             frmReportSvihFilmova forma = new frmReportSvihFilmova();
             forma.ShowDialog();
+        }
+
+        private void cmbZanrovi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnFiltriranaLista_Click(object sender, EventArgs e)
+        {
+            List<Film> filtriranaLista = dgvPopisSvihFilmova.DataSource as List<Film>;
+            Korisnik test = DohvatiKorisnika();
         }
     }
 }
