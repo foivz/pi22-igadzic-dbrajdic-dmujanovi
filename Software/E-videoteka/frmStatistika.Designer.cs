@@ -44,6 +44,7 @@ namespace E_videoteka
             this.txtbPretraziPoNazivu = new System.Windows.Forms.TextBox();
             this.checkbox = new System.Windows.Forms.CheckBox();
             this.btnIzvještajSvih = new System.Windows.Forms.Button();
+            this.cbGledanost = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisSvihFilmova)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,11 +188,22 @@ namespace E_videoteka
             this.btnIzvještajSvih.UseVisualStyleBackColor = true;
             this.btnIzvještajSvih.Click += new System.EventHandler(this.btnIzvještajSvih_Click);
             // 
+            // cbGledanost
+            // 
+            this.cbGledanost.AutoSize = true;
+            this.cbGledanost.Location = new System.Drawing.Point(275, 38);
+            this.cbGledanost.Name = "cbGledanost";
+            this.cbGledanost.Size = new System.Drawing.Size(124, 17);
+            this.cbGledanost.TabIndex = 18;
+            this.cbGledanost.Text = "Sortiraj po gledanosti";
+            this.cbGledanost.UseVisualStyleBackColor = true;
+            // 
             // frmStatistika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 546);
+            this.Controls.Add(this.cbGledanost);
             this.Controls.Add(this.btnIzvještajSvih);
             this.Controls.Add(this.checkbox);
             this.Controls.Add(this.txtbPretraziPoNazivu);
@@ -234,5 +246,6 @@ namespace E_videoteka
         private System.Windows.Forms.TextBox txtbPretraziPoNazivu;
         private System.Windows.Forms.CheckBox checkbox;
         private System.Windows.Forms.Button btnIzvještajSvih;
+        private System.Windows.Forms.CheckBox cbGledanost;
     }
 }

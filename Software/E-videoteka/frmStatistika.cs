@@ -64,6 +64,7 @@ namespace E_videoteka
             dgvPopisSvihFilmova.Columns["Odobren"].Visible = false;
             dgvPopisSvihFilmova.Columns["LokacijaFilma"].Visible = false;
             dgvPopisSvihFilmova.Columns["ID_Korsinik"].Visible = false;
+            dgvPopisSvihFilmova.Columns["AktivnostKorisnikas"].Visible = false;
         }
 
         private void frmStatistika_KeyDown(object sender, KeyEventArgs e)

@@ -130,6 +130,7 @@ namespace E_videoteka
             this.btnGledajFilm.TabIndex = 7;
             this.btnGledajFilm.Text = "Gledaj film";
             this.btnGledajFilm.UseVisualStyleBackColor = true;
+            this.btnGledajFilm.Click += new System.EventHandler(this.btnGledajFilm_Click);
             // 
             // btnMojiFilmovi
             // 

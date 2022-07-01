@@ -25,6 +25,7 @@ namespace E_videoteka
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AktivnostKorisnika> AktivnostKorisnikas { get; set; }
         public virtual DbSet<Film> Films { get; set; }
         public virtual DbSet<Korisnik> Korisniks { get; set; }
     }
