@@ -80,6 +80,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Autentifikator.cs" />
+    <Compile Include="DodaniFilmoviKorisnika.cs" />
     <Compile Include="Exceptions\EmptyInputException.cs" />
     <Compile Include="Film.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -162,6 +163,18 @@
     <Compile Include="frmReportFilmovaKorisnika.Designer.cs">
       <DependentUpon>frmReportFilmovaKorisnika.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportFiltriraneListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportFiltriraneListe.Designer.cs">
+      <DependentUpon>frmReportFiltriraneListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportPogledanihFilmova.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportPogledanihFilmova.Designer.cs">
+      <DependentUpon>frmReportPogledanihFilmova.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportSvihFilmova.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +218,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PogledaniFilmoviUMjesecu.cs" />
     <Compile Include="PokretacServisa.cs" />
     <Compile Include="Exceptions\PasswordMissMatchException.cs" />
     <Compile Include="Program.cs" />
@@ -251,6 +265,12 @@
     <EmbeddedResource Include="frmReportFilmovaKorisnika.resx">
       <DependentUpon>frmReportFilmovaKorisnika.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportFiltriraneListe.resx">
+      <DependentUpon>frmReportFiltriraneListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportPogledanihFilmova.resx">
+      <DependentUpon>frmReportPogledanihFilmova.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportSvihFilmova.resx">
       <DependentUpon>frmReportSvihFilmova.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +292,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rptFiltriranaLista.rdlc" />
     <EmbeddedResource Include="rptPogledaniFilmovi.rdlc" />
     <EmbeddedResource Include="rptReportFilma.rdlc" />
     <EmbeddedResource Include="rptSviKorisnici.rdlc" />
@@ -284,8 +305,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AktivnostKorisnika.datasource" />
+    <None Include="Properties\DataSources\DodaniFilmoviKorisnika.datasource" />
     <None Include="Properties\DataSources\Film.datasource" />
     <None Include="Properties\DataSources\Korisnik.datasource" />
+    <None Include="Properties\DataSources\PogledaniFilmoviUMjesecu.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

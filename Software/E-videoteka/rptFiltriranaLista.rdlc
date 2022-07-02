@@ -9,10 +9,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Izvještaj svih filmova</Value>
+                <Value>Izvještaj filtrirane liste</Value>
                 <Style>
-                  <FontSize>18pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
+                  <FontSize>16pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -20,10 +19,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.63182cm</Top>
-        <Left>4.5212cm</Left>
-        <Height>1.12917cm</Height>
-        <Width>6.49521cm</Width>
+        <Top>0.49953cm</Top>
+        <Left>4.46828cm</Left>
+        <Height>0.99688cm</Height>
+        <Width>6.97146cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -35,14 +34,14 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>2.51037cm</Top>
-        <Left>1.08162cm</Left>
+        <Top>2.03412cm</Top>
+        <Left>0.42016cm</Left>
         <Height>0cm</Height>
-        <Width>11.36354cm</Width>
+        <Width>12.42188cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
-            <Style>Dotted</Style>
+            <Style>Dashed</Style>
             <Width>1.5pt</Width>
           </Border>
         </Style>
@@ -89,7 +88,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Plum</BackgroundColor>
+                        <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -120,7 +119,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Plum</BackgroundColor>
+                        <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -151,7 +150,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Plum</BackgroundColor>
+                        <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -182,7 +181,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Plum</BackgroundColor>
+                        <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -338,9 +337,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>3.06599cm</Top>
-        <Left>1.31974cm</Left>
+        <DataSetName>dsFilmovi</DataSetName>
+        <Top>2.80141cm</Top>
+        <Left>1.58432cm</Left>
         <Height>1.2cm</Height>
         <Width>10cm</Width>
         <ZIndex>2</ZIndex>
@@ -350,30 +349,28 @@
           </Border>
         </Style>
       </Tablix>
-      <Line Name="Line2">
-        <Top>7.40833cm</Top>
-        <Left>1.44875cm</Left>
-        <Height>0cm</Height>
-        <Width>11.36354cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>Dotted</Style>
-            <Width>1.5pt</Width>
-          </Border>
-        </Style>
-      </Line>
     </ReportItems>
-    <Height>2.91667in</Height>
+    <Height>2.625in</Height>
     <Style />
   </Body>
-  <Width>5.36842in</Width>
+  <Width>5.40625in</Width>
   <Page>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.57528cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
+        <Line Name="Line2">
+          <Left>0.655cm</Left>
+          <Height>0cm</Height>
+          <Width>12.42188cm</Width>
+          <Style>
+            <Border>
+              <Style>Dashed</Style>
+              <Width>1.5pt</Width>
+            </Border>
+          </Style>
+        </Line>
         <Textbox Name="PageNumber">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -389,10 +386,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.44662cm</Top>
-          <Left>11.45cm</Left>
+          <Top>0.50835cm</Top>
+          <Left>11.58558cm</Left>
           <Height>0.6cm</Height>
-          <Width>1.36229cm</Width>
+          <Width>1.89146cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -426,16 +424,20 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>8b8a9324-16a4-4016-a732-92d5c8f46b09</rd:DataSourceID>
+      <rd:DataSourceID>37b9c917-9705-441d-a6e1-eb0df2c9d48f</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dsFilmovi">
       <Query>
         <DataSourceName>E_videoteka</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="Gledan">
+          <DataField>Gledan</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="GodinaIzdanja">
           <DataField>GodinaIzdanja</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -481,5 +483,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>e1a8d435-5d22-4edb-aaa6-bc29403936d4</rd:ReportID>
+  <rd:ReportID>6d438596-1030-465c-8600-ed896ed7a971</rd:ReportID>
 </Report>

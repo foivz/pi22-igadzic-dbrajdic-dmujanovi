@@ -32,29 +32,15 @@ namespace E_videoteka
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.FilmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.KorisnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dodaniFilmoviKorisnikaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.FilmBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dodaniFilmoviKorisnikaBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer
-            // 
-            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DsPrikazFIilma";
-            reportDataSource1.Value = this.FilmBindingSource;
-            reportDataSource2.Name = "DsKorisnikFilma";
-            reportDataSource2.Value = this.KorisnikBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "E_videoteka.rptReportFilma.rdlc";
-            this.reportViewer.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer.Name = "reportViewer";
-            this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer.TabIndex = 0;
-            this.reportViewer.Load += new System.EventHandler(this.reportViewer_Load);
             // 
             // FilmBindingSource
             // 
@@ -63,6 +49,30 @@ namespace E_videoteka
             // KorisnikBindingSource
             // 
             this.KorisnikBindingSource.DataSource = typeof(E_videoteka.Korisnik);
+            // 
+            // reportViewer
+            // 
+            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DsPrikazFIilma";
+            reportDataSource1.Value = this.FilmBindingSource;
+            reportDataSource2.Name = "DsKorisnikFilma";
+            reportDataSource2.Value = this.KorisnikBindingSource;
+            reportDataSource3.Name = "dsDodaniFIlmovi";
+            reportDataSource3.Value = this.dodaniFilmoviKorisnikaBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "E_videoteka.rptReportFilma.rdlc";
+            this.reportViewer.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer.Name = "reportViewer";
+            this.reportViewer.ServerReport.BearerToken = null;
+            this.reportViewer.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer.TabIndex = 0;
+            this.reportViewer.Load += new System.EventHandler(this.reportViewer_Load);
+            // 
+            // dodaniFilmoviKorisnikaBindingSource
+            // 
+            this.dodaniFilmoviKorisnikaBindingSource.DataSource = typeof(E_videoteka.DodaniFilmoviKorisnika);
             // 
             // frmReportFilmovaKorisnika
             // 
@@ -75,6 +85,7 @@ namespace E_videoteka
             this.Load += new System.EventHandler(this.frmReportFilmovaKorisnika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FilmBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dodaniFilmoviKorisnikaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,5 +95,6 @@ namespace E_videoteka
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
         private System.Windows.Forms.BindingSource FilmBindingSource;
         private System.Windows.Forms.BindingSource KorisnikBindingSource;
+        private System.Windows.Forms.BindingSource dodaniFilmoviKorisnikaBindingSource;
     }
 }

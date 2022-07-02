@@ -238,7 +238,15 @@ namespace E_videoteka
         private void btnFiltriranaLista_Click(object sender, EventArgs e)
         {
             List<Film> filtriranaLista = dgvPopisSvihFilmova.DataSource as List<Film>;
-            Korisnik test = DohvatiKorisnika();
+            frmReportFiltriraneListe forma = new frmReportFiltriraneListe(filtriranaLista);
+            forma.ShowDialog();
+        }
+
+        private void btnPogledaniFIlmovi_Click(object sender, EventArgs e)
+        {
+            Korisnik odabrani = DohvatiKorisnika();
+            frmReportPogledanihFilmova forma = new frmReportPogledanihFilmova(odabrani.ID_Korisnik);
+            forma.ShowDialog();
         }
     }
 }

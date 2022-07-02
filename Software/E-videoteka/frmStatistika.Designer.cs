@@ -234,6 +234,7 @@ namespace E_videoteka
             this.btnPogledaniFIlmovi.TabIndex = 22;
             this.btnPogledaniFIlmovi.Text = "Izvještaj pogledanih filmova za odabranog korisnika";
             this.btnPogledaniFIlmovi.UseVisualStyleBackColor = true;
+            this.btnPogledaniFIlmovi.Click += new System.EventHandler(this.btnPogledaniFIlmovi_Click);
             // 
             // btnFiltriranaLista
             // 

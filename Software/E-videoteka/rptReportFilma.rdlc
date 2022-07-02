@@ -105,6 +105,27 @@
         <rd:ObjectDataSourceType>E_videoteka.Korisnik, E-videoteka, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="dsDodaniFIlmovi">
+      <Query>
+        <DataSourceName>E_videoteka</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="BrojFilmova">
+          <DataField>BrojFilmova</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Zanr">
+          <DataField>Zanr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>E_videoteka</rd:DataSetName>
+        <rd:TableName>DodaniFilmoviKorisnika</rd:TableName>
+        <rd:ObjectDataSourceType>E_videoteka.DodaniFilmoviKorisnika, E-videoteka, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -725,7 +746,18 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Chart Name="Chart2">
+          <Line Name="Line1">
+            <Top>7.95196cm</Top>
+            <Height>0cm</Height>
+            <Width>13.53785cm</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>Dotted</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Chart Name="Chart1">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
@@ -737,18 +769,18 @@
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Kategorija</Label>
+                  <Label>Broj Filmova</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Kategorija">
+                <ChartSeries Name="BrojFilmova">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <X>=Fields!Kategorija.Value</X>
-                        <Y>=Count(Fields!Kategorija.Value)</Y>
+                        <X>=Fields!Zanr.Value</X>
+                        <Y>=Sum(Fields!BrojFilmova.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -1034,7 +1066,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Dodani filmovi po kategorijama</Caption>
+                <Caption>Grafički prikaz dodanih filmova po žanru</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -1063,12 +1095,12 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DsPrikazFIilma</DataSetName>
-            <Top>8.12835cm</Top>
-            <Left>2.6562cm</Left>
+            <DataSetName>dsDodaniFIlmovi</DataSetName>
+            <Top>8.41058cm</Top>
+            <Left>3.2553cm</Left>
             <Height>5cm</Height>
-            <Width>8.31611cm</Width>
-            <ZIndex>11</ZIndex>
+            <Width>7.5cm</Width>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -1078,19 +1110,8 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
-          <Line Name="Line1">
-            <Top>7.95196cm</Top>
-            <Height>0cm</Height>
-            <Width>13.53785cm</Width>
-            <ZIndex>12</ZIndex>
-            <Style>
-              <Border>
-                <Style>Dotted</Style>
-              </Border>
-            </Style>
-          </Line>
         </ReportItems>
-        <Height>5.23809in</Height>
+        <Height>5.52975in</Height>
         <Style />
       </Body>
       <Width>5.57861in</Width>
