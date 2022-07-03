@@ -77,15 +77,15 @@ namespace E_videoteka
             if (test.Username == null)
             {
                 string adresa = DohvatiAdresu();
-                //provjeravam dal vec postoji korisnik na toj adresi
+               
                 Korisnik gost = repozitorij.DohvatiKorisnikaPoAdresi(adresa);
-                //prvi put, ako ne postoji
+           
                 if (gost.Username == null)
                 {
 
 
 
-                    //PRVI PUT
+                 
                     string ime = "Gost";
                     string prezime = "Gost";
                     string password = "Gost";
@@ -105,7 +105,7 @@ namespace E_videoteka
                         context.SaveChanges();
                     }
                 }
-                //drugi put
+                
                 if (gost.Username == "Gost")
                 {
                     novifilm.ID_Korsinik = gost.ID_Korisnik;
