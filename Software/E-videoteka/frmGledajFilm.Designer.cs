@@ -29,31 +29,20 @@ namespace E_videoteka
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(595, 464);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 22);
-            this.textBox1.TabIndex = 4;
             // 
             // frmGledajFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 486);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1086, 528);
             this.Name = "frmGledajFilm";
             this.Text = "frmGledajFilm";
             this.Load += new System.EventHandler(this.frmGledajFilm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
