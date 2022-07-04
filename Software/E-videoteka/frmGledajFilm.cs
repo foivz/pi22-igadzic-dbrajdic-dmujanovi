@@ -7,29 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibVLCSharp.Shared;
+using LibVLCSharp.WinForms;
 
 namespace E_videoteka
 {
     public partial class frmGledajFilm : Form
     {
-        public Film odabrani;
-        public frmGledajFilm(Film odabraniFilm)
+        private string videoFile;
+        private LibVLC libvlc = new LibVLC();
+        private VideoView vv = new VideoView();
+
+        public frmGledajFilm(string videoFile)
         {
-            odabrani = odabraniFilm;
+            this.videoFile = videoFile;
+            vv.MediaPlayer = new MediaPlayer(libvlc);
             InitializeComponent();
         }
 
         private void frmGledajFilm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = odabrani.LokacijaFilma.ToString();
-            textBox1.Visible = false;
-            axwmpFilm.URL = textBox1.Text;
-            axwmpFilm.settings.autoStart = true;
-        }
+            vv.Dock = DockStyle.Fill;
+            Controls.Add(vv);
 
-        private void btnIskljuci_Click(object sender, EventArgs e)
-        {
-            Close();
+            var uri = new Uri($@"http://127.0.0.1:3000/{videoFile}");
+            var media = new Media(libvlc, uri, ":input-repeat=65535");
+            vv.MediaPlayer.Play(media);
         }
     }
 }
