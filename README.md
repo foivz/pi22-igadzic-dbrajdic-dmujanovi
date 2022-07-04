@@ -20,7 +20,7 @@ F02    | Prijava korisnika       | Registrirani korisnici imaju mogućnost prija
 F03    | Implementacija windows servisa za pružanje filma | Korisnik koji ima aktiviran odgovarajući windows servis ima i mogućnost streamanja filmova. | Ivan Gadžić
 F04    | Mogućnost korištenja windows servisa | Korisnik može birati želi li da windwos servis bude uključen ili isključen, za mogućnost streamanja filma. | Ivan Gadžić
 F05    | Dodavanje filma  | Svaki korisnik neovisno o teme dali je registriran ili ne ima mogućnost objaviti filmove koje ima pohranjene na vlastitom računalu dostupne za streamanje. | Dominik Mujanović
-F06    | Statistika filmova | Administrator ima mogućnost pregleda statisike e-Videoteke; prikaz filmova, filtriranje filmova, te prikaz izvješća sa grafovima veznoa uz korisnike i filmove. | Dominik Mujanović
+F06    | Statistika filmova | Administrator ima mogućnost pregleda statisike e-Videoteke; prikaz filmova, filtriranje filmova, te prikaz izvješća sa grafovima vezano uz korisnike i filmove. | Dominik Mujanović
 F07    | Odobravanje novih filmova  | Korisniku admin može dodjeliti ulogu recenzenta koji će onda imati mogućnost odobravanja film ako je u skladu s Pravilnikom uploadanja filma. | Dominik Mujanović
 F08    | Pregled dostupnih filmova |  Pregled trenutno dostupnih filmova za gledanje. | Dominik Brajdić
 F09    | Upravljanje korisnicima  | Administrator ima mogućnost upravljati korisnicima, dodijeliti uloge administrator ili recenzent. | Dominik Brajdić
