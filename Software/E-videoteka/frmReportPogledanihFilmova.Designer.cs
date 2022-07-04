@@ -34,16 +34,32 @@ namespace E_videoteka
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.AktivnostKorisnikaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.FilmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.KorisnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pogledaniFilmoviUMjesecuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.AktivnostKorisnikaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FilmBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pogledaniFilmoviUMjesecuBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // AktivnostKorisnikaBindingSource
+            // 
+            this.AktivnostKorisnikaBindingSource.DataSource = typeof(E_videoteka.AktivnostKorisnika);
+            // 
+            // FilmBindingSource
+            // 
+            this.FilmBindingSource.DataSource = typeof(E_videoteka.Film);
+            // 
+            // KorisnikBindingSource
+            // 
+            this.KorisnikBindingSource.DataSource = typeof(E_videoteka.Korisnik);
+            // 
+            // pogledaniFilmoviUMjesecuBindingSource
+            // 
+            this.pogledaniFilmoviUMjesecuBindingSource.DataSource = typeof(E_videoteka.PogledaniFilmoviUMjesecu);
             // 
             // reportViewer1
             // 
@@ -67,22 +83,6 @@ namespace E_videoteka
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // AktivnostKorisnikaBindingSource
-            // 
-            this.AktivnostKorisnikaBindingSource.DataSource = typeof(E_videoteka.AktivnostKorisnika);
-            // 
-            // FilmBindingSource
-            // 
-            this.FilmBindingSource.DataSource = typeof(E_videoteka.Film);
-            // 
-            // KorisnikBindingSource
-            // 
-            this.KorisnikBindingSource.DataSource = typeof(E_videoteka.Korisnik);
-            // 
-            // pogledaniFilmoviUMjesecuBindingSource
-            // 
-            this.pogledaniFilmoviUMjesecuBindingSource.DataSource = typeof(E_videoteka.PogledaniFilmoviUMjesecu);
-            // 
             // frmReportPogledanihFilmova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,6 +90,7 @@ namespace E_videoteka
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmReportPogledanihFilmova";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReportPogledanihFilmova";
             this.Load += new System.EventHandler(this.frmReportPogledanihFilmova_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AktivnostKorisnikaBindingSource)).EndInit();
