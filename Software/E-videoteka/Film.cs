@@ -14,6 +14,12 @@ namespace E_videoteka
     
     public partial class Film
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Film()
+        {
+            this.AktivnostKorisnikas = new HashSet<AktivnostKorisnika>();
+        }
+    
         public int ID_Film { get; set; }
         public string Naziv { get; set; }
         public string GodinaIzdanja { get; set; }
@@ -22,7 +28,10 @@ namespace E_videoteka
         public string LokacijaFilma { get; set; }
         public string Odobren { get; set; }
         public int ID_Korsinik { get; set; }
+        public Nullable<int> Gledan { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AktivnostKorisnika> AktivnostKorisnikas { get; set; }
         public virtual Korisnik Korisnik { get; set; }
     }
 }

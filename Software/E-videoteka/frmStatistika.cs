@@ -12,6 +12,7 @@ namespace E_videoteka
 {
     public partial class frmStatistika : Form
     {
+        public List<Film> listaFilmova = new List<Film>(); 
         public frmStatistika()
         {
             InitializeComponent();
@@ -24,86 +25,46 @@ namespace E_videoteka
 
         private void frmStatistika_Load(object sender, EventArgs e)
         {
-            DohvatiStatistiku();
+            PrikaziSveFilmove();
+            PopuniCombo();
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(frmStatistika_KeyDown);
         }
 
-        private void DohvatiStatistiku()
+        private void PopuniCombo()
         {
-            int sveukupnoKorisnici = 0;
-            int recenzenti = 0;
-            int sveukupnoFilmovi = 0;
-            int gosti = 0;
-            int registriraniKorisnici = 0;
-            int akcijski = 0;
-            int komedija = 0;
-            int romanticni = 0;
-            int dokumentarac = 0;
-            int SF = 0;
+           
+           List<string> listaKorisnickihImena = new List<string>();
+           using(var context = new PI2247_DBEntities1())
+            {
+                var query = from c in context.Korisniks
+                            select c.Username;
+                listaKorisnickihImena = query.ToList();
+            }         
+            cmbKorisnici.DataSource = listaKorisnickihImena;
+            cmbKorisnici.Text = "";
+        }
 
-            List<Korisnik> listaKorisnika = new List<Korisnik>();
-            List<Film> listaFIlmova = new List<Film>();
+        private void PrikaziSveFilmove()
+        {     
             using(var context = new PI2247_DBEntities1())
             {
-                var query = from k in context.Korisniks
-                            select k;
-                var upit = from f in context.Films
-                           select f;
-                listaKorisnika = query.ToList();
-                listaFIlmova = upit.ToList();
+                var query = from f in context.Films
+                            select f;
+                listaFilmova = query.ToList();
+                dgvPopisSvihFilmova.DataSource = listaFilmova;
+                UrediTablicu();   
             }
-            foreach (Film item in listaFIlmova)
-            {
-                sveukupnoFilmovi++;
-                if(item.Kategorija.ToString() == "Akcijski")
-                {
-                    akcijski++;
-                }
-                if (item.Kategorija.ToString() == "Komedija")
-                {
-                    komedija++;
-                }
-                if (item.Kategorija.ToString() == "Dokumentarac")
-                {
-                    dokumentarac++;
-                }
-                if (item.Kategorija.ToString() == "Romanticni")
-                {
-                    romanticni++;
-                }
-                if (item.Kategorija.ToString() == "SF")
-                {
-                    SF++;
-                }
-            }
-            foreach (Korisnik item in listaKorisnika)
-            {
-                sveukupnoKorisnici++;
-                if (item.Uloga.ToString() == "Korisnik")
-                {
-                    registriraniKorisnici++;
-                }
-                if (item.Uloga.ToString() == "Recenzent")
-                {
-                    recenzenti++;
-                }
-                if (item.Uloga.ToString() == "Gost")
-                {
-                    gosti++;
-                }
-                
-            }
-            txtFilmovi.Text = sveukupnoFilmovi.ToString();
-            txtGosti.Text = gosti.ToString();
-            txtRecenzenti.Text = recenzenti.ToString();
-            txtRegistrirani.Text = registriraniKorisnici.ToString();
-            txtSveukupno.Text = sveukupnoKorisnici.ToString();
-            txtbAkcijski.Text = akcijski.ToString();
-            txtbDokumentarac.Text = dokumentarac.ToString();
-            txtbKomedija.Text = komedija.ToString();
-            txtbRomanticni.Text = romanticni.ToString();
-            txtSF.Text = SF.ToString();
+        }
+
+        private void UrediTablicu()
+        {
+            dgvPopisSvihFilmova.Columns["Korisnik"].Visible = false;
+            dgvPopisSvihFilmova.Columns["ID_Film"].Visible = false;
+            dgvPopisSvihFilmova.Columns["Odobren"].Visible = false;
+            dgvPopisSvihFilmova.Columns["LokacijaFilma"].Visible = false;
+            dgvPopisSvihFilmova.Columns["ID_Korsinik"].Visible = false;
+            dgvPopisSvihFilmova.Columns["AktivnostKorisnikas"].Visible = false;
         }
 
         private void frmStatistika_KeyDown(object sender, KeyEventArgs e)
@@ -116,6 +77,176 @@ namespace E_videoteka
                 string cijeli = "File://" + path + "\\UserManual\\UserManual.chm";
                 Help.ShowHelp(this, cijeli, HelpNavigator.Topic, "StatistikaForma.htm");
             }
+        }
+
+        
+
+        private void btnReportKorisnika_Click(object sender, EventArgs e)
+        {
+            frmReportSvihKorisnika forma = new frmReportSvihKorisnika();
+            forma.ShowDialog();
+        }
+
+        private void btnIzvjestajFilmova_Click(object sender, EventArgs e)
+        {
+            Korisnik odabrani = DohvatiKorisnika();
+            frmReportFilmovaKorisnika forma = new frmReportFilmovaKorisnika(odabrani.ID_Korisnik);
+            forma.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrikaziSveFilmove_Click(object sender, EventArgs e)
+        {
+            cmbKorisnici.Text = "";
+            cmbZanrovi.Text = "";
+            rbStarost.Checked = false;
+            rbGledanost.Checked = false;
+            rbPoKategorijama.Checked = false;
+            PrikaziSveFilmove();
+        }
+
+        private void btnFiltriraj_Click(object sender, EventArgs e)
+        {
+
+            if(rbGledanost.Checked == true)
+            {
+                List<Film> filtrirana = listaFilmova.OrderByDescending(x => x.Gledan).ToList();
+                dgvPopisSvihFilmova.DataSource = filtrirana;
+                UrediTablicu();
+            }
+            if (rbPoKategorijama.Checked == true)
+            {
+                List<Film> filtrirana = listaFilmova.OrderBy(x => x.Kategorija).ToList();
+                dgvPopisSvihFilmova.DataSource = filtrirana;
+                UrediTablicu();
+            }
+            if (rbStarost.Checked == true)
+            {
+                List<Film> filtriranaLista = new List<Film>();
+                foreach (var item in listaFilmova)
+                {
+                    int razlika = (2022 - int.Parse(item.GodinaIzdanja));
+                    if (razlika > 10)
+                    {
+                        filtriranaLista.Add(item);
+                    }
+                }
+                dgvPopisSvihFilmova.DataSource = filtriranaLista;
+                UrediTablicu();
+            }
+
+        }
+
+        private void btnPrikaziOdabrano_Click(object sender, EventArgs e)
+        {
+            Korisnik odabrani = DohvatiKorisnika();
+            List<Film> filtriranaLista = new List<Film>();
+            string zanr = cmbZanrovi.Text.ToString();
+            foreach (var item in listaFilmova)
+            {
+                if (item.ID_Korsinik == odabrani.ID_Korisnik && item.Kategorija == zanr)
+                {
+                    filtriranaLista.Add(item);
+                }
+            }
+            dgvPopisSvihFilmova.DataSource = filtriranaLista;
+            UrediTablicu();
+        }
+
+        private Korisnik DohvatiKorisnika()
+        {
+            Korisnik Dohvaceni = new Korisnik();
+            List<Korisnik> listaKorisnika = new List<Korisnik>();      
+            using (var context = new PI2247_DBEntities1())
+            {
+                var query = from c in context.Korisniks
+                            select c;
+                listaKorisnika = query.ToList();
+            }
+            string odabraniucombo = (string)cmbKorisnici.SelectedItem;
+            foreach (var item in listaKorisnika)
+            {
+                if(item.Username == odabraniucombo)
+                {
+                    Dohvaceni = item;
+                }
+            }
+            return Dohvaceni;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+            string pretraganaziv = txtbPretraziPoNazivu.Text.ToString();
+            List<Film> filtriraniFilmov = new List<Film>();
+            foreach (var item in listaFilmova)
+            {
+                if (item.Naziv.Contains(pretraganaziv))
+                {
+                    filtriraniFilmov.Add(item);
+                }
+            }
+            dgvPopisSvihFilmova.DataSource = filtriraniFilmov;
+            UrediTablicu();
+        }
+
+        private void cmbKorisnici_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Korisnik odabrani = DohvatiKorisnika();
+            List<string> listaZanrova = new List<string>();
+            using (var context = new PI2247_DBEntities1())
+            {
+                context.Korisniks.Attach(odabrani);
+                var query = from c in odabrani.Films
+                            select c.Kategorija;
+                listaZanrova = query.Distinct().ToList();
+            }
+            if(listaZanrova.Count == 0)
+            {
+                cmbZanrovi.Text = "";
+            }
+            cmbZanrovi.DataSource = listaZanrova;
+
+            List<Film> filtriranaLista = new List<Film>();
+            foreach (var item in listaFilmova)
+            {
+                if (item.ID_Korsinik == odabrani.ID_Korisnik)
+                {
+                    filtriranaLista.Add(item);
+                }
+            }
+            dgvPopisSvihFilmova.DataSource = filtriranaLista;
+            UrediTablicu();
+
+        }
+
+        private void btnIzvještajSvih_Click(object sender, EventArgs e)
+        {
+            frmReportSvihFilmova forma = new frmReportSvihFilmova();
+            forma.ShowDialog();
+        }
+
+        private void cmbZanrovi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnFiltriranaLista_Click(object sender, EventArgs e)
+        {
+            List<Film> filtriranaLista = dgvPopisSvihFilmova.DataSource as List<Film>;
+            frmReportFiltriraneListe forma = new frmReportFiltriraneListe(filtriranaLista);
+            forma.ShowDialog();
+        }
+
+        private void btnPogledaniFIlmovi_Click(object sender, EventArgs e)
+        {
+            Korisnik odabrani = DohvatiKorisnika();
+            frmReportPogledanihFilmova forma = new frmReportPogledanihFilmova(odabrani.ID_Korisnik);
+            forma.ShowDialog();
         }
     }
 }
