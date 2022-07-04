@@ -30,7 +30,7 @@ namespace E_videoteka
             vv.Dock = DockStyle.Fill;
             Controls.Add(vv);
 
-            var uri = new Uri($@"http://127.0.0.1:3000/{videoFile}");
+            var uri = new Uri($@"http://192.168.1.7:3000/{videoFile}");
             var media = new Media(libvlc, uri, ":input-repeat=65535");
             vv.MediaPlayer.Play(media);
         }

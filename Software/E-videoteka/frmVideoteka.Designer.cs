@@ -85,7 +85,7 @@ namespace E_videoteka
             this.rbtnUkljuci.Text = "Uključi";
             this.rbtnUkljuci.UseVisualStyleBackColor = true;
             this.rbtnUkljuci.CheckedChanged += new System.EventHandler(this.rbtnUkljuci_CheckedChanged);
-            this.rbtnUkljuci.Click += new System.EventHandler(this.rbtnUkljuci_Click);
+            //this.rbtnUkljuci.Click += new System.EventHandler(this.rbtnUkljuci_Click);
             // 
             // rbtnIskljuci
             // 
@@ -99,7 +99,7 @@ namespace E_videoteka
             this.rbtnIskljuci.Text = "Isključi";
             this.rbtnIskljuci.UseVisualStyleBackColor = true;
             this.rbtnIskljuci.CheckedChanged += new System.EventHandler(this.rbtnIskljuci_CheckedChanged);
-            this.rbtnIskljuci.Click += new System.EventHandler(this.rbtnIskljuci_Click);
+            //this.rbtnIskljuci.Click += new System.EventHandler(this.rbtnIskljuci_Click);
             // 
             // btnOdustani
             // 
