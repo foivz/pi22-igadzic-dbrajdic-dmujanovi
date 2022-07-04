@@ -232,6 +232,7 @@
     <Compile Include="RepozitorijKorisnika.cs" />
     <Compile Include="Exceptions\ValidacijaPrijaveException.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UlogeKorisnika.cs" />
     <EmbeddedResource Include="frmAdminGlavna.resx">
       <DependentUpon>frmAdminGlavna.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +320,7 @@
     <None Include="Properties\DataSources\Film.datasource" />
     <None Include="Properties\DataSources\Korisnik.datasource" />
     <None Include="Properties\DataSources\PogledaniFilmoviUMjesecu.datasource" />
+    <None Include="Properties\DataSources\UlogeKorisnika.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

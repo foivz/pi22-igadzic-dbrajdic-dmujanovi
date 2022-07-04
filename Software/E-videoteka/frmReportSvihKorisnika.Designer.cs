@@ -31,17 +31,27 @@ namespace E_videoteka
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.KorisnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ulogeKorisnikaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ulogeKorisnikaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // KorisnikBindingSource
+            // 
+            this.KorisnikBindingSource.DataSource = typeof(E_videoteka.Korisnik);
             // 
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DsKorisnici";
             reportDataSource1.Value = this.KorisnikBindingSource;
+            reportDataSource2.Name = "dsUlogeKorisnica";
+            reportDataSource2.Value = this.ulogeKorisnikaBindingSource;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "E_videoteka.rptSviKorisnici.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
@@ -49,9 +59,9 @@ namespace E_videoteka
             this.reportViewer.Size = new System.Drawing.Size(640, 355);
             this.reportViewer.TabIndex = 0;
             // 
-            // KorisnikBindingSource
+            // ulogeKorisnikaBindingSource
             // 
-            this.KorisnikBindingSource.DataSource = typeof(E_videoteka.Korisnik);
+            this.ulogeKorisnikaBindingSource.DataSource = typeof(E_videoteka.UlogeKorisnika);
             // 
             // frmReportSvihKorisnika
             // 
@@ -63,6 +73,7 @@ namespace E_videoteka
             this.Text = "Izvještaj svih korisnika";
             this.Load += new System.EventHandler(this.frmReportSvihKorisnika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ulogeKorisnikaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -71,5 +82,6 @@ namespace E_videoteka
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
         private System.Windows.Forms.BindingSource KorisnikBindingSource;
+        private System.Windows.Forms.BindingSource ulogeKorisnikaBindingSource;
     }
 }
