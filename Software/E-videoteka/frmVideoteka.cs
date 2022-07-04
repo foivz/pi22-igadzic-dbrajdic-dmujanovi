@@ -52,8 +52,6 @@ namespace E_videoteka
                     dgvDostupniFilmovi.Columns["Korisnik"].Visible = false;
                     dgvDostupniFilmovi.Columns["Odobren"].Visible = false;
                     dgvDostupniFilmovi.Columns["ID_Korsinik"].Visible = false;
-                    dgvDostupniFilmovi.Columns["Gledan"].Visible = false;
-                    dgvDostupniFilmovi.Columns["AktivnostKorisnikas"].Visible = false;
                 }
             }
         }
@@ -80,10 +78,12 @@ namespace E_videoteka
 
         private void rbtnUkljuci_CheckedChanged(object sender, EventArgs e)
         {
+           // PokretacServisa.pokreniServis();
         }
 
         private void rbtnIskljuci_CheckedChanged(object sender, EventArgs e)
-        {  
+        {
+          //  PokretacServisa.zaustaviServis();
         }
 
         private void frmVideoteka_KeyDown(object sender, KeyEventArgs e)
@@ -100,39 +100,9 @@ namespace E_videoteka
 
         private void btnGledajFilm_Click(object sender, EventArgs e)
         {
-            
-            Film odabrani = dgvDostupniFilmovi.CurrentRow.DataBoundItem as Film;
-            using(var context = new PI2247_DBEntities1())
-            {
-                context.Films.Attach(odabrani);
-                odabrani.Gledan += 1;
-                context.SaveChanges();
-            }
-            
-        }
-
-        private void rbtnUkljuci_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PokretacServisa.pokreniServis();
-            }
-            catch
-            {
-                MessageBox.Show("Servis je vec pokrenut");
-            }
-        }
-
-        private void rbtnIskljuci_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PokretacServisa.zaustaviServis();
-            }
-            catch
-            {
-                MessageBox.Show("Servis je vec zaustavljen");
-            }
+            Film odabraniFilm = dgvDostupniFilmovi.CurrentRow.DataBoundItem as Film;
+            frmGledajFilm gledajFilm = new frmGledajFilm("test.mp4");
+            gledajFilm.ShowDialog();
         }
     }
 }
