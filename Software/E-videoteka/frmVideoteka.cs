@@ -83,7 +83,7 @@ namespace E_videoteka
 
         private void rbtnIskljuci_CheckedChanged(object sender, EventArgs e)
         {
-          //  PokretacServisa.zaustaviServis();
+          // PokretacServisa.zaustaviServis();
         }
 
         private void frmVideoteka_KeyDown(object sender, KeyEventArgs e)
@@ -100,9 +100,19 @@ namespace E_videoteka
 
         private void btnGledajFilm_Click(object sender, EventArgs e)
         {
+
             Film odabraniFilm = dgvDostupniFilmovi.CurrentRow.DataBoundItem as Film;
-            frmGledajFilm gledajFilm = new frmGledajFilm(odabraniFilm.LokacijaFilma.ToString());
-            gledajFilm.ShowDialog();
+            if (odabraniFilm !=null)
+            {
+                frmGledajFilm gledajFilm = new frmGledajFilm(odabraniFilm.LokacijaFilma.ToString());
+                gledajFilm.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Molimo odaberite film!");
+            }
+            
         }
     }
 }
