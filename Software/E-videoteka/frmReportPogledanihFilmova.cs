@@ -22,8 +22,21 @@ namespace E_videoteka
         private void frmReportPogledanihFilmova_Load(object sender, EventArgs e)
         {
             DohvatiPogledaneFilmove();
-            
+            DohvatiKorisnika();
             this.reportViewer1.RefreshReport();
+        }
+
+        private void DohvatiKorisnika()
+        {
+            Korisnik proslijedeni = new Korisnik();
+            using(var context = new PI2247_DBEntities1())
+            {
+                var query = from c in context.Korisniks
+                            where c.ID_Korisnik == IDproslijedeniKorisnik
+                            select c;
+                 proslijedeni = query.Single();
+            }
+            KorisnikBindingSource.DataSource = proslijedeni;
         }
 
         private void DohvatiPogledaneFilmove()
