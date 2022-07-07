@@ -101,7 +101,7 @@ namespace E_videoteka
         private void btnGledajFilm_Click(object sender, EventArgs e)
         {
             Film odabraniFilm = dgvDostupniFilmovi.CurrentRow.DataBoundItem as Film;
-            frmGledajFilm gledajFilm = new frmGledajFilm("test.mp4");
+            frmGledajFilm gledajFilm = new frmGledajFilm(odabraniFilm.LokacijaFilma.ToString());
             gledajFilm.ShowDialog();
         }
     }
