@@ -106,7 +106,25 @@ namespace E_videoteka
             Film odabraniFilm = dgvDostupniFilmovi.CurrentRow.DataBoundItem as Film;
             if (odabraniFilm !=null)
             {
+
                 frmGledajFilm gledajFilm = new frmGledajFilm(odabraniFilm.LokacijaFilma.ToString());
+                using (var context = new PI2247_DBEntities1())
+                {
+                    context.Films.Attach(odabraniFilm);
+                    odabraniFilm.Gledan += 1;
+                    context.SaveChanges();
+                }
+                using (var context =new PI2247_DBEntities1())
+                {
+                    AktivnostKorisnika aktivnostKorisnika = new AktivnostKorisnika();
+                    aktivnostKorisnika.Datum = DateTime.Now;
+                    aktivnostKorisnika.ID_Korisnik = frmPrijava.ulogirani.ID_Korisnik;
+                    aktivnostKorisnika.ID_Film = odabraniFilm.ID_Film;
+                    context.AktivnostKorisnikas.Attach(aktivnostKorisnika);
+                    context.AktivnostKorisnikas.Add(aktivnostKorisnika);
+                    context.SaveChanges();
+
+                }
                 gledajFilm.ShowDialog();
 
             }

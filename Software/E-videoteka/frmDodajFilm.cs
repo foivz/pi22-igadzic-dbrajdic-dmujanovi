@@ -73,6 +73,7 @@ namespace E_videoteka
             novifilm.Kategorija = (string)cmbKategorija.SelectedItem;
             novifilm.Trajanje = txtTrajanje.Text.ToString();
             novifilm.Naziv = txtNazivFilma.Text.ToString();
+            novifilm.Gledan = 0;
             Korisnik test = frmPrijava.ulogirani;
             if (test.Username == null)
             {
